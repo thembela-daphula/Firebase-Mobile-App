@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>edit-profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+
+    <input type="file" #fileBtn class="filebtn" (change)="uploadPic($event)" />
+
+		<div>
+			<ion-img class="profile-pic" (click)="updateProfilePic()" src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/150x150/center/"></ion-img>
+    </div>
+    
+    </ion-card>
+
+    <div class="profile-info">
+
+        <ion-item>
+          <ion-label position="floating">Username</ion-label>
+          <ion-input [(ngModel)]="username"></ion-input>
+        </ion-item>
+
+      <div>              
+          <ion-item>
+            <ion-textarea position="floating" placeholder="Enter your name" clearOnEdit="false" [(ngModel)]="name"></ion-textarea>{{ user.name }}
+          </ion-item>
+          
+          <ion-item>
+            <ion-textarea position="floating" placeholder="Enter your work number" [(ngModel)]="cellNumber">{{ user.cellNumber }}</ion-textarea>
+          </ion-item>
+          
+          <ion-item>
+            <ion-textarea position="floating" placeholder="Enter your email" [(ngModel)]="email">{{ user.email }}</ion-textarea>
+          </ion-item>
+
+          <ion-item><ion-textarea position="floating" placeholder="Enter your cellnumber" [(ngModel)]="phone"></ion-textarea>{{ user.phone }}</ion-item>
+
+          <ion-item><ion-textarea position="floating" placeholder="Enter your occupation" [(ngModel)]="occupation"></ion-textarea>{{ user.occupation }}</ion-item>
+
+          <ion-item><ion-textarea position="floating" placeholder="Enter your level" [(ngModel)]="level"></ion-textarea>{{ user.level }}</ion-item>
+
+          <ion-item><ion-textarea position="floating" placeholder="Enter your location" [(ngModel)]="location"></ion-textarea>{{ user.location }}</ion-item>
+                   
+      </div>	
+        <ion-button shape="round" fill="outline" expand="block" (click)="createPost()" color="dark" (click)="updateDetails()" size="medium">Save</ion-button>
+      </div>
+
+</ion-content>

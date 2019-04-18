@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-icon slot="start" name="close-circle" size="large" (click)="presentAlertConfirm()"></ion-icon>
+      <ion-title>Skills</ion-title>
+    </ion-toolbar>
+    <ion-searchbar color="dark"></ion-searchbar>
+  </ion-header>
+  
+  <ion-content>                
+          
+
+            <div *ngIf="skills">
+              
+                <div *ngFor="let post of skills">
+
+              <ion-item>
+                <ion-label>{{ post.skill }} </ion-label>
+                <ion-note slot="end"> {{ post.level }} </ion-note>
+                <ion-note slot="start" color="dark"><ion-icon name="school"></ion-icon></ion-note>
+              </ion-item>
+
+              
+            </div>
+          </div>
+          <div>
+              <ion-button  shape="round" routerLink="/tabs/skills" size="small" fill="solid" slot="start" color="dark">Add-Skill</ion-button>
+
+          </div>
+             
+    </ion-content>

@@ -1,0 +1,15 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Skills-Update</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    
+       <div>    
+            <ion-item><ion-textarea position="floating" placeholder="Enter skill name" [(ngModel)]="skill">{{ user.skill }}</ion-textarea></ion-item>
+          <ion-item><ion-textarea position="floating" placeholder="Enter the above skill's level" [(ngModel)]="level">{{ user.level }}</ion-textarea></ion-item>
+        </div>     
+      
+      <ion-button shape="round" expand="block" (click)="createPost()" color="dark"  size="small">Save</ion-button>
+  </ion-content>
