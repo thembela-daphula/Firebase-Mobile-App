@@ -22,7 +22,12 @@ phone: string;
 data;
 
 
-  constructor( public router: Router, private afs: AngularFirestore, private user: UserService,  private alertCtrl: AlertController) {
+  constructor(
+    public router: Router,
+    private afs: AngularFirestore,
+    private user: UserService,
+
+    private alertCtrl: AlertController) {
 this.mainuser = afs.doc(`members/${user.getUID()}`);
 this.sub = this.mainuser.valueChanges().subscribe(event => {
 this.username = event.username;
@@ -34,7 +39,7 @@ this.data = event.data;
   ngOnInit() {
   }
 
-  edit(){
+  edit() {
     this.router.navigate(['/tabs/profile']);
   }
 

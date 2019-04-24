@@ -1,20 +1,31 @@
 <ion-header>
 	<ion-toolbar>
+		<div slot="end">Logout </div>
+		<ion-icon slot="end" name="Log-out" size="large" (click)="presentAlertConfirm()">Logout </ion-icon>
 		<ion-title>Leave</ion-title>
 	</ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-		<input type="file" *ngIf="!imageURL" (change)="fileChanged($event)" class="filebtn" #fileButton  />
+<ion-content>
 
+	<ion-card>
 
-		<div *ngIf="imageURL">
-						<ion-img src="https://ucarecdn.com/{{ imageURL }}/"></ion-img>
-						<ion-card-content>
-			  <ion-textarea placeholder="Enter some description" [(ngModel)]="desc"></ion-textarea>
-			  <ion-textarea placeholder="Enter a name" [(ngModel)]="name"></ion-textarea>
-							<ion-button shape="round" color="primary" (click)="createPost()">POST</ion-button>
-						</ion-card-content>
-				
-		</div>	
+		<ion-item>
+			Current status:<div slot="end">Leave not Taken</div>
+		</ion-item>
+
+	</ion-card>
+	<div>
+		<div>
+
+			<ion-card>
+				<ion-item>Eployee ID: 11666979 </ion-item>
+
+				<ion-item>Next Leave start date: 03/01/19</ion-item>
+
+				<ion-item>End of next leave date: 03/01/19 </ion-item>
+			</ion-card>
+		</div>
+	</div>
+
 </ion-content>

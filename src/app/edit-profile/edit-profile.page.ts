@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { UserService } from '../user.service';
 
+
 @Component({
   selector: 'app-edit-profile',
   templateUrl: './edit-profile.page.html',
@@ -28,6 +29,7 @@ phone: string;
 occupation: string;
 location: string;
 level: string;
+data;
 
 // tslint:disable-next-line: no-inferrable-types
 busy: boolean = false;
@@ -43,12 +45,13 @@ private afs: AngularFirestore,
 private router: Router,
 private alertController: AlertController,
 private user: UserService,
-public afstore: AngularFirestore,
-  ) {
+
+public alertCtrl: AlertController) {
 this.mainuser = afs.doc(`members/${user.getUID()}`);
 this.sub = this.mainuser.valueChanges().subscribe(event => {
 this.username = event.username;
 this.profilePic = event.profilePic;
+this.data = event.data;
 });
 
   }
@@ -131,9 +134,33 @@ async updateDetails() {
 
   this.router.navigate(['/tabs/profile']);
 }
-
-
+async presentAlertConfirm() {
+  const alert = await this.alertCtrl.create({
+    header: 'Cancel!',
+    message: 'Cancel?',
+    buttons: [
+      {
+        text: 'Cancel',
+        role: 'cancel',
+        cssClass: 'secondary',
+        handler: (blah) => {
+          console.log('Confirm Cancel: blah');
+        }
+      }, {
+        text: 'Yes',
+        handler: () => {
+          this.router.navigate(['/tabs/profile']);
+        }
+      }
+    ]
+// tslint:disable-next-line: semicolon
+  });
+  await alert.present();
 }
+    }
+
+
+
 
 
 
