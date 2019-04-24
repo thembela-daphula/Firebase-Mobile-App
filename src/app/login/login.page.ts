@@ -5,6 +5,7 @@ import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { RegisterPage } from '../register/register.page';
+import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 
 @Component({
   selector: 'app-login',
@@ -17,9 +18,11 @@ username: string = '';
 // tslint:disable-next-line: no-inferrable-types
 password: string = '';
 
-  constructor(public afAuth: AngularFireAuth, public user: UserService, public router: Router, public toastController: ToastController) { }
+  // tslint:disable-next-line:max-line-length
+  constructor(public afAuth: AngularFireAuth, public user: UserService, public router: Router, public toastController: ToastController, private splashScreen: SplashScreen) { }
 
   ngOnInit() {
+    this.splashScreen.show();
   }
   async login() {
 // tslint:disable-next-line: indent
