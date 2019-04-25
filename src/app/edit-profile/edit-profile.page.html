@@ -7,7 +7,7 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content padding class="background">
 
   <ion-card>
 
@@ -32,37 +32,37 @@
 
     <div>
       <ion-item>
-        <ion-textarea position="floating" placeholder="Enter your name" clearOnEdit="false" [(ngModel)]="name">
+        <ion-textarea position="floating" placeholder="Full name:" clearOnEdit="false" [(ngModel)]="name">
         </ion-textarea>{{ user.name }}
       </ion-item>
 
       <ion-item>
-        <ion-textarea position="floating" placeholder="Enter your work number" [(ngModel)]="cellNumber">
+        <ion-textarea position="floating" placeholder="Office No:" [(ngModel)]="cellNumber">
           {{ user.cellNumber }}</ion-textarea>
       </ion-item>
 
       <ion-item>
-        <ion-textarea position="floating" placeholder="Enter your email" [(ngModel)]="email">{{ user.email }}
+        <ion-textarea position="floating" placeholder="Email:" [(ngModel)]="email">{{ user.email }}
         </ion-textarea>
       </ion-item>
 
       <ion-item>
-        <ion-textarea position="floating" placeholder="Enter your cellnumber" [(ngModel)]="phone"></ion-textarea>
+        <ion-textarea position="floating" placeholder="Cell Phone:" [(ngModel)]="phone"></ion-textarea>
         {{ user.phone }}
       </ion-item>
 
       <ion-item>
-        <ion-textarea position="floating" placeholder="Enter your occupation" [(ngModel)]="occupation"></ion-textarea>
+        <ion-textarea position="floating" placeholder="Field of study:" [(ngModel)]="occupation"></ion-textarea>
         {{ user.occupation }}
       </ion-item>
 
       <ion-item>
-        <ion-textarea position="floating" placeholder="Enter your level" [(ngModel)]="level"></ion-textarea>
+        <ion-textarea position="floating" placeholder="Career level:" [(ngModel)]="level"></ion-textarea>
         {{ user.level }}
       </ion-item>
 
       <ion-item>
-        <ion-textarea position="floating" placeholder="Enter your location" [(ngModel)]="location"></ion-textarea>
+        <ion-textarea position="floating" placeholder="Current location:" [(ngModel)]="location"></ion-textarea>
         {{ user.location }}
       </ion-item>
 
