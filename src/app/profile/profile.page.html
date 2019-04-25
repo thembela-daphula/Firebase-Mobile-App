@@ -1,12 +1,6 @@
 <ion-header>
-<<<<<<< HEAD
-  <ion-toolbar>
-    <div slot="end">Logout </div>
-    <ion-icon (click)="presentAlertConfirm()" slot="end" name="Log-out" size="large"></ion-icon>
-=======
   <ion-toolbar><div slot="end">Logout</div>
       <ion-icon (click)="presentAlertConfirm()" slot="end" name="Log-out"  size="large"></ion-icon>
->>>>>>> a63e0feabad00d3ec83795d9a557985836cdc58c
     <ion-title>Profile </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,94 +8,6 @@
 <ion-content padding class="background">
   <ion-list id="profile-info" *ngIf="username">
     <ion-item>
-<<<<<<< HEAD
-      <ion-thumbnail slot="start">
-        <ion-img src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/200x200/center/"></ion-img>
-      </ion-thumbnail>
-      <ion-label>{{ username }}</ion-label>
-    </ion-item>
-  </ion-list>
-
-
-
-
-  <div *ngIf="data">
-
-
-    <div>
-      <ion-list>
-        <ion-item>
-          <ion-label>Field of study: {{ data.occupation }}</ion-label>
-          <ion-item shape="round" slot="start" color="tertiary">
-            <ion-icon name="school"></ion-icon>
-          </ion-item>
-        </ion-item>
-      </ion-list>
-
-      <ion-list>
-        <ion-item>
-          <ion-label>Email: {{ data.email }}</ion-label>
-          <ion-item shape="round" lot="start" color="tertiary">
-            <ion-icon name="mail"></ion-icon>
-          </ion-item>
-        </ion-item>
-      </ion-list>
-
-      <ion-list>
-        <ion-item>
-          <ion-label>Office No.: {{ data.cellnumber }}</ion-label>
-          <ion-item shape="round" slot="start" color="tertiary">
-            <ion-icon name="call"></ion-icon>
-          </ion-item>
-        </ion-item>
-      </ion-list>
-
-      <ion-list>
-        <ion-item>
-          <ion-label>Full name: {{ data.name }}</ion-label>
-          <ion-item shape="round" slot="start" color="tertiary">
-            <ion-icon name="contact"></ion-icon>
-          </ion-item>
-        </ion-item>
-      </ion-list>
-      <ion-list>
-        <ion-item>
-          <ion-label>Cell phone: {{ data.phone }}</ion-label>
-          <ion-item shape="round" slot="start" color="tertiary">
-            <ion-icon name="phone-portrait"></ion-icon>
-          </ion-item>
-        </ion-item>
-      </ion-list>
-
-      <ion-list>
-        <ion-item>
-          <ion-label>Current location: {{ data.location }}</ion-label>
-          <ion-item shape="round" slot="start" color="tertiary">
-            <ion-icon name="map"></ion-icon>
-          </ion-item>
-        </ion-item>
-      </ion-list>
-
-      <ion-list>
-        <ion-item>
-          <ion-label>Career level: {{ data.level }}</ion-label>
-          <ion-item shape="round" slot="start" color="tertiary">
-            <ion-icon name="ribbon"></ion-icon>
-          </ion-item>
-        </ion-item>
-      </ion-list>
-    </div>
-  </div>
-
-  <ion-item>
-    <ion-button shape="round" color="primary" routerLink="/tabs/edit-profile" slot="end" size="small" fill="outline"
-      slot="end" color="dark">Edit</ion-button>
-  </ion-item>
-
-
-
-</ion-content>
-=======
         <ion-thumbnail slot="start">
             <ion-avatar><img src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/200x200/center/"></ion-avatar>
         </ion-thumbnail>
@@ -116,61 +22,62 @@
 
 
               <div>
-                  <ion-list>
+                  <ion-list padding >
                   <ion-item>
                       <ion-label>Field of study: {{ data.occupation }}</ion-label>
                       <ion-item slot="start" color="tertiary"><ion-icon name="school" ></ion-icon></ion-item>
                     </ion-item>
-                  </ion-list>
+                  <!-- </ion-list> -->
 
-                  <ion-list>                   
+                  <!-- <ion-list>                    -->
                     <ion-item>
                         <ion-label>Email: {{ data.email }}</ion-label>
                         <ion-item slot="start" color="tertiary"><ion-icon name="mail" ></ion-icon></ion-item>
                       </ion-item>
-                    </ion-list>
+                    <!-- </ion-list> -->
 
-                  <ion-list>
+                  <!-- <ion-list> -->
               <ion-item>
                 <ion-label>Office No.: {{ data.cellnumber }}</ion-label>
                 <ion-item slot="start" color="tertiary"><ion-icon name="call" ></ion-icon></ion-item>
               </ion-item>
-              </ion-list>
+              <!-- </ion-list> -->
               
-              <ion-list>
+              <!-- <ion-list> -->
               <ion-item>
                   <ion-label>Full name: {{ data.name }}</ion-label>
                   <ion-item slot="start" color="tertiary"><ion-icon name="contact" ></ion-icon></ion-item>
                 </ion-item>
-                </ion-list>
-                <ion-list>
+                <!-- </ion-list> -->
+                <!-- <ion-list> -->
                 <ion-item>
                     <ion-label>Cell phone: {{ data.phone }}</ion-label>
                     <ion-item slot="start" color="tertiary"><ion-icon name="phone-portrait" ></ion-icon></ion-item>
                   </ion-item>
-                </ion-list>
+                <!-- </ion-list> -->
 
-              <ion-list>
+              <!-- <ion-list> -->
                   <ion-item>
                       <ion-label>Current location: {{ data.location }}</ion-label>
                       <ion-item slot="start" color="tertiary"><ion-icon name="map" ></ion-icon></ion-item>
                     </ion-item>
-                  </ion-list>
+                  <!-- </ion-list> -->
 
-                <ion-list>
+                <!-- <ion-list> -->
                     <ion-item>
                         <ion-label>Career level: {{ data.level }}</ion-label>
                         <ion-item slot="start" color="tertiary"><ion-icon name="ribbon" ></ion-icon></ion-item>
                       </ion-item>
-                    </ion-list>
-                </div>
-              </div>
-           
+                   
+                
               <ion-item>
                   <ion-button  shape="round" color="primary" routerLink="/tabs/edit-profile" slot= "end" size="small" fill="outline" slot="end" color="dark">Edit</ion-button>
               </ion-item>
-      
+            </ion-list>
+            </div>
+          </div>
+       
+           
                  
 
 </ion-content>
->>>>>>> a63e0feabad00d3ec83795d9a557985836cdc58c
