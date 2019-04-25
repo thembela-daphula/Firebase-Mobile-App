@@ -34,7 +34,7 @@ this.data = event.data;
   ngOnInit() {
   }
 
-  edit(){
+  edit() {
     this.router.navigate(['/tabs/profile']);
   }
 

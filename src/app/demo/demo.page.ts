@@ -38,6 +38,7 @@ busy: boolean = false;
 @ViewChild('fileButton') fileButton;
 
 constructor(
+private alertCtrl: AlertController,
 public http: Http,
 public afstore: AngularFirestore,
 public user: UserService,
@@ -97,6 +98,30 @@ this.http.get(`https://ucarecdn.com/${this.imageURL}/detect_faces/`)
 this.noFace = event.json().faces == 0;
 });
 });
+}
+
+async presentAlertConfirm() {
+  const alert = await this.alertCtrl.create({
+    header: 'Logout!',
+    message: 'Are you sure you would like to logout',
+    buttons: [
+      {
+        text: 'Cancel',
+        role: 'cancel',
+        cssClass: 'secondary',
+        handler: (blah) => {
+          console.log('Confirm Cancel: blah');
+        }
+      }, {
+        text: 'Yes',
+        handler: () => {
+          this.router.navigate(['/login']);
+        }
+      }
+    ]
+// tslint:disable-next-line: semicolon
+  });
+  await alert.present();
 }
 
 }
