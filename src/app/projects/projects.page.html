@@ -1,30 +1,47 @@
 <ion-header>
   <ion-toolbar>
-      <ion-icon (click)="presentAlertConfirm()" slot="end" name="log-out" size="large"></ion-icon>
+    <div slot="end">Logout </div>
+    <ion-icon slot="end" name="Log-out" size="large" (click)="presentAlertConfirm()">Logout </ion-icon>
     <ion-title>Projects</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding class="background">
 
-    <ion-card>
+  <ion-card>
 
-        <ion-item>
-          Current status:<div slot="end">Assigned</div>
-        </ion-item>
-       
-        </ion-card>
-       <div>
-        <div>
-      
-       
-        <ion-item>Project Name:  </ion-item>
-       
-        <ion-item>Start date: 03/01/19</ion-item>
-       
-        <ion-item>Actual Roll off date:   </ion-item>
-       
-        </div>
-        </div>
+    <ion-item>
+      Current status:<div slot="end">Assigned</div>
+    </ion-item>
+
+  </ion-card>
+
+
+  <ion-card padding>
+    <ion-card-title> Current Project:</ion-card-title>
+    <ion-item> Project Name: Discovery </ion-item>
+    <ion-item> Start date: 07/20/19 </ion-item>
+    <ion-item> Actual Roll off date: 09/01/19 </ion-item>
+  </ion-card>
+
+
+  <ion-card padding>
+    <ion-card-title> Upcomming Project </ion-card-title>
+    <ion-item> Project Name: Vodacom </ion-item>
+    <ion-item> Start date: 09/10/19</ion-item>
+    <ion-item> Actual Roll off date: 01/16/20 </ion-item>
+  </ion-card>
+
+
+  <ion-card padding>
+    <ion-card-title> Completed Project</ion-card-title>
+    <ion-item> Project Name: Project Info Platfrom </ion-item>
+    <ion-item>Start date: 01/16/19</ion-item>
+    <ion-item> Actual Roll off date: 06/16/19 </ion-item>
+  </ion-card>
+
+
+
+
 
 </ion-content>
