@@ -9,7 +9,6 @@ path: '',
 component: TabsPage,
 children: [
 { path: 'profile', loadChildren: '../profile/profile.module#ProfilePageModule' },
-{ path: 'demo', loadChildren: '../demo/demo.module#DemoPageModule' },
 { path: 'skills', loadChildren: '../skills/skills.module#SkillsPageModule' },
 { path: 'info', loadChildren: '../info/info.module#InfoPageModule' },
 { path: 'projects', loadChildren: '../projects/projects.module#ProjectsPageModule' },

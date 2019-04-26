@@ -9,7 +9,7 @@
 
     <div *ngIf="skills">
     
-        <div *ngFor="let posts of skills">
+        <div *ngFor="let post of skills; let i = index">
             <ion-list>
                 <ion-item>
                   <ion-label> Skill : {{ post.skill }}  </ion-label>
