@@ -9,17 +9,31 @@
 <ion-content padding class="background">
 <ion-item>Skill Name: <div slot="end">Skill level: (1 - 10)</div>  </ion-item>
 
-  <div *ngIf="skills">
-    
-    <div *ngFor="let post of skills">
+
+  <div>
+    <div *ngIf="skills">
       <ion-list>
+        <ion-item-sliding *ngFor="let post of skills">
       <ion-item>
         <ion-label routerLink="/about-skill" >{{ post.skill }} </ion-label>
-        <ion-item slot="end"> {{ post.level }} </ion-item>
+        <ion-item slot="end"> {{ post.level }} > </ion-item>
         <ion-item slot="start" color="tertiary">
           <ion-icon name="school"></ion-icon>
         </ion-item>
       </ion-item>
+      <ion-item-options>
+        <button style="color: red">
+          <ion-icon name="trash"></ion-icon>
+          Delete
+        </button>
+
+        <button style="color: blue">
+            <ion-icon name="create"></ion-icon>
+            Update
+          </button>
+
+      </ion-item-options>
+    </ion-item-sliding>
     </ion-list>
 
     </div>
