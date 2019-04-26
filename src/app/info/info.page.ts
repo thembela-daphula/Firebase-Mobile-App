@@ -13,8 +13,6 @@ import { Http } from '@angular/http';
 export class InfoPage implements OnInit {
 mainuser: AngularFirestoreDocument;
 
-skill: string;
-level: string;
 skills;
 sub;
 

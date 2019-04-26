@@ -14,7 +14,7 @@
     <div *ngFor="let post of skills">
       <ion-list>
       <ion-item>
-        <ion-label>{{ post.skill }} </ion-label>
+        <ion-label routerLink="/about-skill" >{{ post.skill }} </ion-label>
         <ion-item slot="end"> {{ post.level }} </ion-item>
         <ion-item slot="start" color="dark">
           <ion-icon name="school"></ion-icon>

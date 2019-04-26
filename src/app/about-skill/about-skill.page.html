@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-icon slot="start" name="arrow-round-back" size="large" routerLink="/tabs/info" size="large"></ion-icon>
+    <ion-title>about-skill</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <div *ngIf="skills">
+    
+        <div *ngFor="let posts of skills">
+            <ion-list>
+                <ion-item>
+                  <ion-label> Skill : {{ post.skill }}  </ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Skill level : {{ post.level }}</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Last used : {{ post.last_used }} </ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Origin : {{ post.origin }}</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Months Active : {{ post.months_active }}</ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-label>Developing : {{ post.developing }}</ion-label>
+                  </ion-item>
+              </ion-list>
+        </div>
+      </div>
+
+</ion-content>

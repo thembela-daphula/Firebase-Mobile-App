@@ -16,6 +16,11 @@ export class SkillsPage implements OnInit {
   mainuser: AngularFirestoreDocument;
   skill: string;
   level: string;
+  last_used: string;
+  origin: string;
+  months_active: string;
+  developing: string;
+
   skills;
   sub;
 // tslint:disable-next-line: no-inferrable-types
@@ -32,11 +37,19 @@ export class SkillsPage implements OnInit {
       this.busy = true;
       const skill = this.skill;
       const level = this.level;
+      const last_used = this.last_used;
+      const origin = this.origin;
+      const months_active = this.months_active;
+      const developing = this.developing;
 
       this.afs.doc(`members/${this.user.getUID()}`).update({
         skills: firestore.FieldValue.arrayUnion({
           skill,
-          level
+          level,
+          last_used,
+          origin,
+          months_active,
+          developing
         })
         });
 
@@ -70,5 +83,4 @@ export class SkillsPage implements OnInit {
 
   }
 
- 
 }

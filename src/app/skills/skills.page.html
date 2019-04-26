@@ -10,6 +10,10 @@
        <div>    
             <ion-item><ion-textarea position="floating" placeholder="Enter skill name" [(ngModel)]="skill">{{ user.skill }}</ion-textarea></ion-item>
           <ion-item><ion-textarea position="floating" placeholder="Enter the above skill's level" [(ngModel)]="level">{{ user.level }}</ion-textarea></ion-item>
+          <ion-item><ion-textarea position="floating" placeholder="When last did you use the skill (DD/MM/YYYY)" [(ngModel)]="last_used">{{ user.last_used }}</ion-textarea></ion-item>
+          <ion-item><ion-textarea position="floating" placeholder="Enter skill's origin" [(ngModel)]="origin">{{ user.origin }}</ion-textarea></ion-item>
+          <ion-item><ion-textarea position="floating" placeholder="Enter months in which the skill has been active" [(ngModel)]="months_active">{{ user.months_active }}</ion-textarea></ion-item>
+          <ion-item><ion-textarea position="floating" placeholder="Are you currently developing skill?" [(ngModel)]="developing">{{ user.developing }}</ion-textarea></ion-item>
         </div>     
       
       <ion-button shape="round" expand="block" (click)="createPost()" color="dark"  size="small">Save</ion-button>
