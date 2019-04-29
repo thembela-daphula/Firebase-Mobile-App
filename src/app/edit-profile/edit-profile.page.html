@@ -37,7 +37,7 @@
       <ion-item>
         <ion-label position="floating" style="color:darkgray">Occupation:</ion-label>
         <!-- <ion-input placeholder='{{ data.occupation }}'> </ion-input> -->
-        <ion-input [(ngModel)]="occupation" placeholder='' placeholder='{{ data.occupation  }}'>  {{ user.occupation }}
+        <ion-input [(ngModel)]="occupation" placeholder=''>  {{ user.occupation }}
         </ion-input>
         <!-- placeholder='{{ data.occupation  }}' -->
       </ion-item>
@@ -62,7 +62,6 @@
 
       <ion-item>
         <ion-label position="floating" style="color:darkgray">Landline No:</ion-label>
-        <!-- <ion-input placeholder='{{ data.cellnumber }}'></ion-input> -->
         <ion-input [(ngModel)]="cellNumber" placeholder='' > {{ user.cellNumber }}
         </ion-input>
         <!-- placeholder='{{ data.cellnumber }}' -->
@@ -82,17 +81,13 @@
       <ion-item>
         <ion-label position="floating" style="color:darkgray">Current location:
         </ion-label>
-        <!-- <ion-input placeholder='{{ data.location }}'></ion-input> -->
         <ion-input [(ngModel)]="location" placeholder=''> {{ user.location }} </ion-input>
-        <!-- placeholder='{{ data.location }}' -->
       </ion-item>
 
 
       <ion-item>
         <ion-label position="floating" style="color:darkgray">Career level:</ion-label>
-        <!-- <ion-input placeholder='{{ data.level }}'></ion-input> -->
         <ion-input [(ngModel)]="level" placeholder=''> {{ user.level }}</ion-input>
-        <!-- placeholder='{{ data.level }}' -->
       </ion-item>
 
 
