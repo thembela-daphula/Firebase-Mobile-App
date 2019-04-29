@@ -49,11 +49,11 @@ this.data = event.data;
       message: 'Are you sure you would like to logout',
       buttons: [
         {
-          text: 'Cancel',
+          text: 'No',
           role: 'cancel',
           cssClass: 'secondary',
           handler: (blah) => {
-            console.log('Confirm Cancel: blah');
+            console.log('Confirm Cancel: ?');
           }
         }, {
           text: 'Yes',
@@ -66,5 +66,6 @@ this.data = event.data;
     });
     await alert.present();
   }
+
       }
 

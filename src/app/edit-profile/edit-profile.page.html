@@ -1,6 +1,5 @@
 <ion-header>
   <ion-toolbar>
-      <ion-icon slot="start" name="arrow-round-back" size="large" routerLink="/tabs/profile" size="large"></ion-icon>
     <ion-title>edit-profile</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -8,7 +7,7 @@
 
 <ion-content padding class="background">
 
-  <ion-card>
+  <!-- <ion-card> -->
 
     <input type="file" #fileBtn class="filebtn" (change)="uploadPic($event)" />
 
@@ -20,7 +19,9 @@
       </ion-item>
     </div>
 
-  </ion-card>
+  <!-- </ion-card> -->
+
+  <!-- <ion-card> -->
 
   <div class="profile-info">
 
@@ -28,48 +29,47 @@
       <ion-label position="floating">Username</ion-label>
       <ion-input [(ngModel)]="username"></ion-input>
     </ion-item>
+  </div>
 
-    <div>
-      <ion-item>
-        <ion-textarea position="floating" placeholder="Full name:" clearOnEdit="false" [(ngModel)]="name">
-        </ion-textarea>{{ user.name }}
-      </ion-item>
+    
 
+
+</ion-content>
+
+    <!-- <div> 
+      
       <ion-item>
-        <ion-textarea position="floating" placeholder="Office No:" [(ngModel)]="cellNumber">
+          <ion-label position="floating" style="color:darkgray">Office number</ion-label>
+        <ion-textarea [(ngModel)]="cellNumber">
           {{ user.cellNumber }}</ion-textarea>
       </ion-item>
 
       <ion-item>
-        <ion-textarea position="floating" placeholder="Email:" [(ngModel)]="email">{{ user.email }}
+          <ion-label position="floating" style="color:darkgray">Email address</ion-label>
+        <ion-textarea [(ngModel)]="email">{{ user.email }}
         </ion-textarea>
       </ion-item>
 
       <ion-item>
-        <ion-textarea position="floating" placeholder="Cell Phone:" [(ngModel)]="phone"></ion-textarea>
+          <ion-label position="floating" style="color:darkgray">Cellphone number</ion-label>
+        <ion-textarea [(ngModel)]="phone"></ion-textarea>
         {{ user.phone }}
       </ion-item>
 
-      <ion-item>
-        <ion-textarea position="floating" placeholder="Field of study:" [(ngModel)]="occupation"></ion-textarea>
-        {{ user.occupation }}
-      </ion-item>
+      
 
       <ion-item>
-        <ion-textarea position="floating" placeholder="Career level:" [(ngModel)]="level"></ion-textarea>
+          <ion-label position="floating" style="color:darkgray">Career level</ion-label>
+        <ion-textarea [(ngModel)]="level"></ion-textarea>
         {{ user.level }}
       </ion-item>
 
       <ion-item>
-        <ion-textarea position="floating" placeholder="Current location:" [(ngModel)]="location"></ion-textarea>
+          <ion-label position="floating" style="color:darkgray">Current location</ion-label>
+        <ion-textarea [(ngModel)]="location"></ion-textarea>
         {{ user.location }}
       </ion-item>
 
-    </div>
-    <ion-button shape="round"  expand="block" (click)="createPost()" color="light"
-      (click)="updateDetails()" size="medium">Save</ion-button>
-    <ion-button shape="round" expand="block" (click)="createPost()" color="light"
-      (click)="presentAlertConfirm()" size="medium">Cancel</ion-button>
-  </div>
-
-</ion-content>
+    </div> -->
+    
+    
