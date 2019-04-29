@@ -31,7 +31,12 @@
           </ion-item>
           <ion-item>
               <ion-label position="floating" style="color:darkgray">Currently developing skill? Yes/No</ion-label>
-            <ion-textarea [(ngModel)]="developing">{{ user.developing }}</ion-textarea>
+                  <ion-select [(ngModel)]="developing">
+                  <ion-select-option value="yes" selected="true">Yes</ion-select-option>
+                  <ion-select-option value="no">No</ion-select-option>
+                
+              </ion-select>
+              {{ user.developing }}
           </ion-item>
         </div>     
       

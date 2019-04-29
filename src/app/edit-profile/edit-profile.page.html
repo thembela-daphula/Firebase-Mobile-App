@@ -10,7 +10,6 @@
   <ion-card>
 
     <input type="file" #fileBtn class="filebtn" (change)="uploadPic($event)" />
-
     <div>
       <ion-item>
         <ion-img padding class="profile-pic" src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/150x150/center/"></ion-img>
@@ -20,7 +19,7 @@
 
   </ion-card>
 
-  <ion-card>
+  
 
   <div class="profile-info">
 
@@ -78,6 +77,5 @@
     <ion-button shape="round" fill="outline" expand="block" (click)="createPost()" color="light"
       (click)="presentAlertConfirm()" size="medium">Cancel</ion-button>
   </div>
-</ion-card>
 
 </ion-content>

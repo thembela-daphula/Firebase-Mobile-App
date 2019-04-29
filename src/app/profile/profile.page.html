@@ -6,6 +6,7 @@
 </ion-header>
 
 <ion-content padding class="background">
+  <ion-card>
   <ion-list id="profile-info" *ngIf="username">
     <ion-item>
         <ion-thumbnail slot="start">
@@ -14,14 +15,15 @@
         <ion-label>{{ username }}</ion-label>
               </ion-item>
             </ion-list>
+          </ion-card>
 
               
 
-           
+           <ion-card>
           <div *ngIf="data">
 
               <div>
-                  <ion-list padding >
+                  
                   <ion-item>
                       <ion-label>Occupation: {{ data.occupation }}</ion-label>
                       <ion-item slot="start" color="tertiary"><ion-icon name="school" ></ion-icon></ion-item>
@@ -74,9 +76,10 @@
               <ion-item>
                   <ion-button  shape="round" color="primary" routerLink="/tabs/edit-profile" slot= "end" size="small" fill="outline" slot="end" color="dark">Edit</ion-button>
               </ion-item>
-            </ion-list>
+            
             </div>
           </div>
+        </ion-card>
        
            
                  
