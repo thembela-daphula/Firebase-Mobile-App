@@ -136,11 +136,11 @@ async updateDetails() {
 }
 async presentAlertConfirm() {
   const alert = await this.alertCtrl.create({
-    header: 'Cancel!',
-    message: 'Cancel?',
+    header: 'Cancel?',
+    message: 'Would you like to cancel the changes that you have made?',
     buttons: [
       {
-        text: 'Cancel',
+        text: 'No',
         role: 'cancel',
         cssClass: 'secondary',
         handler: (blah) => {

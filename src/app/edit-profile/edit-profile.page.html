@@ -1,6 +1,5 @@
 <ion-header>
   <ion-toolbar>
-      <ion-icon slot="start" name="arrow-round-back" size="large" routerLink="/tabs/profile" size="large"></ion-icon>
     <ion-title>edit-profile</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -21,6 +20,8 @@
 
   </ion-card>
 
+  <ion-card>
+
   <div class="profile-info">
 
     <ion-item>
@@ -30,45 +31,53 @@
 
     <div>
       <ion-item>
-        <ion-textarea position="floating" placeholder="Full name:" clearOnEdit="false" [(ngModel)]="name">
+          <ion-label position="floating" style="color:darkgray">Full name</ion-label>
+        <ion-textarea clearOnEdit="false" [(ngModel)]="name">
         </ion-textarea>{{ user.name }}
       </ion-item>
 
       <ion-item>
-        <ion-textarea position="floating" placeholder="Office No:" [(ngModel)]="cellNumber">
+          <ion-label position="floating" style="color:darkgray">Office number</ion-label>
+        <ion-textarea [(ngModel)]="cellNumber">
           {{ user.cellNumber }}</ion-textarea>
       </ion-item>
 
       <ion-item>
-        <ion-textarea position="floating" placeholder="Email:" [(ngModel)]="email">{{ user.email }}
+          <ion-label position="floating" style="color:darkgray">Email address</ion-label>
+        <ion-textarea [(ngModel)]="email">{{ user.email }}
         </ion-textarea>
       </ion-item>
 
       <ion-item>
-        <ion-textarea position="floating" placeholder="Cell Phone:" [(ngModel)]="phone"></ion-textarea>
+          <ion-label position="floating" style="color:darkgray">Cellphone number</ion-label>
+        <ion-textarea [(ngModel)]="phone"></ion-textarea>
         {{ user.phone }}
       </ion-item>
 
       <ion-item>
-        <ion-textarea position="floating" placeholder="Field of study:" [(ngModel)]="occupation"></ion-textarea>
+          <ion-label position="floating" style="color:darkgray">Occupation</ion-label>
+        <ion-textarea [(ngModel)]="occupation"></ion-textarea>
         {{ user.occupation }}
       </ion-item>
 
       <ion-item>
-        <ion-textarea position="floating" placeholder="Career level:" [(ngModel)]="level"></ion-textarea>
+          <ion-label position="floating" style="color:darkgray">Career level</ion-label>
+        <ion-textarea [(ngModel)]="level"></ion-textarea>
         {{ user.level }}
       </ion-item>
 
       <ion-item>
-        <ion-textarea position="floating" placeholder="Current location:" [(ngModel)]="location"></ion-textarea>
+          <ion-label position="floating" style="color:darkgray">Current location</ion-label>
+        <ion-textarea [(ngModel)]="location"></ion-textarea>
         {{ user.location }}
       </ion-item>
 
     </div>
-    <ion-button shape="round" fill="outline" expand="block" (click)="createPost()" color="dark"
+    <ion-button shape="round" fill="outline" expand="block" (click)="createPost()" color="light"
       (click)="updateDetails()" size="medium">Save</ion-button>
-    <ion-button shape="round" fill="outline" expand="block" (click)="createPost()" color="dark"
+    <ion-button shape="round" fill="outline" expand="block" (click)="createPost()" color="light"
       (click)="presentAlertConfirm()" size="medium">Cancel</ion-button>
   </div>
+</ion-card>
 
 </ion-content>
