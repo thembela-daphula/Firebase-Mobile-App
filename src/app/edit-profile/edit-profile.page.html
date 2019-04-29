@@ -15,7 +15,8 @@
     <div>
       <ion-item>
         <ion-img padding class="profile-pic" src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/150x150/center/"></ion-img>
-        <ion-button padding shape="round" fill="outline" expand="block" color="dark" (click)="updateProfilePic()">Update Profile Picture</ion-button>
+        <div></div>
+        <ion-button padding shape="round" fill="outline" expand="block" color="dark" (click)="updateProfilePic()">Change Picture</ion-button>
       </ion-item>
     </div>
 
@@ -65,9 +66,9 @@
       </ion-item>
 
     </div>
-    <ion-button shape="round" fill="outline" expand="block" (click)="createPost()" color="dark"
+    <ion-button shape="round"  expand="block" (click)="createPost()" color="light"
       (click)="updateDetails()" size="medium">Save</ion-button>
-    <ion-button shape="round" fill="outline" expand="block" (click)="createPost()" color="dark"
+    <ion-button shape="round" expand="block" (click)="createPost()" color="light"
       (click)="presentAlertConfirm()" size="medium">Cancel</ion-button>
   </div>
 

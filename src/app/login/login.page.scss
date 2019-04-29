@@ -1,4 +1,14 @@
 ion-content.background{
-    --background: url(../../assets/Login.png) 0 0/100%  no-repeat;;
+    --background: url(../../assets/Login2.png) 0 0/100%  no-repeat;;
  
     }
+    ion-content.background2{
+        --background: url(../../assets/Login.png) 0 0/100%  no-repeat;;
+     
+        }
+
+#grad {
+    --background: -webkit-linear-gradient(left, #dfdfeb, #e02f9c);
+      }
+
+
