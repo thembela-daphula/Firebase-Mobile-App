@@ -9,18 +9,20 @@
 
   <!-- <ion-card> -->
 
-    <input type="file" #fileBtn class="filebtn" (change)="uploadPic($event)" />
-    <div>
-      <ion-item>
-        <ion-img padding class="profile-pic" src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/150x150/center/"></ion-img>
-        <div></div>
-        <ion-button padding shape="round" fill="outline" expand="block" color="dark" (click)="updateProfilePic()">Change Picture</ion-button>
-      </ion-item>
-    </div>
+  <input type="file" #fileBtn class="filebtn" (change)="uploadPic($event)" />
+  <div>
+    <ion-item>
+      <ion-img padding class="profile-pic" src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/150x150/center/">
+      </ion-img>
+      <div></div>
+      <ion-button padding shape="round" fill="outline" expand="block" color="dark" (click)="updateProfilePic()">Change
+        Picture</ion-button>
+    </ion-item>
+  </div>
 
   <!-- </ion-card> -->
 
-  
+
 
   <div class="profile-info">
 
@@ -28,46 +30,72 @@
       <ion-label position="floating">Username</ion-label>
       <ion-input [(ngModel)]="username"></ion-input>
     </ion-item>
-  </div>
 
-    
+    <div>
 
-
-</ion-content>
-
-    <!-- <div> 
-      
-      <ion-item>
-          <ion-label position="floating" style="color:darkgray">Office number</ion-label>
-        <ion-textarea [(ngModel)]="cellNumber">
-          {{ user.cellNumber }}</ion-textarea>
-      </ion-item>
 
       <ion-item>
-          <ion-label position="floating" style="color:darkgray">Email address</ion-label>
-        <ion-textarea [(ngModel)]="email">{{ user.email }}
-        </ion-textarea>
+        <ion-label position="floating" style="color:darkgray">Occupation:</ion-label>
+        <!-- <ion-input placeholder='{{ data.occupation }}'> </ion-input> -->
+        <ion-input [(ngModel)]="occupation" placeholder='' placeholder='{{ data.occupation  }}'>  {{ user.occupation }}
+        </ion-input>
+        <!-- placeholder='{{ data.occupation  }}' -->
       </ion-item>
+
 
       <ion-item>
-          <ion-label position="floating" style="color:darkgray">Cellphone number</ion-label>
-        <ion-textarea [(ngModel)]="phone"></ion-textarea>
-        {{ user.phone }}
+        <ion-label position="floating" style="color:darkgray">Name:</ion-label>
+        <!-- <ion-input placeholder='{{ data.name }}'> </ion-input> -->
+        <ion-input clearOnEdit="false" [(ngModel)]="name" placeholder=''> {{ user.name }}
+        </ion-input>
+        <!-- placeholder='{{ data.name }}'> -->
       </ion-item>
 
-      
-
-      <ion-item>
-          <ion-label position="floating" style="color:darkgray">Career level</ion-label>
-        <ion-textarea [(ngModel)]="level"></ion-textarea>
-        {{ user.level }}
-      </ion-item>
 
       <ion-item>
-          <ion-label position="floating" style="color:darkgray">Current location</ion-label>
-        <ion-textarea [(ngModel)]="location"></ion-textarea>
-        {{ user.location }}
+        <ion-label position="floating" style="color:darkgray">Email:</ion-label>
+        <!-- <ion-input placeholder='{{ data.email }}'></ion-input> -->
+        <ion-input [(ngModel)]="email" placeholder=''> {{ user.email }} </ion-input>
+        <!-- placeholder='{{ data.email }}' -->
       </ion-item>
+
+
+      <ion-item>
+        <ion-label position="floating" style="color:darkgray">Landline No:</ion-label>
+        <!-- <ion-input placeholder='{{ data.cellnumber }}'></ion-input> -->
+        <ion-input [(ngModel)]="cellNumber" placeholder='' > {{ user.cellNumber }}
+        </ion-input>
+        <!-- placeholder='{{ data.cellnumber }}' -->
+      </ion-item>
+
+
+
+
+      <ion-item>
+        <ion-label position="floating" style="color:darkgray">Cell Phone </ion-label>
+        <!-- <ion-input placeholder='{{ data.phone }}'></ion-input> -->
+        <ion-input [(ngModel)]="phone" placeholder=''> {{ user.phone }}</ion-input>
+        <!-- placeholder='{{ data.phone }}' -->
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label position="floating" style="color:darkgray">Current location:
+        </ion-label>
+        <!-- <ion-input placeholder='{{ data.location }}'></ion-input> -->
+        <ion-input [(ngModel)]="location" placeholder=''> {{ user.location }} </ion-input>
+        <!-- placeholder='{{ data.location }}' -->
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label position="floating" style="color:darkgray">Career level:</ion-label>
+        <!-- <ion-input placeholder='{{ data.level }}'></ion-input> -->
+        <ion-input [(ngModel)]="level" placeholder=''> {{ user.level }}</ion-input>
+        <!-- placeholder='{{ data.level }}' -->
+      </ion-item>
+
+
 
     </div>
     <ion-button shape="round" fill="outline" expand="block" (click)="createPost()" color="light"
