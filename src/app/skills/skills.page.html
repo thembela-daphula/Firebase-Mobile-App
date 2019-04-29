@@ -41,6 +41,7 @@
               <ion-select [(ngModel)]="origin">
                   <ion-select-option value="University" selected="true">University</ion-select-option>
                   <ion-select-option value="Online course">Online course</ion-select-option>
+                  <ion-select-option value="Self-study">Self-study</ion-select-option>
                   <ion-select-option value="Other">Other</ion-select-option>
                 
               </ion-select>
@@ -51,10 +52,6 @@
             <ion-textarea [(ngModel)]="months_active">{{ user.months_active }}</ion-textarea>
           </ion-item>
           <ion-item>
-<<<<<<< HEAD
-              <ion-label position="floating" style="color:darkgray">Currently developing skill? Yes/No</ion-label>
-            <ion-textarea [(ngModel)]="developing">{{ user.developing }}</ion-textarea>
-=======
               <ion-label position="floating" style="color:darkgray">Currently developing skill?</ion-label>
                   <ion-select [(ngModel)]="developing">
                   <ion-select-option value="yes" selected="true">Yes</ion-select-option>
@@ -62,7 +59,6 @@
                 
               </ion-select>
               {{ user.developing }}
->>>>>>> 48c623a8d43e7125d0193c6f82cc6bd9a317ddbf
           </ion-item>
         </div>     
       
