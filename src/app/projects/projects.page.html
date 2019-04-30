@@ -1,21 +1,19 @@
 <ion-header>
   <ion-toolbar>
-    <div slot="end">Logout </div>
-    <ion-icon slot="end" name="Log-out" size="large" (click)="presentAlertConfirm()">Logout </ion-icon>
+      <ion-buttons slot="start">
+          <ion-menu-button autoHide="false" color="dark"></ion-menu-button>
+        </ion-buttons>
     <ion-title>Projects</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding class="background">
 
-  <ion-card>
-
+  <div>
     <ion-item>
       Current status:<div slot="end">Assigned</div>
     </ion-item>
-
-  </ion-card>
-
+  </div>
 
   <ion-list padding class="White">
     <h6>Current Project:</h6>
@@ -44,17 +42,12 @@
   </ion-list>
 
 
-  <ion-card padding class="White">
+  <ion-list padding class="White">
     <!-- <ion-card-header> -->
-    <ion-card-subtitle>Completed Project:</ion-card-subtitle>
+    <h6>Completed Project:</h6>
     <!-- </ion-card-header> -->
     <ion-item> Project Name: Project Info Platfrom </ion-item>
     <ion-item>Start date: 2019/01/16</ion-item>
     <ion-item> Actual Roll off date: 2019/06/16 </ion-item>
-  </ion-card>
-
-
-
-
-
+    </ion-list>
 </ion-content>

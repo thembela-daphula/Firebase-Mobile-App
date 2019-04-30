@@ -3,6 +3,7 @@ import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firest
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-profile',
@@ -26,6 +27,7 @@ data;
     public router: Router,
     private afs: AngularFirestore,
     private user: UserService,
+    private menu: MenuController,
 
     private alertCtrl: AlertController) {
 this.mainuser = afs.doc(`members/${user.getUID()}`);
@@ -65,6 +67,11 @@ this.data = event.data;
   // tslint:disable-next-line: semicolon
     });
     await alert.present();
+  }
+
+  openFirst() {
+    this.menu.enable(true, 'first');
+    this.menu.open('first');
   }
 
       }

@@ -1,15 +1,19 @@
 <ion-header>
-  <ion-toolbar><div slot="end">Logout</div>
-    <ion-icon slot="end" name="Log-out" size="large" (click)="presentAlertConfirm()"> </ion-icon>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-menu-button autoHide="false" color="dark"></ion-menu-button>
+        </ion-buttons>
     <ion-title>Skills</ion-title>
   </ion-toolbar>
   <ion-searchbar color="stable"></ion-searchbar>
 </ion-header>
 
 <ion-content padding class="background">
-<ion-item>Skill Name: <div slot="end">Skill level: (1 - 10)</div>  </ion-item>
 
 
+
+
+    <ion-item>Skill Name: <div slot="end">Skill level: (1 - 10)</div>  </ion-item>
   <div>
     <div *ngIf="skills">
       <ion-list>
@@ -32,10 +36,12 @@
 
     </div>
   </div>
+
   <div>
     <ion-button padding shape="round" routerLink="/tabs/skills" size="small" fill="solid" slot="start" color="tertiary">Add-Skill
     </ion-button>
 
   </div>
+
 
 </ion-content>

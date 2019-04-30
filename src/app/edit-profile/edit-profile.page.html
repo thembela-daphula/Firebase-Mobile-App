@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>edit-profile</ion-title>
+    <ion-title>Update profile</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -95,8 +95,9 @@
     </div>
     <ion-button shape="round" fill="outline" expand="block" (click)="createPost()" color="light"
       (click)="updateDetails()" size="medium">Save</ion-button>
-    <ion-button shape="round" fill="outline" expand="block" (click)="createPost()" color="light"
-      (click)="presentAlertConfirm()" size="medium">Cancel</ion-button>
+
+
+    <ion-button shape="round" fill="outline" expand="block" color="light" routerLink="/tabs/profile">Cancel</ion-button>
   </div>
 
 </ion-content>
