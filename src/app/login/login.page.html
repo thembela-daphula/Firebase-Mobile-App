@@ -1,5 +1,6 @@
 <ion-header>
 	<ion-toolbar>
+		<ion-icon slot="start" name="menu" size="large"></ion-icon>
 		<ion-title></ion-title>
 	</ion-toolbar>
 </ion-header>
@@ -21,7 +22,7 @@
 
 
 <ion-footer padding id="grad">
-	<ion-label position="floating">Username</ion-label>
+	<ion-label position="floating">Enterprise ID</ion-label>
 	<ion-input type="text" [(ngModel)]="username"></ion-input>
 
 
@@ -31,6 +32,6 @@
 
 
 
-	<ion-button fill="solid" expand="block" color="dark" (click)="login()">Login</ion-button>
+	<ion-button id="buttonColor" shape="round" expand="block" (click)="login()" size="medium">Login</ion-button>
 
 </ion-footer>

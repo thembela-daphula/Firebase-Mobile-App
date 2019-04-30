@@ -8,17 +8,17 @@
 
 <ion-content padding class="background">
 
-  <ion-card>
+  <ion-label>
 
     <ion-item>
       Current status:<div slot="end">Assigned</div>
     </ion-item>
 
-  </ion-card>
+  </ion-label>
 
 
-  <ion-list padding class="White">
-    <h6>Current Project:</h6>
+  <ion-label padding class="White">
+    <ion-item>Current Project:</ion-item>
     <ion-item position="floating">Project Name:</ion-item>
     <ion-item>
       <ion-input type="text" placeholder="Discovery"></ion-input>
@@ -32,26 +32,39 @@
     <ion-item>
       <ion-input type="text" placeholder="2019/09/01"></ion-input>
     </ion-item>
-  </ion-list>
+  </ion-label>
 
 
-  <ion-list padding class="White">
-    <h6>Upcoming Project:</h6>
+  <ion-label padding class="White">
+    <ion-item >Upcoming Project:</ion-item>
     <ion-item position="floating"> Project Name: </ion-item>
-    <ion-input type="text" placeholder="Vodacom"></ion-input>
-    <ion-item> Start date: 2019/09/10</ion-item>
-    <!-- <ion-item> Actual Roll off date: 01/16/20 </ion-item> -->
-  </ion-list>
+    <ion-item>
+      <ion-input type="text" placeholder="Vodacom"></ion-input>
+    </ion-item>
+
+    <ion-item position="floating"> Start date: </ion-item>
+    <ion-item>
+      <ion-input type="text" placeholder="2019/09/10"></ion-input>
+    </ion-item>
+  </ion-label>
 
 
-  <ion-card padding class="White">
-    <!-- <ion-card-header> -->
-    <ion-card-subtitle>Completed Project:</ion-card-subtitle>
-    <!-- </ion-card-header> -->
-    <ion-item> Project Name: Project Info Platfrom </ion-item>
-    <ion-item>Start date: 2019/01/16</ion-item>
-    <ion-item> Actual Roll off date: 2019/06/16 </ion-item>
-  </ion-card>
+  <ion-label padding class="White">
+
+    <ion-item>Completed Project:</ion-item>
+    <ion-item position="floating"> Project Name: </ion-item>
+    <ion-item>
+      <ion-input type="text" placeholder="Project Info Platfrom"></ion-input>
+    </ion-item>
+    <ion-item position="floating">Start date: </ion-item>
+    <ion-item>
+      <ion-input type="text" placeholder="2019/01/16"></ion-input>
+    </ion-item>
+    <ion-item position="floating"> Actual Roll off date:</ion-item>
+    <ion-item>
+    <ion-input type="text" placeholder="2019/06/16"></ion-input>
+  </ion-item>
+  </ion-label>
 
 
 
