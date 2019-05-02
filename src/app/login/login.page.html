@@ -1,27 +1,28 @@
 <ion-header>
 	<ion-toolbar>
+		<ion-icon slot="start" name="menu" size="large"></ion-icon>
 		<ion-title></ion-title>
 	</ion-toolbar>
 </ion-header>
 
-<ion-content padding id="grad">
+<ion-content  id="grad">
 
 	<!-- <ion-content class="background"> -->
 
 	<!-- </ion-content> -->
-	<img src="http://www.stickpng.com/assets/images/5847e7a1cef1014c0b5e480f.png" />
-	<img src="http://tpc.syrenis.com/assets/images/uploads/the-preference-centre.png" />
+	<img src="https://i.imgur.com/6QycNwf.png" />
+	<!-- <img src="http://tpc.syrenis.com/assets/images/uploads/the-preference-centre.png" /> -->
 	
-	<ion-label align="center" padding>
+	<!-- <ion-label align="center" padding>
 		<h1 padding><strong>Team Portal</strong></h1>
-	</ion-label>
+	</ion-label> -->
 </ion-content>
 
 
 
 
 <ion-footer padding id="grad">
-	<ion-label position="floating">Username</ion-label>
+	<ion-label position="floating">Enterprise ID</ion-label>
 	<ion-input type="text" [(ngModel)]="username"></ion-input>
 
 
@@ -31,6 +32,6 @@
 
 
 
-	<ion-button fill="solid" expand="block" color="dark" (click)="login()">Login</ion-button>
+	<ion-button id="buttonColor" shape="round" expand="block" (click)="login()" size="medium">Login</ion-button>
 
 </ion-footer>
