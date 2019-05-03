@@ -18,6 +18,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AuthService } from './auth.service';
 import { ShareModule } from './share.module';
 
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],

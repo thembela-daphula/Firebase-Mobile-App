@@ -1,5 +1,7 @@
 <ion-header>
   <ion-toolbar>
+        <ion-icon routerLink="/tabs/skills" size="large"  slot="end" name="add-circle" slot="end" color= "other">
+      </ion-icon>
       <ion-buttons slot="start">
           <ion-menu-button autoHide="false" color="dark"></ion-menu-button>
         </ion-buttons>
@@ -9,41 +11,17 @@
 </ion-header>
 
 <ion-content padding class="background">
-  <ion-item>Skill Name: <div slot="end">Skill level: (1 - 10)</div>
-  </ion-item>
 
-
-
-
-    <ion-item>Skill Name: <div slot="end">Skill level: (1 - 10)</div>  </ion-item>
-  <div>
-    <div *ngIf="skills">
-      <ion-list>
-        <ion-item-sliding *ngFor="let post of skills">
+    <ion-item>Skill<div slot="end"> 1 - 10</div> </ion-item>
+  <div *ngIf="skills">
+    <div *ngFor="let post of skills">
+     
           <ion-item>
             <ion-label routerLink="/about-skill">{{ post.skill }} </ion-label>
-            <ion-item slot="end"> {{ post.level }} > </ion-item>
-
-
+            <ion-item slot="end"> {{ post.level }}</ion-item>
           </ion-item>
-
-          <ion-item-options>
-            <button style="color: blue">
-              <ion-icon name="create"></ion-icon>
-              Update
-            </button>
-          </ion-item-options>
-        </ion-item-sliding>
-      </ion-list>
-
+     
     </div>
-  </div>
-
-  <div>
-    <ion-button id="buttonColor" shape="round" routerLink="/tabs/skills" size="medium" fill="solid" slot="start">
-      Add-Skill
-    </ion-button>
-
   </div>
 
 
