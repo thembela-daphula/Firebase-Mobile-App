@@ -9,11 +9,11 @@
     
        <div>    
           <ion-item>
-              <ion-label position="floating" style="color:darkgray">Skill</ion-label>
+              <ion-label position="floating" style="color:rgba(169, 169, 169, 0.288)">Skill</ion-label>
             <ion-textarea  [(ngModel)]="skill">{{ user.skill }}</ion-textarea>
           </ion-item>
           <ion-item>
-              <ion-label position="floating" style="color:darkgray">Skill level</ion-label>
+              <ion-label position="floating" style="color:rgba(169, 169, 169, 0.288)">Skill level</ion-label>
               <ion-select [(ngModel)]="level">
                   <ion-select-option value="1" selected="true">1</ion-select-option>
                   <ion-select-option value="2">2</ion-select-option>
@@ -31,12 +31,12 @@
           </ion-item>
           
           <ion-item>
-              <ion-label position="floating" style="color:darkgray">Last date the skill was used</ion-label>
+              <ion-label position="floating" style="color:rgba(169, 169, 169, 0.288)">Last date the skill was used</ion-label>
               <ion-datetime [(ngModel)]="last_used" display-format="YYYY,MMM DD"></ion-datetime>
             {{ user.last_used }}
           </ion-item>
           <ion-item>
-              <ion-label position="floating" style="color:darkgray">Skill origin</ion-label>
+              <ion-label position="floating" style="color:rgba(169, 169, 169, 0.288)">Skill origin</ion-label>
 
               <ion-select [(ngModel)]="origin">
                   <ion-select-option value="University" selected="true">University</ion-select-option>
@@ -48,11 +48,11 @@
             {{ user.origin }}
           </ion-item>
           <ion-item>
-              <ion-label position="floating" style="color:darkgray">Skill's months active</ion-label>
+              <ion-label position="floating" style="color:rgba(169, 169, 169, 0.288)">Skill's months active</ion-label>
             <ion-textarea [(ngModel)]="months_active">{{ user.months_active }}</ion-textarea>
           </ion-item>
           <ion-item>
-              <ion-label position="floating" style="color:darkgray">Currently developing skill?</ion-label>
+              <ion-label position="floating" style="color:rgba(169, 169, 169, 0.288)">Currently developing skill?</ion-label>
                   <ion-select [(ngModel)]="developing">
                   <ion-select-option value="yes" selected="true">Yes</ion-select-option>
                   <ion-select-option value="no">No</ion-select-option>

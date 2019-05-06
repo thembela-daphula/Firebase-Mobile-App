@@ -1,7 +1,4 @@
-import * as firebase from 'firebase';
-import { firestore } from 'firebase/app';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Http } from '@angular/http';
 import { Router } from '@angular/router';
@@ -9,27 +6,28 @@ import { AlertController } from '@ionic/angular';
 import { UserService } from '../user.service';
 
 
+
 @Component({
   selector: 'app-edit-profile',
   templateUrl: './edit-profile.page.html',
   styleUrls: ['./edit-profile.page.scss'],
 })
+
 export class EditProfilePage implements OnInit {
 
 
   mainuser: AngularFirestoreDocument;
   sub;
-  username: string;
-  profilePic: string;
-  cellNumber: string;
-  name: string;
-  surname: string;
-  email: string;
-  phone: string;
-  occupation: string;
-  location: string;
-  level: string;
-  data;
+
+  data: any = {
+    'name': null,
+    'cellnumber': null,
+    'email': null,
+    'phone': null,
+    'occupation': null,
+    'location': null,
+    'level': null,
+  };
 
   // tslint:disable-next-line: no-inferrable-types
   busy: boolean = false;
@@ -37,6 +35,8 @@ export class EditProfilePage implements OnInit {
   @ViewChild('fileBtn') fileBtn: {
     nativeElement: HTMLInputElement
   };
+  username: any;
+  profilePic: any;
 
 
   constructor(
@@ -47,17 +47,20 @@ export class EditProfilePage implements OnInit {
     private user: UserService,
 
     public alertCtrl: AlertController) {
-    this.mainuser = afs.doc(`members/${user.getUID()}`);
-    this.sub = this.mainuser.valueChanges().subscribe(event => {
-      this.username = event.username;
-      this.profilePic = event.profilePic;
-      this.data = event.data;
-    });
+
 
   }
 
 
   ngOnInit() {
+    this.mainuser = this.afs.doc(`members/${this.user.getUID()}`);
+
+    this.sub = this.mainuser.valueChanges().subscribe(event => {
+      console.log(event);
+      this.username = event.username;
+      this.profilePic = event.profilePic;
+      this.data = event.data;
+    });
   }
 
   // tslint:disable-next-line: use-life-cycle-interface
@@ -87,26 +90,19 @@ export class EditProfilePage implements OnInit {
   }
 
   async createPost() {
+
     this.busy = true;
-
-    const name = this.name;
-    const cellnumber = this.cellNumber;
-    const email = this.email;
-    const phone = this.phone;
-    const occupation = this.occupation;
-    const location = this.location;
-    const level = this.level;
-
+    const data = {
+      'name': this.data.name,
+      'cellnumber': this.data.cellnumber,
+      'email': this.data.email,
+      'phone': this.data.phone,
+      'occupation': this.data.occupation,
+      'location': this.data.location,
+      'level': this.data.level
+    };
     this.afs.doc(`members/${this.user.getUID()}`).update({
-      data: {
-        name,
-        cellnumber,
-        email,
-        phone,
-        occupation,
-        location,
-        level
-      }
+      data: data
     });
 
     this.router.navigate(['/tabs/profile']);
