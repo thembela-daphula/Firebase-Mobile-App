@@ -84,6 +84,14 @@
         <ion-input [(ngModel)]="data.level"></ion-input>
       </ion-item>
 
+    </div>
+  </div>
+  
+<ion-item>
+    <ion-button slot="end" id="buttonColor" shape="round" (click)="createPost()" (click)="updateDetails()" size="medium">
+        Update
+  </ion-button>
+</ion-item>
 
       <ion-button id="buttonColor" shape="round" (click)="createPost()" (click)="updateDetails()" size="medium">
         Save
@@ -92,8 +100,6 @@
         Cancel</ion-button>
 
 
-    </div>
-  </div>
 
 
 </ion-content>

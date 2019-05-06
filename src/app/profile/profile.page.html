@@ -1,8 +1,10 @@
 <ion-header>
+  
   <ion-toolbar>
-    <div slot="end">Logout</div>
-    <ion-icon slot="start" name="menu" size="large"></ion-icon>
-    <ion-icon (click)="presentAlertConfirm()" slot="end" name="Log-out" size="large"></ion-icon>
+      <ion-icon name="create" slot="end" size="large" routerLink="/tabs/edit-profile"></ion-icon>
+      <ion-buttons slot="start">
+          <ion-menu-button autoHide="false" color="dark"></ion-menu-button>
+        </ion-buttons>
     <ion-title>Profile </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -15,14 +17,26 @@
       </ion-thumbnail>
       <ion-label>{{ data.name }}</ion-label>
     </ion-item>
-  </ion-list>
 
+    <div *ngIf="data">
+    
 
-  <ion-item>
-    <ion-icon id="buttonColor" slot="end" name="md-create" size="large" routerLink="/tabs/edit-profile"></ion-icon>
-  </ion-item>
-
-  <div *ngIf="data">
+        <div class="profile-info">
+          <ion-item>
+            <ion-label position="floating" style="color:darkgray">Role</ion-label>
+            <ion-input [(ngModel)]="Occupation" color="dark" placeholder=''>{{ data.occupation }}</ion-input>
+          </ion-item>
+        </div>
+    
+    
+    
+        <div class="profile-info">
+          <ion-item>
+            <ion-label position="floating" style="color:darkgray">Name</ion-label>
+            <ion-input [(ngModel)]="name" placeholder=''>{{ data.name }}</ion-input>
+          </ion-item>
+        </div>
+    
     <div class="profile-info">
 
       <ion-item>
@@ -85,9 +99,5 @@
     </ion-item> -->
 
     </div>
-  </div>
-
-
-
-
+  </ion-list>
 </ion-content>

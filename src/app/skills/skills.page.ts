@@ -5,11 +5,14 @@ import { AlertController } from '@ionic/angular';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { UserService } from '../user.service';
 import { firestore } from 'firebase/app';
+import { Keyboard } from '@ionic-native/keyboard/ngx';
+
 
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.page.html',
   styleUrls: ['./skills.page.scss'],
+  providers: [Keyboard]
 })
 export class SkillsPage implements OnInit {
 
@@ -26,7 +29,8 @@ export class SkillsPage implements OnInit {
 // tslint:disable-next-line: no-inferrable-types
   busy: boolean = false;
 
-  constructor(public router: Router, private afs: AngularFirestore, private user: UserService,  private alertCtrl: AlertController) {
+// tslint:disable-next-line: max-line-length
+  constructor(public router: Router, private afs: AngularFirestore, private user: UserService,  private alertCtrl: AlertController, private keyboard: Keyboard) {
       this.mainuser = afs.doc(`members/${user.getUID()}`);
       this.sub = this.mainuser.valueChanges().subscribe(event => {
       this.skills = event.skills;
@@ -81,6 +85,10 @@ export class SkillsPage implements OnInit {
   // tslint:disable-next-line: semicolon
     });
     await alert.present();
+  }
+
+  openkeypad() {
+    this.keyboard.show();
   }
 
 
