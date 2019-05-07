@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-      <ion-icon slot="start" name="arrow-round-back" size="large" routerLink="/tabs/profile" size="large"></ion-icon>
+    <ion-icon slot="start" name="arrow-round-back" size="large" routerLink="/tabs/profile" size="large"></ion-icon>
     <ion-title>edit-profile</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -17,7 +17,7 @@
       <ion-avatar> <img src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/150x150/center/"> </ion-avatar>
       </ion-thumbnail>
       <div></div>
-      <ion-button id="buttonColor" shape="round"  expand="block" (click)="updateProfilePic()" size="medium">Change
+      <ion-button id="buttonColor" shape="round" expand="block" (click)="updateProfilePic()" size="medium">Change
         Picture</ion-button>
     </ion-item>
   </div>
@@ -37,59 +37,52 @@
 
 
       <ion-item>
-        <ion-label position="floating" style="color:darkgray">Role</ion-label>
-        <!-- <ion-input placeholder='{{ data.occupation }}'> </ion-input> -->
-        <ion-input [(ngModel)]="occupation" placeholder=''> {{ user.occupation }}
-        </ion-input>
-        <!-- placeholder='{{ data.occupation  }}' -->
+        <ion-label position="floating" style="color:darkgray">Occupation</ion-label>
+        <ion-input [(ngModel)]="data.occupation"> </ion-input>
+
+
       </ion-item>
 
 
-      <ion-item align="center">
-        <ion-label position="floating" style="color:darkgray">Name & Surname</ion-label>
-        <!-- <ion-input placeholder='{{ data.name }}'> </ion-input> -->
-        <ion-input clearOnEdit="false" [(ngModel)]="name" placeholder=''> {{ user.name }}
-        </ion-input>
-        <!-- placeholder='{{ data.name }}'> -->
+      <ion-item>
+        <ion-label position="floating" style="color:darkgray">Name</ion-label>
+        <ion-input [(ngModel)]="data.name"> </ion-input>
+
       </ion-item>
 
 
       <ion-item>
         <ion-label position="floating" style="color:darkgray">Email</ion-label>
-        <!-- <ion-input placeholder='{{ data.email }}'></ion-input> -->
-        <ion-input [(ngModel)]="email" placeholder=''> {{ user.email }} </ion-input>
-        <!-- placeholder='{{ data.email }}' -->
+        <ion-input [(ngModel)]="data.email"></ion-input>
+
       </ion-item>
 
 
       <ion-item>
         <ion-label position="floating" style="color:darkgray">Landline No</ion-label>
-        <ion-input [(ngModel)]="cellNumber" placeholder=''> {{ user.cellNumber }}
-        </ion-input>
-        <!-- placeholder='{{ data.cellnumber }}' -->
+        <ion-input [(ngModel)]="data.cellnumber">        </ion-input>
+
       </ion-item>
 
 
 
 
       <ion-item>
-        <ion-label position="floating" style="color:darkgray">Cell Phone</ion-label>
-        <!-- <ion-input placeholder='{{ data.phone }}'></ion-input> -->
-        <ion-input [(ngModel)]="phone" placeholder=''> {{ user.phone }}</ion-input>
-        <!-- placeholder='{{ data.phone }}' -->
+        <ion-label position="floating" style="color:darkgray">Cell Phone </ion-label>
+        <ion-input [(ngModel)]="data.phone"></ion-input>
       </ion-item>
 
 
       <ion-item>
         <ion-label position="floating" style="color:darkgray">Current location
         </ion-label>
-        <ion-input [(ngModel)]="location" placeholder=''> {{ user.location }} </ion-input>
+        <ion-input [(ngModel)]="data.location"></ion-input>
       </ion-item>
 
 
       <ion-item>
         <ion-label position="floating" style="color:darkgray">Career level</ion-label>
-        <ion-input [(ngModel)]="level" placeholder=''> {{ user.level }}</ion-input>
+        <ion-input [(ngModel)]="data.level"></ion-input>
       </ion-item>
 
     </div>
@@ -101,6 +94,11 @@
   </ion-button>
 </ion-item>
 
+      <ion-button id="buttonColor" shape="round" (click)="createPost()" (click)="updateDetails()" size="medium">
+        Save
+      </ion-button>
+      <ion-button id="buttonColor" shape="round" routerLink="/tabs/profile" size="medium">
+        Cancel</ion-button>
 
 
 
