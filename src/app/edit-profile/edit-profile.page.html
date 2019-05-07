@@ -13,8 +13,9 @@
   <input type="file" #fileBtn class="filebtn" (change)="uploadPic($event)" />
   <div>
     <ion-item>
-      <ion-img padding class="profile-pic" src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/150x150/center/">
-      </ion-img>
+        <ion-thumbnail slot="start">
+      <ion-avatar> <img src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/150x150/center/"> </ion-avatar>
+      </ion-thumbnail>
       <div></div>
       <ion-button id="buttonColor" shape="round"  expand="block" (click)="updateProfilePic()" size="medium">Change
         Picture</ion-button>

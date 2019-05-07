@@ -2,14 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.page.html',
   styleUrls: ['./projects.page.scss'],
 })
 export class ProjectsPage implements OnInit {
+  public items: any = [];
 
-  constructor(private alertCtrl: AlertController, public router: Router) { }
+  constructor(private alertCtrl: AlertController, public router: Router) {
+    this.items = [
+      { expanded: false }
+    ];
+  }
 
   ngOnInit() {
   }
@@ -37,6 +43,5 @@ export class ProjectsPage implements OnInit {
     });
     await alert.present();
   }
-
 
 }

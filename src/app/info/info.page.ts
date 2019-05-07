@@ -1,9 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
-import { AlertController } from '@ionic/angular';
-import { UserService } from '../user.service';
+import { FormArray } from '@angular/forms';
 import { Http } from '@angular/http';
+import { Router } from '@angular/router';
+import { AlertController, PopoverController } from '@ionic/angular';
+import { UserService } from '../user.service';
+import { NotifiticationsComponent } from './notifitications/notifitications.component';
+
+
+
 
 @Component({
   selector: 'app-info',
@@ -25,11 +30,13 @@ busy: boolean = false;
 
 // tslint:disable-next-line: max-line-length
   constructor (
+
     private http: Http,
     public router: Router,
     private afs: AngularFirestore,
     private user: UserService,
     private alertCtrl: AlertController,
+    public popoverController: PopoverController,
         ) {
     this.mainuser = afs.doc(`members/${user.getUID()}`);
     this.sub = this.mainuser.valueChanges().subscribe(event => {
@@ -63,5 +70,22 @@ busy: boolean = false;
       });
       await alert.present();
     }
+
+    async notifications(ev: any) {
+      const popover = await this.popoverController.create({
+          component: NotifiticationsComponent,
+          event: ev,
+          animated: true,
+          showBackdrop: true
+      });
+      return await popover.present();
+  }
+
+  async DismissClick() {
+    await this.popoverController.dismiss();
+      }
+delete(itemid) {
+this.afs.doc('members');
+}
 
 }

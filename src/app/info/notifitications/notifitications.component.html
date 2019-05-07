@@ -1,0 +1,34 @@
+
+      
+        
+        <ion-list class="popover-content">
+            <ion-icon name="close-circle" slot="end" size="large" (click)="DismissClick()"></ion-icon>
+            <ion-item>
+              <ion-label position="floating" style="color:darkgray"> Skill </ion-label>
+              <ion-input  placeholder=''>{{ post.skill }}</ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating" style="color:darkgray">level</ion-label>
+              <ion-input  placeholder=''>{{ post.level }}</ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating" style="color:darkgray">Last used </ion-label>
+              <ion-input  placeholder=''>{{ post.last_used }}</ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating" style="color:darkgray">Origin</ion-label>
+              <ion-input  placeholder=''>{{ post.origin }}</ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating" style="color:darkgray">Months of active experience</ion-label>
+              <ion-input  placeholder=''>{{ post.months_active }}</ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating" style="color:darkgray">Are you currently developing skill?</ion-label>
+                <ion-input  placeholder=''>{{ post.developing }}</ion-input>
+              </ion-item>
+              <ion-button size="small" slot="start" color="primary">Update</ion-button>
+              <ion-button size="small" slot="start" color="danger">Delete</ion-button>
+          </ion-list>
+        
+  

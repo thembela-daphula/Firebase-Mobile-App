@@ -1,12 +1,11 @@
 <ion-header>
   <ion-toolbar>
       <ion-buttons slot="start">
-          <ion-menu-button autoHide="false" color="dark"></ion-menu-button>
+          <ion-menu-button autoHide="true" color="dark"></ion-menu-button>
         </ion-buttons>
     <ion-title>Projects</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content padding class="background">
 
   <ion-label>
@@ -68,7 +67,37 @@
   </ion-label>
 
 
+    <ion-card (click)="expandItem(item)" *ngFor="let item of items">
+      <ion-card-header>
+        <ion-card-title>Past Projects</ion-card-title>
+      </ion-card-header>
+  
+      <ion-card-content>
+        <app-expandable expandHeight="100px" [expanded]="item.expanded">
+          <p>
+            Hello there.
+          </p>
+        </app-expandable>
+      </ion-card-content>
+    </ion-card>
 
+    
+    <ion-card (click)="expandItem(item)" *ngFor="let item of items">
+      <ion-card-header>
+        <ion-card-title>Future Projects</ion-card-title>
+      </ion-card-header>
+  
+      <ion-card-content>
+        <app-expandable expandHeight="100px" [expanded]="item.expanded">
+          <p>
+            Hello there.
+          </p>
+        </app-expandable>
+      </ion-card-content>
+    </ion-card>
+
+
+    
 
 
 </ion-content>
