@@ -2,24 +2,24 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { AlertController } from '@ionic/angular';
-import { UserService } from '../user.service';
+import { UserService } from '../../user.service';
 import { Http } from '@angular/http';
+import { PopoverController } from '@ionic/angular';
+
 
 @Component({
-  selector: 'app-about-skill',
-  templateUrl: './about-skill.page.html',
-  styleUrls: ['./about-skill.page.scss'],
+  selector: 'app-notifitications',
+  templateUrl: './notifitications.component.html',
+  styleUrls: ['./notifitications.component.scss'],
 })
-export class AboutSkillPage implements OnInit {
+export class NotifiticationsComponent implements OnInit {
 
 mainuser: AngularFirestoreDocument;
 skills;
 sub;
 
-// tslint:disable-next-line: no-inferrable-types
-busy: boolean = false;
-
   constructor(
+    private popoverController: PopoverController,
     private http: Http,
     public router: Router,
     private afs: AngularFirestore,
@@ -30,9 +30,12 @@ busy: boolean = false;
     this.sub = this.mainuser.valueChanges().subscribe(event => {
     this.skills = event.skills;
     });
-  }
+   }
 
-  ngOnInit() {
-  }
+   async DismissClick() {
+    await this.popoverController.dismiss();
+      }
+
+  ngOnInit() {}
 
 }

@@ -17,12 +17,15 @@ import { UserService } from './user.service';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AuthService } from './auth.service';
 import { ShareModule } from './share.module';
+import { NotifiticationsComponent } from './info/notifitications/notifitications.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
+  declarations: [AppComponent, NotifiticationsComponent],
+  entryComponents: [NotifiticationsComponent],
   imports: [
+HttpClientModule,
 BrowserModule,
 IonicModule.forRoot(),
 AppRoutingModule,

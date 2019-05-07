@@ -13,6 +13,7 @@ children: [
 { path: 'info', loadChildren: '../info/info.module#InfoPageModule' },
 { path: 'projects', loadChildren: '../projects/projects.module#ProjectsPageModule' },
 { path: 'edit-profile', loadChildren: '../edit-profile/edit-profile.module#EditProfilePageModule' },
+{ path: 'members', loadChildren: '../members/members.module#MembersPageModule' },
 
 // tslint:disable-next-line: indent
         ]
