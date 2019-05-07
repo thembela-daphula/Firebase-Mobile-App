@@ -65,39 +65,4 @@
     <ion-input type="text" placeholder="2019/06/16"></ion-input>
   </ion-item>
   </ion-label>
-
-
-    <ion-card (click)="expandItem(item)" *ngFor="let item of items">
-      <ion-card-header>
-        <ion-card-title>Past Projects</ion-card-title>
-      </ion-card-header>
-  
-      <ion-card-content>
-        <app-expandable expandHeight="100px" [expanded]="item.expanded">
-          <p>
-            Hello there.
-          </p>
-        </app-expandable>
-      </ion-card-content>
-    </ion-card>
-
-    
-    <ion-card (click)="expandItem(item)" *ngFor="let item of items">
-      <ion-card-header>
-        <ion-card-title>Future Projects</ion-card-title>
-      </ion-card-header>
-  
-      <ion-card-content>
-        <app-expandable expandHeight="100px" [expanded]="item.expanded">
-          <p>
-            Hello there.
-          </p>
-        </app-expandable>
-      </ion-card-content>
-    </ion-card>
-
-
-    
-
-
 </ion-content>
