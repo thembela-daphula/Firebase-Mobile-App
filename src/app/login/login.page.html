@@ -1,18 +1,22 @@
 <ion-header>
+
 	<ion-toolbar>
-		<ion-icon slot="start" name="menu" size="large"></ion-icon>
+		<ion-buttons slot="start">
+			<ion-menu-button autoHide="false" color="dark"></ion-menu-button>
+		</ion-buttons>
 		<ion-title></ion-title>
+
 	</ion-toolbar>
 </ion-header>
 
-<ion-content  id="grad">
+<ion-content id="grad">
 
 	<!-- <ion-content class="background"> -->
 
 	<!-- </ion-content> -->
 	<img src="https://i.imgur.com/6QycNwf.png" />
 	<!-- <img src="http://tpc.syrenis.com/assets/images/uploads/the-preference-centre.png" /> -->
-	
+
 	<!-- <ion-label align="center" padding>
 		<h1 padding><strong>Team Portal</strong></h1>
 	</ion-label> -->
@@ -32,6 +36,6 @@
 
 
 
-	<ion-button id="Login" shape="round" expand="block" (click)="login()" size="medium">Login</ion-button>
+	<ion-button id="Login" shape="square" expand="block" (click)="login()" size="medium">Login</ion-button>
 
 </ion-footer>

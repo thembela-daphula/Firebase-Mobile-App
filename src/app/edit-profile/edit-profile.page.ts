@@ -4,6 +4,7 @@ import { Http } from '@angular/http';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { UserService } from '../user.service';
+import { delay } from 'rxjs/internal/operators/delay';
 
 
 
@@ -60,7 +61,15 @@ export class EditProfilePage implements OnInit {
       this.username = event.username;
       this.profilePic = event.profilePic;
       this.data = event.data;
+      this.data.occupation = '';
+      this.data.name = '';
+      this.data.email = '';
+      this.data.cellnumber = '';
+      this.data.phone = '';
+      this.data.location = '';
+      this.data.level = '';
     });
+
   }
 
   // tslint:disable-next-line: use-life-cycle-interface

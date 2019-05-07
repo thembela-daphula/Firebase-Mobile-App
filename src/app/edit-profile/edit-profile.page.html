@@ -1,7 +1,8 @@
 <ion-header>
   <ion-toolbar>
-    <ion-icon slot="start" name="arrow-round-back" size="large" routerLink="/tabs/profile" size="large"></ion-icon>
-    <ion-title>edit-profile</ion-title>
+    <ion-icon id="back-arrow" slot="start" name="arrow-round-back" size="large" routerLink="/tabs/profile" size="large">
+    </ion-icon>
+    <ion-title>Edit profile</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -13,11 +14,11 @@
   <input type="file" #fileBtn class="filebtn" (change)="uploadPic($event)" />
   <div>
     <ion-item>
-      <ion-img padding class="profile-pic" src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/150x150/center/">
-      </ion-img>
-      <div></div>
-      <ion-button id="buttonColor" shape="round" expand="block" (click)="updateProfilePic()" size="medium">Change
-        Picture</ion-button>
+      <ion-thumbnail slot="start">
+        <ion-avatar><img id="change-picture" src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/200x200/center/"
+            (click)="updateProfilePic()"></ion-avatar>
+      </ion-thumbnail>
+      <div padding></div>
     </ion-item>
   </div>
 
@@ -27,17 +28,17 @@
 
   <div class="profile-info">
 
-    <ion-item>
-      <ion-label position="floating">Username</ion-label>
+    <!-- <ion-item>
+      <ion-label id="Username" position="floating">Username</ion-label>
       <ion-input [(ngModel)]="username"></ion-input>
-    </ion-item>
+    </ion-item> -->
 
     <div>
 
 
       <ion-item>
-        <ion-label position="floating" style="color:darkgray">Occupation</ion-label>
-        <ion-input [(ngModel)]="data.occupation"> </ion-input>
+        <ion-label position="floating" style="color:darkgray">Role</ion-label>
+        <ion-input id="Occupation" [(ngModel)]="data.occupation"> </ion-input>
 
 
       </ion-item>
@@ -45,21 +46,21 @@
 
       <ion-item>
         <ion-label position="floating" style="color:darkgray">Name</ion-label>
-        <ion-input [(ngModel)]="data.name"> </ion-input>
+        <ion-input id="Name" [(ngModel)]="data.name"> </ion-input>
 
       </ion-item>
 
 
       <ion-item>
         <ion-label position="floating" style="color:darkgray">Email</ion-label>
-        <ion-input [(ngModel)]="data.email"></ion-input>
+        <ion-input id="Email" [(ngModel)]="data.email"></ion-input>
 
       </ion-item>
 
 
       <ion-item>
         <ion-label position="floating" style="color:darkgray">Landline No</ion-label>
-        <ion-input [(ngModel)]="data.cellnumber">        </ion-input>
+        <ion-input id="Landline-No" [(ngModel)]="data.cellnumber"> </ion-input>
 
       </ion-item>
 
@@ -68,36 +69,35 @@
 
       <ion-item>
         <ion-label position="floating" style="color:darkgray">Cell Phone </ion-label>
-        <ion-input [(ngModel)]="data.phone"></ion-input>
+        <ion-input id="Cell-Phone" [(ngModel)]="data.phone"></ion-input>
       </ion-item>
 
 
       <ion-item>
-        <ion-label position="floating" style="color:darkgray">Current location
-        </ion-label>
-        <ion-input [(ngModel)]="data.location"></ion-input>
+        <ion-label position="floating" style="color:darkgray">Current location </ion-label>
+        <ion-input id="Current-location" [(ngModel)]="data.location"></ion-input>
       </ion-item>
 
 
       <ion-item>
-        <ion-label position="floating" style="color:darkgray">Career level</ion-label>
-        <ion-input [(ngModel)]="data.level"></ion-input>
+        <ion-label  position="floating" style="color:darkgray">Career level</ion-label>
+        <ion-input id="Career-level" [(ngModel)]="data.level"></ion-input>
       </ion-item>
 
     </div>
   </div>
-  
-<ion-item>
-    <ion-button slot="end" id="buttonColor" shape="round" (click)="createPost()" (click)="updateDetails()" size="medium">
-        Update
-  </ion-button>
-</ion-item>
 
-      <ion-button id="buttonColor" shape="round" (click)="createPost()" (click)="updateDetails()" size="medium">
+  <ion-item>
+    <ion-button slot="end" id="buttonColor" (click)="createPost()" (click)="updateDetails()" size="medium">
+      Update
+    </ion-button>
+  </ion-item>
+
+  <!-- <ion-button id="buttonColor" shape="square" (click)="createPost()" (click)="updateDetails()" size="medium">
         Save
       </ion-button>
-      <ion-button id="buttonColor" shape="round" routerLink="/tabs/profile" size="medium">
-        Cancel</ion-button>
+      <ion-button id="buttonColor" shape="square" routerLink="/tabs/profile" size="medium">
+        Cancel</ion-button> -->
 
 
 

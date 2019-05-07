@@ -1,10 +1,10 @@
 <ion-header>
-  
+
   <ion-toolbar>
-      <ion-icon name="create" slot="end" size="large" routerLink="/tabs/edit-profile"></ion-icon>
-      <ion-buttons slot="start">
-          <ion-menu-button autoHide="false" color="dark"></ion-menu-button>
-        </ion-buttons>
+    <ion-icon id="edit-profile" name="md-create" slot="end" size="large" routerLink="/tabs/edit-profile"></ion-icon>
+    <ion-buttons slot="start">
+      <ion-menu-button id="menu" autoHide="true" color="dark"></ion-menu-button>
+    </ion-buttons>
     <ion-title>Profile </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -19,84 +19,59 @@
     </ion-item>
 
     <div *ngIf="data">
-    
+
+
+      <div class="profile-info">
+        <ion-item>
+          <ion-label position="floating" style="color:darkgray">Role</ion-label>
+          <ion-input [(ngModel)]="Occupation" color="dark" placeholder=''>{{ data.occupation }}</ion-input>
+        </ion-item>
+      </div>
+
+      <div class="profile-info">
+        <ion-item>
+          <ion-label position="floating" style="color:darkgray">Name:</ion-label>
+          <ion-input [(ngModel)]="name" color="dark" placeholder=''>{{ data.name }}</ion-input>
+        </ion-item>
+      </div>
+
+      <div class="profile-info">
+        <div class="profile-info">
+          <ion-item>
+            <ion-label position="floating" style="color:darkgray">Email:</ion-label>
+            <ion-input [(ngModel)]="email" color="dark" placeholder=''>{{ data.email }}</ion-input>
+          </ion-item>
+        </div>
 
         <div class="profile-info">
           <ion-item>
-            <ion-label position="floating" style="color:darkgray">Role</ion-label>
-            <ion-input [(ngModel)]="Occupation" color="dark" placeholder=''>{{ data.occupation }}</ion-input>
+            <ion-label position="floating" style="color:darkgray">Landline No:</ion-label>
+            <ion-input [(ngModel)]="cellnumber" color="dark" placeholder=''>{{ data.cellnumber }}</ion-input>
           </ion-item>
         </div>
-    
-    
-    
+
         <div class="profile-info">
           <ion-item>
-            <ion-label position="floating" style="color:darkgray">Name</ion-label>
-            <ion-input [(ngModel)]="name" placeholder=''>{{ data.name }}</ion-input>
+            <ion-label position="floating" style="color:darkgray">Cell Phone:</ion-label>
+            <ion-input [(ngModel)]="phone" placeholder=''> {{ data.phone }} </ion-input>
           </ion-item>
         </div>
-    
-    <div class="profile-info">
 
-      <ion-item>
-        <ion-label position="floating" style="color:rgba(169, 169, 169, 0.288)">Occupation:</ion-label>
+        <div class="profile-info">
+          <ion-item>
+            <ion-label position="floating" style="color:darkgray">Current location: </ion-label>
+            <ion-input [(ngModel)]="map" color="dark" placeholder=''>{{ data.location }}</ion-input>
+          </ion-item>
+        </div>
 
-        <ion-input [(ngModel)]="Occupation" color="dark" placeholder=''>{{ data.occupation }}</ion-input>
-      </ion-item>
-    </div>
+        <div class="profile-info">
+          <ion-item>
+            <ion-label position="floating" style="color:darkgray">Career level:</ion-label>
+            <ion-input [(ngModel)]="ribbon" color="dark" placeholder=''>{{ data.level }}</ion-input>
+          </ion-item>
+        </div>
 
-
-
-    <div class="profile-info">
-      <ion-item>
-        <ion-label position="floating" style="color:rgba(169, 169, 169, 0.288)">Name:</ion-label>
-        <ion-input [(ngModel)]="name" placeholder=''>{{ data.name }}</ion-input>
-      </ion-item>
-    </div>
-
-    <div class="profile-info">
-      <div class="profile-info">
-        <ion-item>
-          <ion-label position="floating" style="color:rgba(169, 169, 169, 0.288)">Email:</ion-label>
-          <ion-input [(ngModel)]="email" placeholder=''>{{ data.email }}</ion-input>
-        </ion-item>
       </div>
-
-      <div class="profile-info">
-        <ion-item>
-          <ion-label position="floating" style="color:rgba(169, 169, 169, 0.288)">Landline No:</ion-label>
-          <ion-input [(ngModel)]="cellnumber" placeholder=''>{{ data.cellnumber }}</ion-input>
-        </ion-item>
-      </div>
-
-      <div class="profile-info">
-        <ion-item>
-          <ion-label position="floating" style="color:rgba(169, 169, 169, 0.288)">Cell Phone:</ion-label>
-          <ion-input [(ngModel)]="phone" placeholder='' id="calcmouldSugNOfCavitiesCost" disabled>{{ data.phone }}
-          </ion-input>
-        </ion-item>
-      </div>
-
-      <div class="profile-info">
-        <ion-item>
-          <ion-label position="floating" style="color:rgba(169, 169, 169, 0.288)">Current location: </ion-label>
-          <ion-input [(ngModel)]="map" placeholder=''>{{ data.location }}</ion-input>
-        </ion-item>
-      </div>
-
-      <div class="profile-info">
-        <ion-item>
-          <ion-label position="floating" style="color:rgba(169, 169, 169, 0.288)">Career level:</ion-label>
-          <ion-input [(ngModel)]="ribbon" placeholder=''>{{ data.level }}</ion-input>
-        </ion-item>
-      </div>
-
-
-      <!-- <ion-item>
-      <ion-button shape="round" color="primary" routerLink="/tabs/edit-profile" slot="end" size="small" fill="outline"
-        slot="end" color="dark">Edit</ion-button>
-    </ion-item> -->
 
     </div>
   </ion-list>
