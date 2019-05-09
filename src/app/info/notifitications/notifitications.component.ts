@@ -38,4 +38,8 @@ sub;
 
   ngOnInit() {}
 
+go() {
+  this.router.navigate(['/tabs/profile']);
+}
+
 }

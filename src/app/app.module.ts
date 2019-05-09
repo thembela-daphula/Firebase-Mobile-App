@@ -19,11 +19,12 @@ import { AuthService } from './auth.service';
 import { ShareModule } from './share.module';
 import { NotifiticationsComponent } from './info/notifitications/notifitications.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MemberinfoComponent } from './members/memberinfo/memberinfo.component';
 
 
 @NgModule({
-  declarations: [AppComponent, NotifiticationsComponent],
-  entryComponents: [NotifiticationsComponent],
+  declarations: [AppComponent, NotifiticationsComponent, MemberinfoComponent],
+  entryComponents: [NotifiticationsComponent, MemberinfoComponent],
   imports: [
 HttpClientModule,
 BrowserModule,
