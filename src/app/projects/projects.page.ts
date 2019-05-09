@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -9,12 +10,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./projects.page.scss'],
 })
 export class ProjectsPage implements OnInit {
-  public items: any = [];
+  information: any[];
+  automaticClose = false;
 
-  constructor(private alertCtrl: AlertController, public router: Router) {
-    this.items = [
-      { expanded: false }
-    ];
+
+  constructor(private alertCtrl: AlertController, public router: Router, private http: HttpClient) {
+    this.http.get('assets/information.json').subscribe( res => {
+      this.information = res['data'];
+
+      this.information[0].open = true;
+    });
   }
 
   ngOnInit() {
@@ -43,5 +48,25 @@ export class ProjectsPage implements OnInit {
     });
     await alert.present();
   }
+
+  toogleSelection(index) {
+    this.information[index].open = !this.information[index].open;
+
+    if (this.automaticClose && this.information[index].open) {
+      this.information
+// tslint:disable-next-line: triple-equals
+      .filter((data, dataIndex ) => dataIndex != index)
+      .map((data => data.open = false));
+
+    }
+
+  }
+
+  toogleItem(index, childIndex) {
+    this.information[index].children[childIndex].open = !this.information[index].children[childIndex].open;
+
+  }
+
+
 
 }

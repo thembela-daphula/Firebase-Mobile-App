@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-product',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
-  constructor() { }
+// tslint:disable-next-line: no-input-rename
+  @Input ('product') product: any;
+
+  constructor(private toastCrtl: ToastController) { }
 
   ngOnInit() {}
 
