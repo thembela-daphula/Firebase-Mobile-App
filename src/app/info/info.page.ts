@@ -8,8 +8,6 @@ import { UserService } from '../user.service';
 import { NotifiticationsComponent } from './notifitications/notifitications.component';
 
 
-
-
 @Component({
   selector: 'app-info',
   templateUrl: './info.page.html',
