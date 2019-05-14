@@ -1,12 +1,10 @@
-
-
 <ion-header>
   <ion-toolbar>
-        <ion-icon routerLink="/tabs/skills" size="large"  slot="end" name="add-circle" slot="end" color= "other">
-      </ion-icon>
-      <ion-buttons slot="start">
-          <ion-menu-button autoHide="false" color="dark"></ion-menu-button>
-        </ion-buttons>
+    <ion-icon routerLink="/tabs/skills" size="large" slot="end" name="add-circle" slot="end" color="other">
+    </ion-icon>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false" color="dark"></ion-menu-button>
+    </ion-buttons>
     <ion-title>Skills</ion-title>
   </ion-toolbar>
   <ion-searchbar color="stable"></ion-searchbar>
@@ -14,19 +12,19 @@
 
 <ion-content padding class="background">
 
-    <ion-item lines="none">Skill<div slot="end"> 1 - 10</div> </ion-item>
+  <ion-item lines="none">Skill<div slot="end"> 1 - 10</div>
+  </ion-item>
 
 
-    <ion-list *ngIf="skills">
-          <ion-list *ngFor="let post of skills">
-              <ion-reorder-group disabled="false" id="reorder">
-                  <ion-item>
-                      <ion-label (click)="notifications()" >{{ post.skill }} </ion-label>
-                      <ion-item slot="end"> {{ post.level }}</ion-item>
-                      <ion-reorder slot="end"></ion-reorder>
-                    </ion-item>
-                  </ion-reorder-group>
-          </ion-list>
-        </ion-list>
+  <ion-list *ngIf="skills">
+    <ion-list *ngFor="let post of skills">
+
+      <ion-item>
+        <ion-label (click)="notifications()">{{ post.skill }} </ion-label>
+        <ion-item slot="end"> {{ post.level }}</ion-item>
+      </ion-item>
+
+    </ion-list>
+  </ion-list>
 
 </ion-content>

@@ -60,14 +60,14 @@ export class EditProfilePage implements OnInit {
       console.log(event);
       this.username = event.username;
       this.profilePic = event.profilePic;
-      this.data = event.data;
-      this.data.occupation = '';
-      this.data.name = '';
-      this.data.email = '';
-      this.data.cellnumber = '';
-      this.data.phone = '';
-      this.data.location = '';
-      this.data.level = '';
+      // this.data = event.data;
+      // this.data.occupation = '';
+      // this.data.name = '';
+      // this.data.email = '';
+      // this.data.cellnumber = '';
+      // this.data.phone = '';
+      // this.data.location = '';
+      // this.data.level = '';
     });
 
   }
