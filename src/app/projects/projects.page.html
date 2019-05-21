@@ -8,8 +8,8 @@
 </ion-header>
 <ion-content class="background">
 
- <ion-list  *ngFor="let data of information; let i = index;" class="accordion-list" lines="none" detail="false" no-padding>
-    <ion-item class="backgroundColor" tappable (click)="toogleSelection(i)" [ngClass]="{'section-active' : data.open, 'section': !data.open}">
+ <ion-list  *ngFor="let data of information; let i = index;" class="accordion-list" lines="none" detail="false"  no-padding>
+    <ion-item class="backgroundColor" id="current_project" tappable (click)="toogleSelection(i)" [ngClass]="{'section-active' : data.open, 'section': !data.open}">
       <ion-icon color="dark" slot="start" name="arrow-forward" *ngIf="!data.open"></ion-icon>
       <ion-icon  color="dark"slot="start" name="arrow-down" *ngIf="data.open"></ion-icon>
       {{ data.project}}
@@ -17,7 +17,7 @@
 
     <div *ngIf ="data.children && data.open">
     <ion-list padding-start *ngFor ="let child of data.children; let j = index;" lines="none" class="child-list">
-      <ion-item class="backgroundColor" tappable (click)="toogleItem(i, j)" *ngIf="child.children" [ngClass]="{'child-active' : child.open, 'child': !child.open}">
+      <ion-item class="backgroundColor" id="upcoming_projects" tappable (click)="toogleItem(i, j)" *ngIf="child.children" [ngClass]="{'child-active' : child.open, 'child': !child.open}">
       <ion-icon color="dark" size="small" slot="start" name="arrow-forward" *ngIf="!child.open"></ion-icon>
       <ion-icon color="dark" size="small"  slot="start" name="arrow-down" *ngIf="child.open"></ion-icon>
       <ion-label>
@@ -27,7 +27,7 @@
 
       <app-product [product]="child" *ngIf="!child.children"></app-product>
 
-      <ion-list *ngIf="child.children && child.open" class="product-list" lines="none">
+      <ion-list *ngIf="child.children && child.open" class="product-list" id="past_Projects" lines="none">
           <app-product [product]="product" *ngFor="let product of child.children"></app-product>
       </ion-list>
     </ion-list>
