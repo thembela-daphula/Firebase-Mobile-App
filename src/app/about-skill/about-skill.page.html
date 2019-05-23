@@ -14,27 +14,27 @@
             <ion-list> {{i}}
                 
                 <ion-item>
-                  <ion-label position="floating" style="color:darkgray"> Skill </ion-label>
+                  <ion-label position="floating" style="color:darkgray" id="txtSkill"> Skill </ion-label>
                   <ion-input  placeholder=''>{{ post.skill }}</ion-input>
                 </ion-item>
                 <ion-item>
-                  <ion-label position="floating" style="color:darkgray">level</ion-label>
+                  <ion-label position="floating" style="color:darkgray" id="radLevel">level</ion-label>
                   <ion-input  placeholder=''>{{ post.level }}</ion-input>
                 </ion-item>
                 <ion-item>
-                  <ion-label position="floating" style="color:darkgray">Last used </ion-label>
+                  <ion-label position="floating" style="color:darkgray" id="dtLastUsed">Last used </ion-label>
                   <ion-input  placeholder=''>{{ post.last_used }}</ion-input>
                 </ion-item>
                 <ion-item>
-                  <ion-label position="floating" style="color:darkgray">Origin</ion-label>
+                  <ion-label position="floating" style="color:darkgray" id="radOrigin">Origin</ion-label>
                   <ion-input  placeholder=''>{{ post.origin }}</ion-input>
                 </ion-item>
                 <ion-item>
-                  <ion-label position="floating" style="color:darkgray">Months of active experience</ion-label>
+                  <ion-label position="floating" style="color:darkgray" id="txtAEMonths">Months of active experience</ion-label>
                   <ion-input  placeholder=''>{{ post.months_active }}</ion-input>
                 </ion-item>
                 <ion-item>
-                    <ion-label position="floating" style="color:darkgray">Are you currently developing skill?</ion-label>
+                    <ion-label position="floating" style="color:darkgray" id="radSkillDeveloping">Are you currently developing skill?</ion-label>
                     <ion-input  placeholder=''>{{ post.developing }}</ion-input>
                   </ion-item>
               </ion-list>
