@@ -132,34 +132,28 @@ export class EditProfilePage implements OnInit {
 
     await this.presentAlert('Update success', 'Your profile was updated');
 
-    this.router.navigate(['/tabs/profile']);
+    // this.router.navigate(['/tabs/profile']);
   }
   async presentAlertConfirm() {
-    this.router.navigate(['/tabs/profile']);
-  }
-  //   const alert = await this.alertCtrl.create({
-  //     header: 'Cancel?',
-  //     message: 'Would you like to cancel the changes that you have made?',
-  //     buttons: [
-  //       {
-  //         text: 'No',
-  //         role: 'cancel',
-  //         cssClass: 'secondary',
-  //         handler: (blah) => {
-  //           console.log('Confirm Cancel: blah');
-  //         }
-  //       }, {
-  //         text: 'Yes',
-  //         handler: () => {
-  //           this.router.navigate(['/tabs/profile']);
-  //         }
-  //       }
-  //     ]
-  // // tslint:disable-next-line: semicolon
-  //   });
-  //   await alert.present();
+  //   this.router.navigate(['/tabs/profile']);
   // }
+    const alert = await this.alertCtrl.create({
+      header: 'Update success',
+      message: 'Your profile has been updated',
+      buttons: [
+        {
+          text: 'OK',
+          handler: () => {
+            this.router.navigate(['/tabs/profile']);
+          }
+        }
+      ]
+  // tslint:disable-next-line: semicolon
+    });
+    await alert.present();
+  }
 }
+
 
 
 
