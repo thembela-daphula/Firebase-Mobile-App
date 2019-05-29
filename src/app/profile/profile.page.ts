@@ -20,6 +20,7 @@ name: string;
 last_name: string;
 nick_name: string;
 cellnumber: string;
+b_day: string;
 email: string;
 phone: string;
 data;

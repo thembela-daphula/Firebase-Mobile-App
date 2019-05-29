@@ -101,7 +101,8 @@ export class EditProfilePage implements OnInit {
       'last_name': this.data.last_name,
       'surname': this.data.location,
       'level': this.data.level,
-      'nick_name': this.data.nick_name
+      'nick_name': this.data.nick_name,
+      'b_day': this.data.b_day
     };
     this.afs.doc(`members/${this.user.getUID()}`).update({
       data: data
@@ -129,7 +130,7 @@ export class EditProfilePage implements OnInit {
       });
     }
 
-    await this.presentAlert('Done!', 'Your profile was updated!');
+    await this.presentAlert('Update success', 'Your profile was updated');
 
     this.router.navigate(['/tabs/profile']);
   }
