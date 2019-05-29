@@ -13,10 +13,10 @@
   <input type="file" #fileBtn class="filebtn" (change)="uploadPic($event)" />
   <div>
     <ion-item>
-        <ion-thumbnail slot="start">
-      <ion-avatar> <img src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/150x150/center/"> </ion-avatar>
+      <ion-thumbnail slot="start">
+        <ion-avatar> <img src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/150x150/center/" (click)="updateProfilePic()"> </ion-avatar>
       </ion-thumbnail>
-      <ion-icon size="large" color="dark" slot="start" name="create" (click)="updateProfilePic()"></ion-icon>
+      <!-- <ion-icon size="large" color="dark" slot="start" name="create"></ion-icon> -->
     </ion-item>
   </div>
 
@@ -25,6 +25,16 @@
 
 
   <div class="profile-info">
+
+    <ion-item>
+      <ion-label position="floating" style="color:darkgray">Email</ion-label>
+      <ion-input [(ngModel)]="data.email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">First name(s) </ion-label>
+      <ion-input [(ngModel)]="username"></ion-input>
+    </ion-item>
 
     <ion-item>
       <ion-label position="floating">Username</ion-label>
@@ -45,20 +55,15 @@
       <ion-item>
         <ion-label position="floating" style="color:darkgray">Name</ion-label>
         <ion-input [(ngModel)]="data.name"> </ion-input>
-
       </ion-item>
 
 
-      <ion-item>
-        <ion-label position="floating" style="color:darkgray">Email</ion-label>
-        <ion-input [(ngModel)]="data.email"></ion-input>
 
-      </ion-item>
 
 
       <ion-item>
         <ion-label position="floating" style="color:darkgray">Landline No</ion-label>
-        <ion-input [(ngModel)]="data.cellnumber">        </ion-input>
+        <ion-input [(ngModel)]="data.cellnumber"> </ion-input>
 
       </ion-item>
 
@@ -85,10 +90,11 @@
 
     </div>
   </div>
-  
-<ion-item>
-    <ion-button style="text-transform: none;" slot="end" id="buttonColor" shape="round" (click)="createPost()" (click)="updateDetails()" size="medium">
-        Update
-  </ion-button>
-</ion-item>
+
+  <ion-item>
+    <ion-button style="text-transform: none;" slot="end" id="buttonColor" shape="round" (click)="createPost()"
+      (click)="updateDetails()" size="medium">
+      Update
+    </ion-button>
+  </ion-item>
 </ion-content>
