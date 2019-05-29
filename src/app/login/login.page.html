@@ -4,30 +4,29 @@
 	</ion-toolbar>
 </ion-header>
 
-<ion-content  id="grad">
-
-	<!-- <ion-content class="background"> -->
-
-	<!-- </ion-content> -->
-	<img src="https://i.imgur.com/6QycNwf.png" />
-	<!-- <img src="http://tpc.syrenis.com/assets/images/uploads/the-preference-centre.png" /> -->
-	
-	<!-- <ion-label align="center" padding>
-		<h1 padding><strong>Team Portal</strong></h1>
-	</ion-label> -->
+<ion-content id="grad" class="background">
+	<img style="block-size: 20%"
+		src="https://cdn.freebiesupply.com/images/large/2x/accenture-logo-black-and-white.png" />
+	<img pading class="img2" src="http://tpc.syrenis.com/assets/images/uploads/the-preference-centre.png" />
+	<ion-item id="grad" class="background">
+		<ion-label align="center" padding>
+			<h1 style="font-size: 38px" padding><strong>Team Portal</strong></h1>
+		</ion-label>
+	</ion-item>
 </ion-content>
 
 
 
-<field>
 <ion-footer padding id="grad">
 	<ion-label floating>Enterprise ID</ion-label>
-	<ion-input type="text" [(ngModel)]="username" ></ion-input>
+	<ion-input type="text" [(ngModel)]="username" placeholder="____________________________________"></ion-input>
 
-	
+
 	<ion-label position="floating">Password</ion-label>
-	<ion-input type="password" [(ngModel)]="password" ></ion-input>
-	
-	<ion-button style="text-transform: none;" id="Login" shape="round" expand="block" (click)="login()" size="medium">Login</ion-button>
+	<ion-input type="password" [(ngModel)]="password" placeholder="____________________________________">
+	</ion-input>
+
+	<ion-button style="text-transform: none;" id="Login" shape="round" expand="block" (click)="login()" size="medium">
+		Login</ion-button>
 
 </ion-footer>
