@@ -19,18 +19,17 @@
 
 
 
-
+<field>
 <ion-footer padding id="grad">
-	<ion-label position="floating">Enterprise ID</ion-label>
-	<ion-input type="text" [(ngModel)]="username"></ion-input>
+	<ion-label floating>Enterprise ID</ion-label>
+	<ion-input type="text" [(ngModel)]="username" ></ion-input>
 
-
-
+	
 	<ion-label position="floating">Password</ion-label>
-	<ion-input type="password" [(ngModel)]="password"></ion-input>
+	<ion-input type="password" [(ngModel)]="password" ></ion-input>
 
-
-
+<field>
+	
 	<ion-button style="text-transform: none;" id="Login" shape="round" expand="block" (click)="login()" size="medium">Login</ion-button>
 
 </ion-footer>

@@ -60,6 +60,7 @@ export class EditProfilePage implements OnInit {
       this.username = event.username;
       this.profilePic = event.profilePic;
       this.data = event.data;
+
     });
   }
 

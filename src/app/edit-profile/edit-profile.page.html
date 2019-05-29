@@ -14,9 +14,9 @@
   <div>
     <ion-item>
         <ion-thumbnail slot="start">
-      <ion-avatar> <img src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/150x150/center/"> </ion-avatar>
+      <ion-avatar> <img src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/150x150/center/"  (click)="updateProfilePic()" > </ion-avatar>
       </ion-thumbnail>
-      <ion-icon size="large" color="dark" slot="start" name="create" (click)="updateProfilePic()"></ion-icon>
+    
     </ion-item>
   </div>
 
@@ -87,8 +87,10 @@
   </div>
   
 <ion-item>
+  
     <ion-button style="text-transform: none;" slot="end" id="buttonColor" shape="round" (click)="createPost()" (click)="updateDetails()" size="medium">
-        Update
+        Update     
   </ion-button>
+  
 </ion-item>
 </ion-content>

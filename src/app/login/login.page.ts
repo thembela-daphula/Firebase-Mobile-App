@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { RegisterPage } from '../register/register.page';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { ReactiveFormsModule , Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -13,13 +14,17 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+  myform: FormGroup;
   // tslint:disable-next-line: no-inferrable-types
   username: string = '';
   // tslint:disable-next-line: no-inferrable-types
   password: string = '';
 
+
   // tslint:disable-next-line:max-line-length
-  constructor(public afAuth: AngularFireAuth, public user: UserService, public router: Router, public toastController: ToastController, private splashScreen: SplashScreen) { }
+  constructor(public afAuth: AngularFireAuth, public user: UserService, public router: Router, public toastController: ToastController, private splashScreen: SplashScreen) {
+
+  }
 
   ngOnInit() {
     this.splashScreen.show();
