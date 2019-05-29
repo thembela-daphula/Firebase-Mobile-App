@@ -25,8 +25,8 @@ export class EditProfilePage implements OnInit {
     'cellnumber': null,
     'email': null,
     'phone': null,
-    'occupation': null,
-    'location': null,
+    'last_name': null,
+    'surname': null,
     'level': null,
   };
 
@@ -60,6 +60,7 @@ export class EditProfilePage implements OnInit {
       console.log(event);
       this.username = event.username;
       this.profilePic = event.profilePic;
+<<<<<<< HEAD
       // this.data = event.data;
       // this.data.occupation = '';
       // this.data.name = '';
@@ -68,6 +69,10 @@ export class EditProfilePage implements OnInit {
       // this.data.phone = '';
       // this.data.location = '';
       // this.data.level = '';
+=======
+      this.data = event.data;
+
+>>>>>>> 54bea779306d4a0c3fa13f2fbd2fd4fcd5136287
     });
 
   }
@@ -106,9 +111,11 @@ export class EditProfilePage implements OnInit {
       'cellnumber': this.data.cellnumber,
       'email': this.data.email,
       'phone': this.data.phone,
-      'occupation': this.data.occupation,
-      'location': this.data.location,
-      'level': this.data.level
+      'last_name': this.data.last_name,
+      'surname': this.data.location,
+      'level': this.data.level,
+      'nick_name': this.data.nick_name,
+      'b_day': this.data.b_day
     };
     this.afs.doc(`members/${this.user.getUID()}`).update({
       data: data
@@ -136,36 +143,30 @@ export class EditProfilePage implements OnInit {
       });
     }
 
-    await this.presentAlert('Done!', 'Your profile was updated!');
+    await this.presentAlert('Update success', 'Your profile was updated');
 
-    this.router.navigate(['/tabs/profile']);
+    // this.router.navigate(['/tabs/profile']);
   }
   async presentAlertConfirm() {
-    this.router.navigate(['/tabs/profile']);
-  }
-  //   const alert = await this.alertCtrl.create({
-  //     header: 'Cancel?',
-  //     message: 'Would you like to cancel the changes that you have made?',
-  //     buttons: [
-  //       {
-  //         text: 'No',
-  //         role: 'cancel',
-  //         cssClass: 'secondary',
-  //         handler: (blah) => {
-  //           console.log('Confirm Cancel: blah');
-  //         }
-  //       }, {
-  //         text: 'Yes',
-  //         handler: () => {
-  //           this.router.navigate(['/tabs/profile']);
-  //         }
-  //       }
-  //     ]
-  // // tslint:disable-next-line: semicolon
-  //   });
-  //   await alert.present();
+  //   this.router.navigate(['/tabs/profile']);
   // }
+    const alert = await this.alertCtrl.create({
+      header: 'Update success',
+      message: 'Your profile has been updated',
+      buttons: [
+        {
+          text: 'OK',
+          handler: () => {
+            this.router.navigate(['/tabs/profile']);
+          }
+        }
+      ]
+  // tslint:disable-next-line: semicolon
+    });
+    await alert.present();
+  }
 }
+
 
 
 

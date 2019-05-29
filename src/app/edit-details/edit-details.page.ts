@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./edit-details.page.scss'],
 })
 export class EditDetailsPage implements OnInit {
+  
 
   constructor() { }
 

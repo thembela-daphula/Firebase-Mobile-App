@@ -17,7 +17,10 @@ sub;
 username: string;
 profilePic: string;
 name: string;
+last_name: string;
+nick_name: string;
 cellnumber: string;
+b_day: string;
 email: string;
 phone: string;
 data;
@@ -48,7 +51,7 @@ this.data = event.data;
   async presentAlertConfirm() {
     const alert = await this.alertCtrl.create({
       header: 'Logout',
-      message: 'Are you sure you would like to logout',
+      message: 'Are you sure you want to logout?',
       buttons: [
         {
           text: 'No',

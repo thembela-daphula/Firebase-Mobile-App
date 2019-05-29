@@ -14,11 +14,18 @@
   <input type="file" #fileBtn class="filebtn" (change)="uploadPic($event)" />
   <div>
     <ion-item>
+<<<<<<< HEAD
       <ion-thumbnail slot="start">
         <ion-avatar><img id="change-picture" src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/200x200/center/"
             (click)="updateProfilePic()"></ion-avatar>
       </ion-thumbnail>
       <ion-icon size="large" color="dark" slot="start" name="md-create" id="profilePicEdit" (click)="updateProfilePic()"></ion-icon>
+=======
+        <ion-thumbnail slot="start">
+      <ion-avatar> <img src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/150x150/center/"  (click)="updateProfilePic()" > </ion-avatar>
+      </ion-thumbnail>
+    
+>>>>>>> 54bea779306d4a0c3fa13f2fbd2fd4fcd5136287
     </ion-item>
   </div>
 
@@ -28,8 +35,23 @@
 
   <div class="profile-info">
 
+<<<<<<< HEAD
     <!-- <ion-item>
       <ion-label id="Username" position="floating">Username</ion-label>
+=======
+    <ion-item>
+      <ion-label position="floating" style="color:darkgray">Email</ion-label>
+      <ion-input [(ngModel)]="data.email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">First name(s) </ion-label>
+      <ion-input [(ngModel)]="username"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Username</ion-label>
+>>>>>>> 54bea779306d4a0c3fa13f2fbd2fd4fcd5136287
       <ion-input [(ngModel)]="username"></ion-input>
     </ion-item> -->
 
@@ -37,8 +59,13 @@
 
 
       <ion-item>
+<<<<<<< HEAD
         <ion-label position="floating" style="color:darkgray">Role</ion-label>
         <ion-input id="Occupation" [(ngModel)]="data.occupation"> </ion-input>
+=======
+        <ion-label position="floating" style="color:darkgray">Last name</ion-label>
+        <ion-input [(ngModel)]="data.last_name"> </ion-input>
+>>>>>>> 54bea779306d4a0c3fa13f2fbd2fd4fcd5136287
 
 
       </ion-item>
@@ -46,6 +73,7 @@
 
       <ion-item>
         <ion-label position="floating" style="color:darkgray">Name</ion-label>
+<<<<<<< HEAD
         <ion-input id="Name" [(ngModel)]="data.name"> </ion-input>
 
       </ion-item>
@@ -54,13 +82,22 @@
       <ion-item>
         <ion-label position="floating" style="color:darkgray">Email</ion-label>
         <ion-input id="Email" [(ngModel)]="data.email"></ion-input>
-
+=======
+        <ion-input [(ngModel)]="data.name"> </ion-input>
       </ion-item>
+
+
+>>>>>>> 54bea779306d4a0c3fa13f2fbd2fd4fcd5136287
+
 
 
       <ion-item>
         <ion-label position="floating" style="color:darkgray">Landline No</ion-label>
+<<<<<<< HEAD
         <ion-input id="Landline-No" [(ngModel)]="data.cellnumber"> </ion-input>
+=======
+        <ion-input [(ngModel)]="data.cellnumber"> </ion-input>
+>>>>>>> 54bea779306d4a0c3fa13f2fbd2fd4fcd5136287
 
       </ion-item>
 
@@ -88,8 +125,15 @@
   </div>
   
 <ion-item>
+<<<<<<< HEAD
     <ion-button style="text-transform: none;" slot="end" id="buttonColor" shape="square"(click)="createPost()" (click)="updateDetails()" size="medium">
         Update
+=======
+  
+    <ion-button style="text-transform: none;" slot="end" id="buttonColor" shape="round" (click)="presentAlertConfirm()" (click)="updateDetails()" size="medium">
+        Update     
+>>>>>>> 54bea779306d4a0c3fa13f2fbd2fd4fcd5136287
   </ion-button>
+  
 </ion-item>
 </ion-content>

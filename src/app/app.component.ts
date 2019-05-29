@@ -33,7 +33,7 @@ export class AppComponent {
   async presentAlertConfirm() {
     const alert = await this.alertCtrl.create({
       header: 'Logout',
-      message: 'Are you sure you would like to logout?',
+      message: 'Are you sure you want to logout?',
       buttons: [
         {
           text: 'No',
