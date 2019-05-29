@@ -17,6 +17,8 @@ sub;
 username: string;
 profilePic: string;
 name: string;
+last_name: string;
+nick_name: string;
 cellnumber: string;
 email: string;
 phone: string;

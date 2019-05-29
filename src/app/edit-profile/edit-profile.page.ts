@@ -24,8 +24,8 @@ export class EditProfilePage implements OnInit {
     'cellnumber': null,
     'email': null,
     'phone': null,
-    'occupation': null,
-    'location': null,
+    'last_name': null,
+    'surname': null,
     'level': null,
   };
 
@@ -98,9 +98,10 @@ export class EditProfilePage implements OnInit {
       'cellnumber': this.data.cellnumber,
       'email': this.data.email,
       'phone': this.data.phone,
-      'occupation': this.data.occupation,
-      'location': this.data.location,
-      'level': this.data.level
+      'last_name': this.data.last_name,
+      'surname': this.data.location,
+      'level': this.data.level,
+      'nick_name': this.data.nick_name
     };
     this.afs.doc(`members/${this.user.getUID()}`).update({
       data: data

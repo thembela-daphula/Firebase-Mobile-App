@@ -15,25 +15,40 @@
       <ion-thumbnail slot="start">
         <ion-avatar><img src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/200x200/center/"></ion-avatar>
       </ion-thumbnail>
-      <ion-label>{{ data.name }}</ion-label>
+      <ion-label>
+          <ion-item>
+              <ion-label position="floating" style="color:darkgray">Enterprise ID</ion-label>
+              <ion-input disable="true" [(ngModel)]="username" placeholder=''></ion-input>
+            </ion-item>
+      </ion-label>
     </ion-item>
 
     <div *ngIf="data">
-    
-
         <div class="profile-info">
           <ion-item>
-            <ion-label position="floating" style="color:darkgray">Role</ion-label>
-            <ion-input [(ngModel)]="Occupation" color="dark" placeholder=''>{{ data.occupation }}</ion-input>
+            <ion-label position="floating" style="color:darkgray">First name(s)</ion-label>
+            <ion-input disable="true" [(ngModel)]="last_name" color="dark" placeholder=''>{{ data.name }}</ion-input>
           </ion-item>
         </div>
     
-    
+        <div class="profile-info">
+            <ion-item>
+              <ion-label position="floating" style="color:darkgray">Surname</ion-label>
+              <ion-input disable="true" [(ngModel)]="last_name" color="dark" placeholder=''>{{ data.last_name }}</ion-input>
+            </ion-item>
+          </div>
+
+          <div class="profile-info">
+              <ion-item>
+                <ion-label position="floating" style="color:darkgray">Nick name</ion-label>
+                <ion-input disable="true" [(ngModel)]="nick_name" color="dark" placeholder=''>{{ data.nick_name }}</ion-input>
+              </ion-item>
+            </div>
     
         <div class="profile-info">
           <ion-item>
-            <ion-label position="floating" style="color:darkgray">Name</ion-label>
-            <ion-input [(ngModel)]="name" placeholder=''>{{ data.name }}</ion-input>
+            <ion-label position="floating" style="color:darkgray"></ion-label>
+            <ion-input disable="true" [(ngModel)]="name" placeholder=''>{{ data.name }}</ion-input>
           </ion-item>
         </div>
     
@@ -41,35 +56,35 @@
         <div class="profile-info">
           <ion-item>
             <ion-label position="floating" style="color:darkgray">Enterprise ID</ion-label>
-            <ion-input [(ngModel)]="username" placeholder=''></ion-input>
+            <ion-input disable="true" [(ngModel)]="username" placeholder=''></ion-input>
           </ion-item>
         </div>
     
         <div class="profile-info">
           <ion-item>
             <ion-label position="floating" style="color:darkgray">Landline No</ion-label>
-            <ion-input [(ngModel)]="cellnumber" placeholder=''>{{ data.cellnumber }}</ion-input>
+            <ion-input disable="true" [(ngModel)]="cellnumber" placeholder=''>{{ data.cellnumber }}</ion-input>
           </ion-item>
         </div>
     
         <div class="profile-info">
           <ion-item>
-            <ion-label position="floating" style="color:darkgray">Cell Phone</ion-label>
-            <ion-input [(ngModel)]="phone" placeholder='' >{{ data.phone }}</ion-input>
+            <ion-label position="floating" style="color:black"></ion-label>
+           <!--<ion-input disable="true" [(ngModel)]="phone" placeholder='' >{{ data.phone }}</ion-input>--> 
           </ion-item>
         </div>
     
         <div class="profile-info">
           <ion-item>
             <ion-label position="floating" style="color:darkgray">Current location </ion-label>
-            <ion-input [(ngModel)]="location" placeholder=''>{{ data.location }}</ion-input>
+            <ion-input disable="true" [(ngModel)]="location" placeholder=''>{{ data.location }}</ion-input>
           </ion-item>
         </div>
     
         <div class="profile-info">
           <ion-item>
             <ion-label position="floating" style="color:darkgray">Career level</ion-label>
-            <ion-input [(ngModel)]="level" placeholder=''>{{ data.level }}</ion-input>
+            <ion-input disable="true" [(ngModel)]="level" placeholder=''>{{ data.level }}</ion-input>
           </ion-item>
         </div>
   
