@@ -15,6 +15,7 @@
   <div>
     <ion-item>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <ion-thumbnail slot="start">
         <ion-avatar><img id="change-picture" src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/200x200/center/"
             (click)="updateProfilePic()"></ion-avatar>
@@ -26,6 +27,13 @@
       </ion-thumbnail>
     
 >>>>>>> 54bea779306d4a0c3fa13f2fbd2fd4fcd5136287
+=======
+      <ion-thumbnail slot="start">
+        <ion-avatar> <img src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/150x150/center/"
+            (click)="updateProfilePic()"> </ion-avatar>
+      </ion-thumbnail>
+
+>>>>>>> 409c09c0c3b2c484182051d825109e2fe9fbdfd2
     </ion-item>
   </div>
 
@@ -40,25 +48,32 @@
       <ion-label id="Username" position="floating">Username</ion-label>
 =======
     <ion-item>
-      <ion-label position="floating" style="color:darkgray">Email</ion-label>
-      <ion-input [(ngModel)]="data.email"></ion-input>
+      <ion-label position="floating">Enterprise ID</ion-label>
+      <ion-input disable="true" readonly="true" [(ngModel)]="username"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">First name(s) </ion-label>
-      <ion-input [(ngModel)]="username"></ion-input>
+      <ion-input [(ngModel)]="data.name"></ion-input>
     </ion-item>
 
     <ion-item>
+<<<<<<< HEAD
       <ion-label position="floating">Username</ion-label>
 >>>>>>> 54bea779306d4a0c3fa13f2fbd2fd4fcd5136287
       <ion-input [(ngModel)]="username"></ion-input>
     </ion-item> -->
+=======
+      <ion-label position="floating">Surname</ion-label>
+      <ion-input [(ngModel)]="data.last_name"></ion-input>
+    </ion-item>
+>>>>>>> 409c09c0c3b2c484182051d825109e2fe9fbdfd2
 
     <div>
 
 
       <ion-item>
+<<<<<<< HEAD
 <<<<<<< HEAD
         <ion-label position="floating" style="color:darkgray">Role</ion-label>
         <ion-input id="Occupation" [(ngModel)]="data.occupation"> </ion-input>
@@ -68,10 +83,14 @@
 >>>>>>> 54bea779306d4a0c3fa13f2fbd2fd4fcd5136287
 
 
+=======
+        <ion-label position="floating">Nick name</ion-label>
+        <ion-input [(ngModel)]="data.nick_name"> </ion-input>
+>>>>>>> 409c09c0c3b2c484182051d825109e2fe9fbdfd2
       </ion-item>
 
-
       <ion-item>
+<<<<<<< HEAD
         <ion-label position="floating" style="color:darkgray">Name</ion-label>
 <<<<<<< HEAD
         <ion-input id="Name" [(ngModel)]="data.name"> </ion-input>
@@ -84,14 +103,17 @@
         <ion-input id="Email" [(ngModel)]="data.email"></ion-input>
 =======
         <ion-input [(ngModel)]="data.name"> </ion-input>
+=======
+        <ion-label position="floating">Career level</ion-label>
+        <ion-input [(ngModel)]="data.level"></ion-input>
+>>>>>>> 409c09c0c3b2c484182051d825109e2fe9fbdfd2
       </ion-item>
 
 
 >>>>>>> 54bea779306d4a0c3fa13f2fbd2fd4fcd5136287
 
-
-
       <ion-item>
+<<<<<<< HEAD
         <ion-label position="floating" style="color:darkgray">Landline No</ion-label>
 <<<<<<< HEAD
         <ion-input id="Landline-No" [(ngModel)]="data.cellnumber"> </ion-input>
@@ -99,12 +121,19 @@
         <ion-input [(ngModel)]="data.cellnumber"> </ion-input>
 >>>>>>> 54bea779306d4a0c3fa13f2fbd2fd4fcd5136287
 
+=======
+        <ion-label position="floating">Cell number </ion-label>
+        <ion-input [(ngModel)]="data.cellnumber"></ion-input>
+>>>>>>> 409c09c0c3b2c484182051d825109e2fe9fbdfd2
       </ion-item>
 
-
-
+    <ion-item>
+      <ion-label position="floating" style="color:darkgray">Nick name</ion-label>
+      <ion-input [(ngModel)]="nick_name" placeholder=""> {{ data.nick_name }} </ion-input>
+    </ion-item>
 
       <ion-item>
+<<<<<<< HEAD
         <ion-label position="floating" style="color:darkgray">Cell Phone </ion-label>
         <ion-input id="Cell-Phone" [(ngModel)]="data.phone"></ion-input>
       </ion-item>
@@ -136,4 +165,30 @@
   </ion-button>
   
 </ion-item>
+=======
+        <ion-label position="floating">Birth date </ion-label>
+        <ion-input [(ngModel)]="data.b_day"></ion-input>
+      </ion-item>
+
+      <!-- <ion-item>
+        <ion-label position="floating" style="color:darkgray">Current location
+        </ion-label>
+        <ion-input [(ngModel)]="data.location"></ion-input>
+      </ion-item> -->
+
+
+
+
+    </div>
+  </div>
+
+  <ion-item>
+
+    <ion-button style="text-transform: none;" slot="end" id="buttonColor" shape="round" (click)="presentAlertConfirm()"
+      (click)="createPost()" (click)="updateDetails()" size="medium">
+      Update
+    </ion-button>
+
+  </ion-item>
+>>>>>>> 409c09c0c3b2c484182051d825109e2fe9fbdfd2
 </ion-content>

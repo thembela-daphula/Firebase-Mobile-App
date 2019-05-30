@@ -28,6 +28,7 @@ export class EditProfilePage implements OnInit {
     'last_name': null,
     'surname': null,
     'level': null,
+    'location': null,
   };
 
   // tslint:disable-next-line: no-inferrable-types
@@ -115,7 +116,8 @@ export class EditProfilePage implements OnInit {
       'surname': this.data.location,
       'level': this.data.level,
       'nick_name': this.data.nick_name,
-      'b_day': this.data.b_day
+      'b_day': this.data.b_day,
+      'location': this.data.location
     };
     this.afs.doc(`members/${this.user.getUID()}`).update({
       data: data
@@ -143,7 +145,7 @@ export class EditProfilePage implements OnInit {
       });
     }
 
-    await this.presentAlert('Update success', 'Your profile was updated');
+    // await this.presentAlert('Update success', 'Your profile was updated');
 
     // this.router.navigate(['/tabs/profile']);
   }
