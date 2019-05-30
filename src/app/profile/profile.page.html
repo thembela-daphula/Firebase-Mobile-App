@@ -18,12 +18,19 @@
 
       <ion-label>
 
-        <ion-label position="floating">Enterprise ID</ion-label>
-        <ion-input disable="true" readonly="true" [(ngModel)]="username" placeholder=''></ion-input>
+        <ion-label position="floating">Nick name & Surname</ion-label>
+        <ion-input disable="true" readonly="true" [(ngModel)]="name" placeholder=' {{ data.nick_name }},{{ data.last_name }} '></ion-input>
       </ion-label>
     </ion-item>
 
     <div *ngIf="data">
+
+        <div class="profile-info">
+            <ion-item>
+              <ion-label position="floating">Enterprise ID</ion-label>
+              <ion-input disable="true" [(ngModel)]="username" color="dark" placeholder=''>{{ data.username }}</ion-input>
+            </ion-item>
+          </div>
       <div class="profile-info">
         <ion-item>
           <ion-label position="floating">First name(s)</ion-label>
