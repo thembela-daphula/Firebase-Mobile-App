@@ -27,7 +27,7 @@
         <div class="profile-info">
           <ion-item>
             <ion-label position="floating" style="color:darkgray">First name(s)</ion-label>
-            <ion-input disable="true" [(ngModel)]="last_name" color="dark" placeholder=''>{{ data.name }}</ion-input>
+            <ion-input disable="true" [(ngModel)]="name" color="dark" placeholder=''>{{ data.name }}</ion-input>
           </ion-item>
         </div>
     
@@ -67,33 +67,6 @@
                   </ion-item>
                 </div>
 
-      <div class="profile-info">
-        <ion-item>
-          <ion-label color=dark position="floating">Enterprise ID</ion-label>
-          <ion-input color=dark readonly="true" [(ngModel)]="username" placeholder=''>{{ data.username }}</ion-input>
-        </ion-item>
-      </div>
-
-      <div class="profile-info">
-        <ion-item>
-          <ion-label position="floating">Landline No</ion-label>
-          <ion-input disabled="true" [(ngModel)]="cellnumber" placeholder=''>{{ data.cellnumber }}</ion-input>
-        </ion-item>
-      </div>
-
-      <div class="profile-info">
-        <ion-item>
-          <ion-label position="floating">Cell Phone</ion-label>
-          <ion-input disabled="true" [(ngModel)]="phone" placeholder=''>{{ data.phone }}</ion-input>
-        </ion-item>
-      </div>
-
-      <div class="profile-info">
-        <ion-item>
-          <ion-label position="floating">Current location </ion-label>
-          <ion-input disabled="true" [(ngModel)]="location" placeholder=''>{{ data.location }}</ion-input>
-        </ion-item>
-      </div>
 
       <div class="profile-info">
         <ion-item>

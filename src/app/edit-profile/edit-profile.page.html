@@ -27,66 +27,43 @@
   <div class="profile-info">
 
     <ion-item>
-      <ion-label position="floating" style="color:darkgray">Email</ion-label>
+      <ion-label position="floating" style="color:darkgray">EID Enterprice</ion-label>
       <ion-input [(ngModel)]="data.email"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">First name(s) </ion-label>
-      <ion-input [(ngModel)]="username"></ion-input>
+      <ion-label position="floating" style="color:darkgray">First name(s) </ion-label>
+      <ion-input [(ngModel)]="name" placeholder="">{{ data.name }}</ion-input>
+    </ion-item>
+
+ <ion-item>
+        <ion-label position="floating" style="color:darkgray">Surname</ion-label>
+        <ion-input [(ngModel)]="data.last_name"> {{ data.last_name }} </ion-input>
+      </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" style="color:darkgray">Nick name</ion-label>
+      <ion-input [(ngModel)]="nick_name" placeholder=""> {{ data.nick_name }} </ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">Username</ion-label>
-      <ion-input [(ngModel)]="username"></ion-input>
+      <ion-label position="floating" style="color:darkgray">Career level</ion-label>
+      <ion-input [(ngModel)]="level" placeholder=""> {{ data.level }} </ion-input>
     </ion-item>
 
+    <ion-item>
+      <ion-label position="floating" style="color:darkgray">Cell number</ion-label>
+      <ion-input [(ngModel)]="cellnumber" placeholder=""> {{ data.cellnumber }} </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" style="color:darkgray">Birth date</ion-label>
+      <ion-input [(ngModel)]="b_day" placeholder=""> {{ data.b_day }} </ion-input>
+    </ion-item>
     <div>
 
 
-      <ion-item>
-        <ion-label position="floating" style="color:darkgray">Last name</ion-label>
-        <ion-input [(ngModel)]="data.last_name"> </ion-input>
-
-
-      </ion-item>
-
-
-      <ion-item>
-        <ion-label position="floating" style="color:darkgray">Name</ion-label>
-        <ion-input [(ngModel)]="data.name"> </ion-input>
-      </ion-item>
-
-
-
-
-
-      <ion-item>
-        <ion-label position="floating" style="color:darkgray">Landline No</ion-label>
-        <ion-input [(ngModel)]="data.cellnumber"> </ion-input>
-
-      </ion-item>
-
-
-
-
-      <ion-item>
-        <ion-label position="floating" style="color:darkgray">Cell Phone </ion-label>
-        <ion-input [(ngModel)]="data.phone"></ion-input>
-      </ion-item>
-
-
-      <ion-item>
-        <ion-label position="floating" style="color:darkgray">Current location
-        </ion-label>
-        <ion-input [(ngModel)]="data.location"></ion-input>
-      </ion-item>
-
-
-      <ion-item>
-        <ion-label position="floating" style="color:darkgray">Career level</ion-label>
-        <ion-input [(ngModel)]="data.level"></ion-input>
-      </ion-item>
+     
 
     </div>
   </div>
