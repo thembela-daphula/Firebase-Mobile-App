@@ -13,10 +13,11 @@
   <input type="file" #fileBtn class="filebtn" (change)="uploadPic($event)" />
   <div>
     <ion-item>
-        <ion-thumbnail slot="start">
-      <ion-avatar> <img src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/150x150/center/"  (click)="updateProfilePic()" > </ion-avatar>
+      <ion-thumbnail slot="start">
+        <ion-avatar> <img src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/150x150/center/"
+            (click)="updateProfilePic()"> </ion-avatar>
       </ion-thumbnail>
-    
+
     </ion-item>
   </div>
 
@@ -27,75 +28,64 @@
   <div class="profile-info">
 
     <ion-item>
-      <ion-label position="floating" style="color:darkgray">Email</ion-label>
-      <ion-input [(ngModel)]="data.email"></ion-input>
+      <ion-label position="floating">Enterprise ID</ion-label>
+      <ion-input disable="true" readonly="true" [(ngModel)]="username"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">First name(s) </ion-label>
-      <ion-input [(ngModel)]="username"></ion-input>
+      <ion-input [(ngModel)]="data.name"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">Username</ion-label>
-      <ion-input [(ngModel)]="username"></ion-input>
+      <ion-label position="floating">Surname</ion-label>
+      <ion-input [(ngModel)]="data.last_name"></ion-input>
     </ion-item>
 
     <div>
 
 
       <ion-item>
-        <ion-label position="floating" style="color:darkgray">Last name</ion-label>
-        <ion-input [(ngModel)]="data.last_name"> </ion-input>
-
-
+        <ion-label position="floating">Nick name</ion-label>
+        <ion-input [(ngModel)]="data.nick_name"> </ion-input>
       </ion-item>
 
-
       <ion-item>
-        <ion-label position="floating" style="color:darkgray">Name</ion-label>
-        <ion-input [(ngModel)]="data.name"> </ion-input>
-      </ion-item>
-
-
-
-
-
-      <ion-item>
-        <ion-label position="floating" style="color:darkgray">Landline No</ion-label>
-        <ion-input [(ngModel)]="data.cellnumber"> </ion-input>
-
-      </ion-item>
-
-
-
-
-      <ion-item>
-        <ion-label position="floating" style="color:darkgray">Cell Phone </ion-label>
-        <ion-input [(ngModel)]="data.phone"></ion-input>
-      </ion-item>
-
-
-      <ion-item>
-        <ion-label position="floating" style="color:darkgray">Current location
-        </ion-label>
-        <ion-input [(ngModel)]="data.location"></ion-input>
-      </ion-item>
-
-
-      <ion-item>
-        <ion-label position="floating" style="color:darkgray">Career level</ion-label>
+        <ion-label position="floating">Career level</ion-label>
         <ion-input [(ngModel)]="data.level"></ion-input>
       </ion-item>
 
+
+
+      <ion-item>
+        <ion-label position="floating">Cell number </ion-label>
+        <ion-input [(ngModel)]="data.cellnumber"></ion-input>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label position="floating">Birth date </ion-label>
+        <ion-input [(ngModel)]="data.b_day"></ion-input>
+      </ion-item>
+
+      <!-- <ion-item>
+        <ion-label position="floating" style="color:darkgray">Current location
+        </ion-label>
+        <ion-input [(ngModel)]="data.location"></ion-input>
+      </ion-item> -->
+
+
+
+
     </div>
   </div>
-  
-<ion-item>
-  
-    <ion-button style="text-transform: none;" slot="end" id="buttonColor" shape="round" (click)="presentAlertConfirm()" (click)="updateDetails()" size="medium">
-        Update     
-  </ion-button>
-  
-</ion-item>
+
+  <ion-item>
+
+    <ion-button style="text-transform: none;" slot="end" id="buttonColor" shape="round" (click)="presentAlertConfirm()"
+      (click)="createPost()" (click)="updateDetails()" size="medium">
+      Update
+    </ion-button>
+
+  </ion-item>
 </ion-content>
