@@ -1,8 +1,7 @@
 <ion-header>
   <ion-toolbar>
-    <ion-icon id="back-arrow" slot="start" name="arrow-round-back" size="large" routerLink="/tabs/profile" size="large">
-    </ion-icon>
-    <ion-title>Edit profile</ion-title>
+    <ion-icon slot="start" name="arrow-round-back" size="large" routerLink="/tabs/profile" size="large"></ion-icon>
+    <ion-title>edit-profile</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -14,19 +13,6 @@
   <input type="file" #fileBtn class="filebtn" (change)="uploadPic($event)" />
   <div>
     <ion-item>
-
-      <ion-thumbnail slot="start">
-        <ion-avatar><img id="change-picture" src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/200x200/center/"
-            (click)="updateProfilePic()"></ion-avatar>
-      </ion-thumbnail>
-      <ion-icon size="large" color="dark" slot="start" name="md-create" id="profilePicEdit" (click)="updateProfilePic()"></ion-icon>
-
-        <ion-thumbnail slot="start">
-      <ion-avatar> <img src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/150x150/center/"  (click)="updateProfilePic()" > </ion-avatar>
-      </ion-thumbnail>
-    
-
-
       <ion-thumbnail slot="start">
         <ion-avatar> <img src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/150x150/center/"
             (click)="updateProfilePic()"> </ion-avatar>
@@ -41,13 +27,9 @@
 
   <div class="profile-info">
 
-
-    <!-- <ion-item>
-      <ion-label id="Username" position="floating">Username</ion-label>
-
     <ion-item>
       <ion-label position="floating">Enterprise ID</ion-label>
-      <ion-input disable="true" readonly="true" [(ngModel)]="username"></ion-input>
+      <ion-input disable="false" readonly="true" [(ngModel)]="username"></ion-input>
     </ion-item>
 
     <ion-item>
@@ -56,57 +38,28 @@
     </ion-item>
 
     <ion-item>
-
-      <ion-label position="floating">Username</ion-label>
-
-      <ion-input [(ngModel)]="username"></ion-input>
-    </ion-item> -->
-
       <ion-label position="floating">Surname</ion-label>
       <ion-input [(ngModel)]="data.last_name"></ion-input>
     </ion-item>
-
 
     <div>
 
 
       <ion-item>
-
-        <ion-label position="floating" style="color:darkgray">Role</ion-label>
-        <ion-input id="Occupation" [(ngModel)]="data.occupation"> </ion-input>
-
-        <ion-label position="floating" style="color:darkgray">Last name</ion-label>
-        <ion-input [(ngModel)]="data.last_name"> </ion-input>
-
-
-
-
         <ion-label position="floating">Nick name</ion-label>
         <ion-input [(ngModel)]="data.nick_name"> </ion-input>
-
       </ion-item>
 
       <ion-item>
-
-        <ion-label position="floating" style="color:darkgray">Name</ion-label>
-        <ion-input id="Name" [(ngModel)]="data.name"> </ion-input>
-
         <ion-label position="floating">Career level</ion-label>
-        <ion-input  id="Email" [(ngModel)]="data.level"></ion-input>
+        <ion-input [(ngModel)]="data.level"></ion-input>
       </ion-item>
 
 
 
-
       <ion-item>
-
-        <ion-label position="floating" style="color:darkgray">Landline No</ion-label>
-        <ion-input  id="Landline-No" [(ngModel)]="data.cellnumber"> </ion-input>
-
-
         <ion-label position="floating">Cell number </ion-label>
         <ion-input [(ngModel)]="data.cellnumber"></ion-input>
-
       </ion-item>
 
     <ion-item>
@@ -115,34 +68,6 @@
     </ion-item>
 
       <ion-item>
-
-        <ion-label position="floating" style="color:darkgray">Cell Phone </ion-label>
-        <ion-input id="Cell-Phone" [(ngModel)]="data.phone"></ion-input>
-      </ion-item>
-
-
-      <ion-item>
-        <ion-label position="floating" style="color:darkgray">Current location </ion-label>
-        <ion-input id="Current-location" [(ngModel)]="data.location"></ion-input>
-      </ion-item>
-
-
-      <ion-item>
-        <ion-label  position="floating" style="color:darkgray">Career level</ion-label>
-        <ion-input id="Career-level" [(ngModel)]="data.level"></ion-input>
-      </ion-item>
-
-    </div>
-  </div>
-  
-<ion-item>
-  
-    <ion-button style="text-transform: none;" slot="end" id="buttonColor" shape="square" (click)="presentAlertConfirm()" (click)="updateDetails()" size="medium">
-        Update     
-  </ion-button>
-  
-</ion-item>
-
         <ion-label position="floating">Birth date </ion-label>
         <ion-input [(ngModel)]="data.b_day"></ion-input>
       </ion-item>
@@ -167,5 +92,4 @@
     </ion-button>
 
   </ion-item>
-
 </ion-content>

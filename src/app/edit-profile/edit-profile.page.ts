@@ -142,7 +142,7 @@ export class EditProfilePage implements OnInit {
   //   this.router.navigate(['/tabs/profile']);
   // }
     const alert = await this.alertCtrl.create({
-      header: 'Update success',
+      header: 'Update successful',
       message: 'Your profile has been updated',
       buttons: [
         {
