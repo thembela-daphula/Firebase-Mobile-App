@@ -9,21 +9,12 @@
 
   <div>
     <ion-item>
-<<<<<<< HEAD
-      <ion-label position="floating" style="color:darkgray" id="txtSkill" >Skill</ion-label>
-      <ion-textarea [(ngModel)]="skill">{{ user.skill }}</ion-textarea>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating" style="color:darkgray" id="radLevel">Skill level (1 - 10)</ion-label>
-      <ion-select [(ngModel)]="level">
-=======
       <ion-label color=dark position="floating">Skill</ion-label>
       <ion-textarea [(ngModel)]="skill" placeholder='Name'>{{ user.skill }}</ion-textarea>
     </ion-item>
     <ion-item>
-      <ion-label color=dark position="floating">Skill level (1 - 10)</ion-label>
+      <ion-label color=dark position="floating" id="radLevel" >Skill level (1 - 10)</ion-label>
       <ion-select [(ngModel)]="level" placeholder='Level'>
->>>>>>> 54bea779306d4a0c3fa13f2fbd2fd4fcd5136287
         <ion-select-option value="1" selected="true">1</ion-select-option>
         <ion-select-option value="2">2</ion-select-option>
         <ion-select-option value="3">3</ion-select-option>
@@ -39,26 +30,15 @@
     </ion-item>
 
     <ion-item>
-<<<<<<< HEAD
-      <ion-label position="floating" style="color:darkgray" id="dtLastUsed">Last date the skill was used</ion-label>
-      <ion-datetime [(ngModel)]="last_used" display-format="YYYY,MMM DD"></ion-datetime>
-=======
-      <ion-label color=dark position="floating">Date last used</ion-label>
+      <ion-label color=dark position="floating"  id="dtLastUsed">Date last used</ion-label>
       <ion-datetime [(ngModel)]="last_used" display-format="YYYY,MMM DD" placeholder='Date'></ion-datetime>
->>>>>>> 54bea779306d4a0c3fa13f2fbd2fd4fcd5136287
 
       {{ user.last_used }}
     </ion-item>
     <ion-item>
-<<<<<<< HEAD
-      <ion-label position="floating" style="color:darkgray" id="radOrigin">Origin</ion-label>
-
-      <ion-select [(ngModel)]="origin">
-=======
-      <ion-label color=dark position="floating">Origin</ion-label>
+      <ion-label color=dark position="floating" id="radOrigin">Origin</ion-label>
 
       <ion-select [(ngModel)]="origin" placeholder='Origin'>
->>>>>>> 54bea779306d4a0c3fa13f2fbd2fd4fcd5136287
         <ion-select-option value="University" selected="true">Tertiary</ion-select-option>
         <ion-select-option value="Online course">Online course</ion-select-option>
         <ion-select-option value="Self-study">Self-study</ion-select-option>
@@ -67,21 +47,12 @@
       {{ user.origin }}
     </ion-item>
     <ion-item>
-<<<<<<< HEAD
-      <ion-label position="floating" style="color:darkgray" id="txtAEMonths">Months of active experience</ion-label>
-      <ion-textarea [(ngModel)]="months_active">{{ user.months_active }}</ion-textarea>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating" style="color:darkgray" id="radSkillDeveloping">Are you currently developing this skill?</ion-label>
-      <ion-select [(ngModel)]="developing">
-=======
-      <ion-label color=dark position="floating">Months of active experience</ion-label>
+      <ion-label color=dark position="floating"  id="txtAEMonths">Months of active experience</ion-label>
       <ion-textarea [(ngModel)]="months_active" placeholder='Months'>{{ user.months_active }}</ion-textarea>
     </ion-item>
     <ion-item>
-      <ion-label color=dark position="floating">Are you currently developing this skill?</ion-label>
+      <ion-label color=dark position="floating" id="radSkillDeveloping" >Are you currently developing this skill?</ion-label>
       <ion-select [(ngModel)]="developing" placeholder='(Y/N)'>
->>>>>>> 54bea779306d4a0c3fa13f2fbd2fd4fcd5136287
         <ion-select-option value="yes" selected="true">Yes</ion-select-option>
         <ion-select-option value="no">No</ion-select-option>
 
@@ -90,12 +61,7 @@
     </ion-item>
   </div>
   <ion-item>
-<<<<<<< HEAD
-  <ion-button slot="end" id="btnAddSkill" shape="square" (click)="createPost()" size="medium" >Add</ion-button>
-</ion-item>
-=======
-    <ion-button style="text-transform: none;" slot="end" id="buttonColor" shape="round" (click)="createPost()"
+    <ion-button style="text-transform: none;" slot="end" id="buttonColor" id="btnAddSkill" shape="square" (click)="createPost()"
       size="medium">Add skill</ion-button>
   </ion-item>
->>>>>>> 54bea779306d4a0c3fa13f2fbd2fd4fcd5136287
 </ion-content>
