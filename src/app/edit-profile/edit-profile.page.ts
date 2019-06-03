@@ -4,6 +4,7 @@ import { Http } from '@angular/http';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { UserService } from '../user.service';
+// import { timingSafeEqual } from 'crypto';
 
 
 
@@ -20,6 +21,7 @@ export class EditProfilePage implements OnInit {
   sub;
 
   data: any = {
+    'username' : null,
     'name': null,
     'cellnumber': null,
     'email': null,
@@ -95,6 +97,7 @@ export class EditProfilePage implements OnInit {
 
     this.busy = true;
     const data = {
+      'username' : this.data.username,
       'name': this.data.name,
       'cellnumber': this.data.cellnumber,
       'email': this.data.email,

@@ -15,11 +15,11 @@
       <ion-thumbnail slot="start">
         <ion-avatar><img src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/200x200/center/"></ion-avatar>
       </ion-thumbnail>
-
+      <ion-row style="height: 20px"></ion-row>
       <ion-label>
 
         <ion-label position="floating">Nick name & Surname</ion-label>
-        <ion-input disable="true" readonly="true" [(ngModel)]="name" placeholder=' {{ data.nick_name }},{{ data.last_name }} '></ion-input>
+        <ion-input disable="true" readonly="true" [(ngModel)]="name" placeholder=' {{ data.nick_name }} {{ data.last_name }} '></ion-input>
       </ion-label>
     </ion-item>
 
@@ -28,7 +28,7 @@
         <div class="profile-info">
             <ion-item>
               <ion-label position="floating">Enterprise ID</ion-label>
-              <ion-input disable="true" [(ngModel)]="username" color="dark" placeholder=''>{{ data.username }}</ion-input>
+              <ion-input disable="false" color="dark" placeholder=''>{{ data.username }}</ion-input>
             </ion-item>
           </div>
       <div class="profile-info">

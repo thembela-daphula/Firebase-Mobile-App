@@ -1,10 +1,12 @@
-// .popover-content {
-//     width: 250px;
-//   }
-
-  #buttonColor{
-        
-    --background: #960584;
+.popover {
+  --height: 175%;
+  --width: 175%;
+  // background-color: #960584;
+  width: 100%;
+  height: 100%;
+}
+#buttonColor {
+  --background: #960584;
 }
 
 // .ioncard.popover-content sc-ion-card-md-h sc-ion-card-md-s{

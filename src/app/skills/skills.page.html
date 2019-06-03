@@ -10,7 +10,7 @@
   <div>
     <ion-item>
       <ion-label color=dark position="floating">Skill</ion-label>
-      <ion-textarea [(ngModel)]="skill" placeholder='Name'>{{ user.skill }}</ion-textarea>
+      <ion-input [(ngModel)]="skill" placeholder='Name'>{{ user.skill }}</ion-input>
     </ion-item>
     <ion-item>
       <ion-label color=dark position="floating">Skill level (1 - 10)</ion-label>
@@ -48,7 +48,7 @@
     </ion-item>
     <ion-item>
       <ion-label color=dark position="floating">Months of active experience</ion-label>
-      <ion-textarea [(ngModel)]="months_active" placeholder='Months'>{{ user.months_active }}</ion-textarea>
+      <ion-input [(ngModel)]="months_active" placeholder='Months'>{{ user.months_active }}</ion-input>
     </ion-item>
     <ion-item>
       <ion-label color=dark position="floating">Are you currently developing this skill?</ion-label>
