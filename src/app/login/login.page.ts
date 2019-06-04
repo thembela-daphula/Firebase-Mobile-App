@@ -37,8 +37,8 @@ export class LoginPage implements OnInit {
   async login() {
     // tslint:disable-next-line: indent
     const { username, password } = this;
-    this.username = '';
-    this.password = '';
+    // this.username = '';
+    // this.password = '';
     // tslint:disable-next-line: indent
     try {
       // tslint:disable-next-line: indent

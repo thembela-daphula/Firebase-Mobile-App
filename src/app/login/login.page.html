@@ -1,4 +1,3 @@
-
 <ion-content id="grad">
 
 	<img src="//i.imgur.com/maaghN7.png" />
@@ -7,22 +6,47 @@
 
 </ion-content>
 
+<div class="container" id="grad">
+	<div [hidden]="submitted">
+		<form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+			<div class="form-group">
+				<ion-item >
+					<ion-label position="floating" for="name">Enterprise ID</ion-label>
+					<ion-input type="text" class="form-control" id="name" required [(ngModel)]="username" name="name"
+						placeholder="" #name="ngModel"></ion-input>
+				</ion-item>
+
+				<div [hidden]="name.valid || name.pristine" class="alert-danger">
+					<!-- <ion-item class="Error_Message"> -->
+						     Name is required
+					<!-- </ion-item> -->
+				</div>
+			</div>
 
 
-<ion-footer id="grad">
-	<ion-item>
-		<ion-label position="floating">Enterprise ID</ion-label>
-		<ion-input type="text" [(ngModel)]="username"  placeholder=""></ion-input>
-	</ion-item>
 
-	<ion-item>
-		<ion-label position="floating">Password</ion-label>
-		<ion-input type="password" [(ngModel)]="password" placeholder="">
-		</ion-input>
-	</ion-item>
+			<div class="container" id="grad">
+				<div [hidden]="submitted">
+					<form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+						<div class="form-group">
+							<ion-item>
+								<ion-label position="floating" for="password1">Password</ion-label>
+								<ion-input type="password" class="form-control" id="password" required
+									[(ngModel)]="password" placeholder="" name="password" #password1="ngModel" > </ion-input>
+							</ion-item >
+							<div [hidden]="password1.valid || password1.pristine" class="alert-danger">
+								<!-- <ion-item class="Error_Message"> -->
+									    Password is required
+								<!-- </ion-item> -->
+							</div>
+						</div>
 
 
-	<ion-button style="text-transform: none;" id="Login" shape="round" expand="block" (click)="login()" size="medium">
-		Login</ion-button>
 
-</ion-footer>
+
+						<ion-button padding type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid"
+							style="text-transform: none;" id="Login" shape="square" expand="block" (click)="login()"
+							size="medium">
+							Login</ion-button>
+
+						<ion-row style="height: 30px"></ion-row>

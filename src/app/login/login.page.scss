@@ -1,26 +1,37 @@
-ion-content.background{
-    --background: url(../../assets/Login2.png) 0 0/100%  no-repeat;;
- 
-    }
-    ion-content.background2{
-        --background: url(../../assets/Login.png) 0 0/100%  no-repeat;;
-     
-        }
+ion-content.background {
+  --background: url(../../assets/Login2.png) 0 0/100% no-repeat;
+}
+ion-content.background2 {
+  --background: url(../../assets/Login.png) 0 0/100% no-repeat;
+}
 
 #grad {
-    --background: -webkit-linear-gradient(left, #dfdfeb, #e02f9c);
-      }
+  --background: -webkit-linear-gradient(left, #dfdfeb, #e02f9c);
+}
 
-      	
-	#buttonColor{
-        
-        --background: #960584;
-    }
-	#Login{
-        
-        --background: #960584;
-    }
-    #img2 {
-        block-size: 10%;
-    }
+#buttonColor {
+  --background: #960584;
+}
+#Login {
+  --background: #960584;
+}
+#img2 {
+  block-size: 10%;
+}
 
+.ng-valid[required],
+.ng-valid.required {
+  border-left: 5px solid #42a948; /* green */
+}
+
+.ng-invalid:not(form) {
+  border-left: 5px solid #a94442; /* red */
+}
+
+.alert-danger {
+  padding: 5px;
+  background-color: #ffafaf; /* Red */
+  color:#960303;
+  margin-bottom: 15px;
+  margin-left: 15px;
+}
