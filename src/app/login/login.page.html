@@ -1,16 +1,12 @@
 <ion-content id="grad">
-
 	<img src="//i.imgur.com/maaghN7.png" />
-
-
-
 </ion-content>
 
 <div class="container" id="grad">
 	<div [hidden]="submitted">
 		<form (ngSubmit)="onSubmit()" #heroForm="ngForm">
 			<div class="form-group">
-				<ion-item >
+				<ion-item>
 					<ion-label position="floating" for="name">Enterprise ID</ion-label>
 					<ion-input type="text" class="form-control" id="name" required [(ngModel)]="username" name="name"
 						placeholder="" #name="ngModel"></ion-input>
@@ -18,7 +14,7 @@
 
 				<div [hidden]="name.valid || name.pristine" class="alert-danger">
 					<!-- <ion-item class="Error_Message"> -->
-						     Name is required
+					Name is required
 					<!-- </ion-item> -->
 				</div>
 			</div>
@@ -32,21 +28,21 @@
 							<ion-item>
 								<ion-label position="floating" for="password1">Password</ion-label>
 								<ion-input type="password" class="form-control" id="password" required
-									[(ngModel)]="password" placeholder="" name="password" #password1="ngModel" > </ion-input>
-							</ion-item >
+									[(ngModel)]="password" placeholder="" name="password" #password1="ngModel">
+								</ion-input>
+							</ion-item>
 							<div [hidden]="password1.valid || password1.pristine" class="alert-danger">
 								<!-- <ion-item class="Error_Message"> -->
-									    Password is required
+								Password is required
 								<!-- </ion-item> -->
 							</div>
 						</div>
-
-
-
-
+						
 						<ion-button padding type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid"
 							style="text-transform: none;" id="Login" shape="square" expand="block" (click)="login()"
 							size="medium">
 							Login</ion-button>
 
 						<ion-row style="height: 30px"></ion-row>
+
+						</form>
