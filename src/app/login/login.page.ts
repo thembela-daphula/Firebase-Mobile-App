@@ -22,7 +22,12 @@ export class LoginPage implements OnInit {
 
 
   // tslint:disable-next-line:max-line-length
-  constructor(public afAuth: AngularFireAuth, public user: UserService, public router: Router, public toastController: ToastController, private splashScreen: SplashScreen) {
+  constructor(
+    public afAuth: AngularFireAuth,
+    public user: UserService,
+    public router: Router,
+    public toastController: ToastController,
+     private splashScreen: SplashScreen) {
 
   }
 
