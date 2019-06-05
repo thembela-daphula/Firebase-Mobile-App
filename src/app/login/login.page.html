@@ -32,17 +32,17 @@
 								</ion-input>
 							</ion-item>
 							<div [hidden]="password1.valid || password1.pristine" class="alert-danger">
-								<!-- <ion-item class="Error_Message"> -->
+
 								Password is required
-								<!-- </ion-item> -->
+
 							</div>
 						</div>
-						
-						<ion-button padding type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid"
+
+						<ion-button padding type="submit" class="btn btn-success" [disabled]="!heroForm.valid"
 							style="text-transform: none;" id="Login" shape="square" expand="block" (click)="login()"
 							size="medium">
 							Login</ion-button>
 
 						<ion-row style="height: 30px"></ion-row>
 
-						</form>
+					</form>
