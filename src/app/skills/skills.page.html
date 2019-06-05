@@ -29,27 +29,22 @@
               <div class="form-group">
                 <ion-item>
                   <ion-label color=dark position="floating" for="Skill_level">Skill level (1 - 10)</ion-label>
-                  <ion-select class="form-control" required id="Skill_level" [(ngModel)]="level" placeholder='Level'
-                    name="Skill_level" #Skill_level="ngModel">
-                    <ion-select-option value="1">1</ion-select-option>
-                    <ion-select-option value="2">2</ion-select-option>
-                    <ion-select-option value="3">3</ion-select-option>
-                    <ion-select-option value="4">4</ion-select-option>
-                    <ion-select-option value="5">5</ion-select-option>
-                    <ion-select-option value="6">6</ion-select-option>
-                    <ion-select-option value="7">7</ion-select-option>
-                    <ion-select-option value="8">8</ion-select-option>
-                    <ion-select-option value="9">9</ion-select-option>
-                    <ion-select-option value="10">10</ion-select-option>
-                  </ion-select>
-                  {{ user.level }}
+                  <ion-input type="text" class="form-control" required pattern="[01-9]{0,2}" id="Skill_level"
+                    [(ngModel)]="level" placeholder='Level' name="Skill_level" #Skill_level="ngModel">{{ user.skill }}
+                  </ion-input>
                 </ion-item>
                 <div [hidden]="Skill_level.valid || Skill_level.pristine" class="alert-danger">
 
-                  Skill level is required
+                    Please enter a number between 1 - 10
+                
+                  <div [hidden]="Skill_level.errors.pattern">
+                     
+                    </div>
 
-                </div>
+
               </div>
+              </div>
+
 
               <div class="container" id="grad">
                 <div [hidden]="submitted">
