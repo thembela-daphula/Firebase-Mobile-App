@@ -7,7 +7,9 @@
 
 <ion-content padding class="background">
 
-  <div>
+  
+        <div>
+
     <ion-item>
       <ion-label color=dark position="floating">Skill</ion-label>
       <ion-input [(ngModel)]="skill" placeholder='Name'>{{ user.skill }}</ion-input>
@@ -60,8 +62,9 @@
       {{ user.developing }}
     </ion-item>
   </div>
-  <ion-item>
+  
     <ion-button style="text-transform: none;" slot="end" id="buttonColor" shape="round" (click)="createPost()"
       size="medium">Add skill</ion-button>
-  </ion-item>
+  
+
 </ion-content>

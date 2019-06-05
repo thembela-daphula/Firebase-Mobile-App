@@ -8,148 +8,130 @@
 
 <ion-content padding class="background">
 
+  <input type="file" #fileBtn class="filebtn" (change)="uploadPic($event)" />
+  <div>
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <ion-avatar> <img src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/150x150/center/"
+            (click)="updateProfilePic()"> </ion-avatar>
+      </ion-thumbnail>
 
+    </ion-item>
+  </div>
 
-<input type="file" #fileBtn class="filebtn" (change)="uploadPic($event)" />
-<div>
-  <ion-item>
-    <ion-thumbnail slot="start">
-      <ion-avatar> <img src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/150x150/center/"
-          (click)="updateProfilePic()"> </ion-avatar>
-    </ion-thumbnail>
+  <div class="container" id="grad">
+    <div [hidden]="submitted">
+      <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
 
-  </ion-item>
-</div>
+        <div class="form-group">
+          <ion-item>
+            <ion-label position="floating" for="name">Enterprise ID</ion-label>
+            <ion-input type="text" class="form-control" id="name" required [(ngModel)]="data.username" name="name"
+              disable="false" readonly="false" #name="ngModel"></ion-input>
+          </ion-item>
+          <div [hidden]="name.valid || name.pristine" class="alert-danger">
 
-<div class="container" id="grad">
-  <div [hidden]="submitted">
-    <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
-      <div class="form-group">
-        <ion-item>
-          <ion-label position="floating" for="name">Enterprise ID</ion-label>
-          <ion-input type="text" class="form-control" id="name" required [(ngModel)]="data.username" name="name"
-            disable="false" readonly="false" #name="ngModel"></ion-input>
-        </ion-item>
-        <div [hidden]="name.valid || name.pristine" class="alert-danger">
+            Enterprise ID is required
 
-          Enterprise ID is required
-
+          </div>
         </div>
-      </div>
 
-      <div class="container" id="grad">
-        <div [hidden]="submitted">
-          <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
-            <div class="form-group">
-              <ion-item>
-                <ion-label position="floating" for="First_name">First name(s) </ion-label>
-                <ion-input type="text" class="form-control" id="First_name" required [(ngModel)]="data.name"
-                  name="First_name" #First_name="ngModel"></ion-input>
-              </ion-item>
-              <div [hidden]="First_name.valid || First_name.pristine" class="alert-danger">
+        <div class="form-group">
+          <ion-item>
+            <ion-label position="floating" for="First_name">First name(s) </ion-label>
+            <ion-input type="text" class="form-control" id="First_name" required [(ngModel)]="data.name"
+              name="First_name" #First_name="ngModel"></ion-input>
+          </ion-item>
+          <div [hidden]="First_name.valid || First_name.pristine" class="alert-danger">
 
-                First name(s) is required
+            First name(s) is required
 
-              </div>
-            </div>
-
-            <div class="container" id="grad">
-              <div [hidden]="submitted">
-                <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
-                  <div class="form-group">
-                    <ion-item>
-                      <ion-label position="floating" for="First_name">Surname</ion-label>
-                      <ion-input type="text" class="form-control" id="Surname" required [(ngModel)]="data.last_name"
-                        name="Surname" #Surname="ngModel"></ion-input>
-                    </ion-item>
-                    <div [hidden]="Surname.valid || Surname.pristine" class="alert-danger">
-
-                      Surname is required
-
-                    </div>
-                  </div>
+          </div>
+        </div>
 
 
-                   <div class="container" id="grad">
-                    <div [hidden]="submitted">
-                      <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
-                        <div class="form-group">
-                          <ion-item>
-                            <ion-label position="floating" for="Nick_name">Nick name</ion-label>
-                            <ion-input type="text" class="form-control" id="Nick_name" required
-                              [(ngModel)]="data.nick_name" name="Nick_name" #Nick_name="ngModel"></ion-input>
-                          </ion-item>
-                          <div [hidden]="Nick_name.valid || Nick_name.pristine" class="alert-danger">
+        <div class="form-group">
+          <ion-item>
+            <ion-label position="floating" for="First_name">Surname</ion-label>
+            <ion-input type="text" class="form-control" id="Surname" required [(ngModel)]="data.last_name"
+              name="Surname" #Surname="ngModel"></ion-input>
+          </ion-item>
+          <div [hidden]="Surname.valid || Surname.pristine" class="alert-danger">
 
-                            Nick name is required
+            Surname is required
 
-                          </div>
-                        </div>
+          </div>
+        </div>
 
-                        <div class="container" id="grad">
-                          <div [hidden]="submitted">
-                            <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
-                              <div class="form-group">
-                                <ion-item>
-                                  <ion-label position="floating" for="Career_level">Career level</ion-label>
-                                  <ion-input type="text" class="form-control" id="Nick_name" required
-                                    [(ngModel)]="data.level" name="Career_level" #Career_level="ngModel"></ion-input>
-                                </ion-item>
-                                <div [hidden]="Career_level.valid || Career_level.pristine" class="alert-danger">
+        <div class="form-group">
+          <ion-item>
+            <ion-label position="floating" for="Nick_name">Nick name</ion-label>
+            <ion-input type="text" class="form-control" id="Nick_name" required [(ngModel)]="data.nick_name"
+              name="Nick_name" #Nick_name="ngModel"></ion-input>
+          </ion-item>
+          <div [hidden]="Nick_name.valid || Nick_name.pristine" class="alert-danger">
 
-                                  Career level is required
+            Nick name is required
 
-                                </div>
-                              </div>
+          </div>
+        </div>
 
 
 
-                          <div class="container" id="grad">
-                                <div [hidden]="submitted">
-                                  <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
-                                    <div class="form-group">
-                                      <ion-item>
-                                        <ion-label position="floating" for="Cell_number">Cell number </ion-label>
-                                        <ion-input  type="text" class="form-control" id="Cell_number" required 
-                                        [(ngModel)]="data.cellnumber" name="Cell_number" #Cell_number="ngModel"></ion-input>
-                                      </ion-item>
-                                      <div [hidden]="Cell_number.valid || Cell_number.pristine" class="alert-danger">
+        <div class="form-group">
+          <ion-item>
+            <ion-label position="floating" for="Career_level">Career level</ion-label>
+            <ion-input type="text" class="form-control" id="Nick_name" required [(ngModel)]="data.level"
+              name="Career_level" #Career_level="ngModel"></ion-input>
+          </ion-item>
+          <div [hidden]="Career_level.valid || Career_level.pristine" class="alert-danger">
 
-                                        Career level is required
+            Career level is required
 
-                                      </div>
-                                    </div>
+          </div>
+        </div>
 
-                                   
+        <div class="form-group">
+          <ion-item>
+            <ion-label position="floating" for="Cell_number">Cell number </ion-label>
+            <ion-input type="text" class="form-control" id="Cell_number" required [(ngModel)]="data.cellnumber"
+              name="Cell_number" #Cell_number="ngModel"></ion-input>
+          </ion-item>
+          <div [hidden]="Cell_number.valid || Cell_number.pristine" class="alert-danger">
 
-                                            <div class="container" id="grad">
-                                            <div [hidden]="submitted">
-                                              <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
-                                                <div class="form-group">
-                                                  <ion-item>
-                                                    <ion-label position="floating" for="Birth_date">Birth date</ion-label>
-                                                    <ion-input  type="text" class="form-control" id="Nick_name" required
-                                                    [(ngModel)]="data.b_day"  name="Birth_date" #Birth_date="ngModel"></ion-input>
-                                                  </ion-item>
-                                                  <div [hidden]="Birth_date.valid || Birth_date.pristine" class="alert-danger">
+            Career level is required
 
-                                                      Birth date is required (DD/MM//YYYY)
-
-                                                  </div>
-                                                </div>
+          </div>
+        </div>
 
 
-                                      
+        <div class="form-group">
+          <ion-item>
+            <ion-label position="floating" for="Birth_date">Birth date</ion-label>
+            <ion-input type="text" class="form-control" id="Nick_name" required [(ngModel)]="data.b_day"
+              name="Birth_date" #Birth_date="ngModel"></ion-input>
+          </ion-item>
+          <div [hidden]="Birth_date.valid || Birth_date.pristine" class="alert-danger">
 
-                                          <ion-item>
+            Birth date is required (DD/MM//YYYY)
 
-                                            <ion-button style="text-transform: none;" slot="end" id="buttonColor"
-                                              shape="round" (click)="presentAlertConfirm()" (click)="createPost()"
-                                              (click)="updateDetails()" size="medium">
-                                              Update
-                                            </ion-button>
+          </div>
+        </div>
 
-                                          </ion-item>
-                                       
-                                        </form>
-                                        
+
+
+
+        <ion-item>
+
+          <ion-button style="text-transform: none;" slot="end" id="buttonColor" shape="round"
+            (click)="presentAlertConfirm()" (click)="createPost()" (click)="updateDetails()" size="medium"
+            [disabled]="!heroForm.valid">
+            Update
+          </ion-button>
+
+        </ion-item>
+
+      </form>
+    </div>
+  </div>
+</ion-content>

@@ -23,7 +23,7 @@
 
 			<div class="container" id="grad">
 				<div [hidden]="submitted">
-					<form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+					<form (ngSubmit)="onSubmit()" #heroForm="ngForm" >
 						<div class="form-group">
 							<ion-item>
 								<ion-label position="floating" for="password1">Password</ion-label>
@@ -38,7 +38,7 @@
 							</div>
 						</div>
 						
-						<ion-button padding type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid"
+						<ion-button padding type="submit" class="btn btn-success" [disabled]="!heroForm.valid"
 							style="text-transform: none;" id="Login" shape="square" expand="block" (click)="login()"
 							size="medium">
 							Login</ion-button>
@@ -46,3 +46,6 @@
 						<ion-row style="height: 30px"></ion-row>
 
 						</form>
+						<!---->
+
+						<!--[formGroup]= "form" (ngSubmit)= "form.valid && onSubmit()"-->

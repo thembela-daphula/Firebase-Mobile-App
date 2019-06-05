@@ -14,7 +14,6 @@ import { ReactiveFormsModule , Validators, FormBuilder, FormGroup, FormControl }
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  myform: FormGroup;
   // tslint:disable-next-line: no-inferrable-types
   username: string = '';
   // tslint:disable-next-line: no-inferrable-types
@@ -66,5 +65,6 @@ export class LoginPage implements OnInit {
 
     }
   }
-
+  
 }
+
