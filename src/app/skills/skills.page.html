@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar routerLink="/tabs/info">
     <ion-icon slot="start" name="arrow-round-back" size="large" routerLink="/tabs/info" size="large"></ion-icon>
     <ion-title>Add skill</ion-title>
   </ion-toolbar>
@@ -9,7 +9,7 @@
 
   <div class="container" id="grad">
     <div [hidden]="submitted">
-      <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+      <form (ngSubmit)="onSubmit()" #heroForm1="ngForm">
         <div class="form-group">
           <ion-item>
             <ion-label color=dark position="floating" for="Skill">Skill</ion-label>
@@ -25,7 +25,7 @@
 
         <div class="container" id="grad">
           <div [hidden]="submitted">
-            <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+            <form (ngSubmit)="onSubmit()" #heroForm2="ngForm">
               <div class="form-group">
                 <ion-item>
                   <ion-label color=dark position="floating" for="Skill_level">Skill level (1 - 10)</ion-label>
@@ -35,25 +35,19 @@
                 </ion-item>
                 <div [hidden]="Skill_level.valid || Skill_level.pristine" class="alert-danger">
 
-                    Please enter a number between 1 - 10
-                
-                  <div [hidden]="Skill_level.errors.pattern">
-                     
-                    </div>
+                  Please enter a number between 1 - 10
 
-
+                </div>
               </div>
-              </div>
-
 
               <div class="container" id="grad">
                 <div [hidden]="submitted">
-                  <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+                  <form (ngSubmit)="onSubmit()" #heroForm3="ngForm">
                     <div class="form-group">
                       <ion-item>
                         <ion-label color=dark position="floating" for="Date_last_used">Date last used</ion-label>
                         <ion-datetime class="form-control" id="Date_last_used" required [(ngModel)]="last_used"
-                          name="Date_last_used" display-format="YYYY,MMM DD" placeholder='Date last used'
+                          name="Date_last_used" display-format="DD MMM YYYY" placeholder='Date last used'
                           #Date_last_used="ngModel" name="Date_last_used"></ion-datetime>
                         {{ user.last_used }}
                       </ion-item>
@@ -67,7 +61,7 @@
 
                     <div class="container" id="grad">
                       <div [hidden]="submitted">
-                        <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+                        <form (ngSubmit)="onSubmit()" #heroForm4="ngForm">
                           <div class="form-group">
                             <ion-item>
                               <ion-label color=dark position="floating" for="Origin">Origin</ion-label>
@@ -89,7 +83,7 @@
 
                           <div class="container" id="grad">
                             <div [hidden]="submitted">
-                              <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+                              <form (ngSubmit)="onSubmit()" #heroForm5="ngForm">
                                 <div class="form-group">
                                   <ion-item>
                                     <ion-label color=dark position="floating" for="Months_of_active_experience">Months
@@ -111,7 +105,7 @@
 
                                 <div class="container" id="grad">
                                   <div [hidden]="submitted">
-                                    <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+                                    <form (ngSubmit)="onSubmit()" #heroForm6="ngForm">
                                       <div class="form-group">
                                         <ion-item>
                                           <ion-label color=dark position="floating" for="Developing_skill">Are you
@@ -137,7 +131,10 @@
 
 
                                       <ion-item>
-                                        <ion-button class="btn btn-success" [disabled]="!heroForm.form.valid"
+                                        <ion-button class="btn btn-success" [hidden]="!heroForm1.valid"
+                                          [hidden]="!heroForm2.valid" [hidden]="!heroForm3.valid"
+                                          [hidden]="!heroForm3.valid" [hidden]="!heroForm4.valid"
+                                          [hidden]="!heroForm5.valid" [disabled]="!heroForm6.form.valid"
                                           style="text-transform: none;" id="buttonColor" shape="square"
                                           (click)="createPost()" size="medium" slot="end">Add skill</ion-button>
                                       </ion-item>

@@ -5,7 +5,7 @@
     <ion-buttons slot="start">
       <ion-menu-button autoHide="false" color="dark"></ion-menu-button>
     </ion-buttons>
-    <ion-title>Profile </ion-title>
+    <ion-title>Profile</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -19,7 +19,7 @@
       <ion-label>
 
         <ion-label position="floating">Nick name & Surname</ion-label>
-        <ion-input disable="true" readonly="true" [(ngModel)]="name" placeholder=' {{ data.nick_name }} {{ data.last_name }} '></ion-input>
+        <ion-input disable="true" readonly="true" [(ngModel)]="name" placeholder='{{data.nick_name }} {{data.last_name}}'></ion-input>
       </ion-label>
     </ion-item>
 
@@ -28,7 +28,7 @@
         <div class="profile-info">
             <ion-item>
               <ion-label position="floating">Enterprise ID</ion-label>
-              <ion-input disable="false" color="dark" placeholder=''>{{ data.username }}</ion-input>
+              <ion-input disable="false" color="dark" placeholder=''>{{data.username}}</ion-input>
             </ion-item>
           </div>
       <div class="profile-info">
@@ -70,24 +70,12 @@
       <div class="profile-info">
         <ion-item>
           <ion-label position="floating">Birth date</ion-label>
-          <ion-input disable="true" [(ngModel)]="b_day" placeholder=''>{{ data.b_day }}</ion-input>
+          <ion-datetime disable="true"readonly="true" display-format="DD MMM YYYY" [(ngModel)]="data.b_day" placeholder=''></ion-datetime>
         </ion-item>
       </div>
-      <!-- 
-            <div class="profile-info">
-        <ion-item>
-          <ion-label position="floating">Current location</ion-label>
-          <ion-input disabled="true" [(ngModel)]="location" placeholder=''>{{ data.location }}</ion-input>
-        </ion-item>
-      </div> -->
+ 
 
     </div>
-
-
-    <!-- <ion-item>
-      <ion-button shape="round" color="primary" routerLink="/tabs/edit-profile" slot="end" size="small" fill="outline"
-        slot="end" color="dark">Edit</ion-button>
-    </ion-item> -->
 
   </ion-list>
 </ion-content>

@@ -1,22 +1,24 @@
 <ion-header class="popover">
-</ion-header>
+  </ion-header>
 <ion-content class="popover">
   <ion-list class="popover">
     <ion-item>
+        <ion-text>About skill</ion-text>
       <ion-icon slot="end" color="dark" name="close-circle" (click)="DismissClick()"></ion-icon>
-
+      
+    
     </ion-item>
     <ion-item>
 
       <ion-label position="floating" style="color:darkgray"> Skill </ion-label>
-      <ion-input placeholder='' required >{{ post.skill }}</ion-input>
+      <ion-input placeholder=''  >{{ post.skill }}</ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating" style="color:darkgray">Level</ion-label>
       <ion-input placeholder=''> {{ post.level }}</ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating" style="color:darkgray">Last used </ion-label>
+      <ion-label position="floating" style="color:darkgray">Date last used </ion-label>
       <ion-input placeholder=''>{{ post.last_used }}</ion-input>
     </ion-item>
     <ion-item>
@@ -32,9 +34,9 @@
       <ion-input placeholder=''>{{ post.developing }}</ion-input>
     </ion-item>
 
-    <ion-item>
+    <ion-item > 
       <!-- <ion-button slot="start" style="text-transform: none;" size="small" slot="start" color="danger">Delete</ion-button> -->
-      <ion-button slot="end" style="text-transform: none;" id="buttonColor" size="meduim">Update</ion-button>
+      <!-- <ion-button slot="end" style="text-transform: none;" id="buttonColor" size="meduim">Update</ion-button> -->
       <ion-icon slot="end" color="dark" name="md-create" routerLink="/about-skill" (click)="DismissClick()"></ion-icon>
     </ion-item>
   </ion-list>
