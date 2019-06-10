@@ -14,7 +14,6 @@ import { ReactiveFormsModule , Validators, FormBuilder, FormGroup, FormControl }
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  myform: FormGroup;
   // tslint:disable-next-line: no-inferrable-types
   username: string = '';
   // tslint:disable-next-line: no-inferrable-types
@@ -22,7 +21,12 @@ export class LoginPage implements OnInit {
 
 
   // tslint:disable-next-line:max-line-length
-  constructor(public afAuth: AngularFireAuth, public user: UserService, public router: Router, public toastController: ToastController, private splashScreen: SplashScreen) {
+  constructor(
+    public afAuth: AngularFireAuth,
+    public user: UserService,
+    public router: Router,
+    public toastController: ToastController,
+     private splashScreen: SplashScreen) {
 
   }
 
@@ -32,8 +36,8 @@ export class LoginPage implements OnInit {
   async login() {
     // tslint:disable-next-line: indent
     const { username, password } = this;
-    this.username = '';
-    this.password = '';
+    // this.username = '';
+    // this.password = '';
     // tslint:disable-next-line: indent
     try {
       // tslint:disable-next-line: indent
@@ -61,5 +65,6 @@ export class LoginPage implements OnInit {
 
     }
   }
-
+  
 }
+
