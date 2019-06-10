@@ -1,11 +1,11 @@
 <ion-header>
   <ion-toolbar>
     <ion-item>
-      <ion-icon slot="start" name="arrow-round-back" size="large" routerLink="/tabs/info" size="large"></ion-icon>
+      <ion-icon slot="start" name="arrow-round-back" size="large" (click)="presentAlertConfirm()" size="large"></ion-icon>
       <ion-title>Edit all skills</ion-title>
 
       <ion-button style="text-transform: none;" slot="end" id="buttonColor" shape="square"
-        (click)="presentAlertConfirm()" (click)="createPost()" (click)="updateDetails()" size="medium"> Update
+        (click)="presentAlertConfirm2()" (click)="createPost()" (click)="updateDetails()" size="medium"> Update
       </ion-button>
     </ion-item>
   </ion-toolbar>
