@@ -86,6 +86,24 @@ export class SkillsPage implements OnInit {
     });
     await alert.present();
   }
+  async presentAlertConfirm1() {
+    //   this.router.navigate(['/tabs/profile']);
+    // }
+      const alert = await this.alertCtrl.create({
+        header: 'Skill added successfully',
+        message: 'Your new skill has has been added',
+        buttons: [
+          {
+            text: 'OK',
+            handler: () => {
+              this.router.navigate(['/tabs/profile']);
+            }
+          }
+        ]
+    // tslint:disable-next-line: semicolon
+      });
+      await alert.present();
+    }
 
   openkeypad() {
     this.keyboard.show();
