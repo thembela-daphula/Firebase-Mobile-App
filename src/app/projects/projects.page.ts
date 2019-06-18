@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { flatMap } from 'rxjs/operators';
 
 
 @Component({
@@ -14,13 +15,17 @@ export class ProjectsPage implements OnInit {
   automaticClose = false;
 
 
-  constructor(private alertCtrl: AlertController, public router: Router, private http: HttpClient) {
-    this.http.get('assets/information.json').subscribe( res => {
-      this.information = res['data'];
+  constructor(
+    private alertCtrl: AlertController,
+    public router: Router,
+    private http: HttpClient, ) {
 
-      this.information[0].open = true;
+    this.http.get('assets/information.json').subscribe(res => {
+    this.information = res['data'];
+    this.information[0].open = false;
     });
   }
+
 
   ngOnInit() {
   }
@@ -44,7 +49,7 @@ export class ProjectsPage implements OnInit {
           }
         }
       ]
-  // tslint:disable-next-line: semicolon
+      // tslint:disable-next-line: semicolon
     });
     await alert.present();
   }
@@ -54,9 +59,9 @@ export class ProjectsPage implements OnInit {
 
     if (this.automaticClose && this.information[index].open) {
       this.information
-// tslint:disable-next-line: triple-equals
-      .filter((data, dataIndex ) => dataIndex != index)
-      .map((data => data.open = false));
+        // tslint:disable-next-line: triple-equals
+        .filter((data, dataIndex) => dataIndex != index)
+        .map((data => data.open = false));
 
     }
 

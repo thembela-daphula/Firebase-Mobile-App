@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 import { AlertController, PopoverController } from '@ionic/angular';
 import { UserService } from '../user.service';
 import { NotifiticationsComponent } from './notifitications/notifitications.component';
-
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-info',
@@ -14,6 +14,8 @@ import { NotifiticationsComponent } from './notifitications/notifitications.comp
   styleUrls: ['./info.page.scss'],
 })
 export class InfoPage implements OnInit {
+  information: any[];
+  automaticClose = false;
 mainuser: AngularFirestoreDocument;
 
 skills;
@@ -29,20 +31,26 @@ busy: boolean = false;
 // tslint:disable-next-line: max-line-length
   constructor (
 
-    private http: Http,
+    private http: HttpClient,
     public router: Router,
     private afs: AngularFirestore,
     private user: UserService,
     private alertCtrl: AlertController,
-    public popoverController: PopoverController,
-        ) {
+    public popoverController: PopoverController, ) {
     this.mainuser = afs.doc(`members/${user.getUID()}`);
     this.sub = this.mainuser.valueChanges().subscribe(event => {
     this.skills = event.skills;
     });
+        this.http.get('assets/skills.json').subscribe(res => {
+    this.information = res['data'];
+    this.information[0].open = false;
+    });
     }
 
+
+
   ngOnInit() {
+
   }
 
     async presentAlertConfirm() {
@@ -78,7 +86,23 @@ busy: boolean = false;
       });
       return await popover.present();
   }
+  toogleSelection(index) {
+    this.information[index].open = !this.information[index].open;
 
+    if (this.automaticClose && this.information[index].open) {
+      this.information
+        // tslint:disable-next-line: triple-equals
+        .filter((data, dataIndex) => dataIndex != index)
+        .map((data => data.open = false));
+
+    }
+
+  }
+
+  toogleItem(index, childIndex) {
+    this.information[index].children[childIndex].open = !this.information[index].children[childIndex].open;
+
+  }
   async DismissClick() {
     await this.popoverController.dismiss();
       }
