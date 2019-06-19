@@ -1,10 +1,12 @@
 <ion-header class="popover">
-</ion-header>
+  </ion-header>
 <ion-content class="popover">
   <ion-list class="popover">
     <ion-item>
+        <ion-text>About skill</ion-text>
       <ion-icon slot="end" color="dark" name="close-circle" (click)="DismissClick()"></ion-icon>
-
+      
+    
     </ion-item>
  
     <form>
@@ -45,11 +47,39 @@
       
     </ion-list>
 
+<<<<<<< HEAD
 
    
     <ion-item>
+=======
+      <ion-label position="floating" style="color:darkgray"> Skill </ion-label>
+      <ion-input placeholder=''  >{{ post.skill }}</ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" style="color:darkgray">Level</ion-label>
+      <ion-input placeholder=''> {{ post.level }}</ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" style="color:darkgray">Date last used </ion-label>
+      <ion-input placeholder=''>{{ post.last_used }}</ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" style="color:darkgray">Origin</ion-label>
+      <ion-input placeholder=''>{{ post.origin }}</ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" style="color:darkgray">Months of active experience</ion-label>
+      <ion-input placeholder=''>{{ post.months_active }}</ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" style="color:darkgray">Are you currently developing skill?</ion-label>
+      <ion-input placeholder=''>{{ post.developing }}</ion-input>
+    </ion-item>
+
+    <ion-item > 
+>>>>>>> 4ecaa3f01ba036b76572122823561f91a8c0dba4
       <!-- <ion-button slot="start" style="text-transform: none;" size="small" slot="start" color="danger">Delete</ion-button> -->
-      <ion-button slot="end" style="text-transform: none;" id="buttonColor" size="meduim">Update</ion-button>
+      <!-- <ion-button slot="end" style="text-transform: none;" id="buttonColor" size="meduim">Update</ion-button> -->
       <ion-icon slot="end" color="dark" name="md-create" routerLink="/about-skill" (click)="DismissClick()"></ion-icon>
     </ion-item>
   </ion-list>

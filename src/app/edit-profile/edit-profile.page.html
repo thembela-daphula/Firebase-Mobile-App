@@ -1,9 +1,11 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-icon slot="start" name="arrow-round-back" size="large" routerLink="/tabs/profile" size="large"></ion-icon>
-    <ion-title>edit-profile</ion-title>
+  <ion-toolbar routerLink="/tabs/profile">
+    <ion-icon routerLink="/tabs/profile" slot="start" name="arrow-round-back" size="large" size="large"></ion-icon>
+    <ion-title>Edit profile</ion-title>
   </ion-toolbar>
 </ion-header>
+
+
 <ion-content padding class="background">
 
   <input type="file" #fileBtn class="filebtn" (change)="uploadPic($event)" />
@@ -22,11 +24,31 @@
     
     <div [hidden]="submitted">
       <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
-        <div class="form-group">
+
+        <!-- <div class="form-group">
           <ion-item>
+<<<<<<< HEAD
             <ion-label position="floating" for="First_name">First name</ion-label>
             <ion-input type="text" class="form-control" id="name" required [(ngModel)]="name"
               name="name" #First_name="ngModel"></ion-input>
+=======
+            <ion-label position="floating" for="name">Enterprise ID</ion-label>
+            <ion-input type="text" class="form-control" id="name" placeholder=" " required [(ngModel)]="data.username" name="name"
+              disable="false" readonly="false" #name="ngModel"></ion-input>
+          </ion-item>
+          <div [hidden]="name.valid || name.pristine" class="alert-danger">
+
+            Enterprise ID is required
+
+          </div>
+        </div> -->
+
+        <div class="form-group">
+          <ion-item>
+            <ion-label position="floating" for="First_name">First name(s) </ion-label>
+            <ion-input type="text" class="form-control" id="First_name" placeholder=" " required [(ngModel)]="data.name"
+              name="First_name" #First_name="ngModel"></ion-input>
+>>>>>>> 4ecaa3f01ba036b76572122823561f91a8c0dba4
           </ion-item>
           <div [hidden]="First_name.valid || First_name.pristine" class="alert-danger">
 
@@ -38,8 +60,13 @@
          <div class="form-group">
           <ion-item>
             <ion-label position="floating" for="First_name">Surname</ion-label>
+<<<<<<< HEAD
             <ion-input type="text" class="form-control" id="surname" required [(ngModel)]="surname"
               name="surname" #First_name="ngModel"></ion-input>
+=======
+            <ion-input type="text" class="form-control" id="Surname" placeholder=" " required
+              [(ngModel)]="data.last_name" name="Surname" #Surname="ngModel"></ion-input>
+>>>>>>> 4ecaa3f01ba036b76572122823561f91a8c0dba4
           </ion-item>
           <div [hidden]="First_name.valid || First_name.pristine" class="alert-danger">
 
@@ -49,6 +76,7 @@
         </div>
 
         <div class="form-group">
+<<<<<<< HEAD
             <ion-item>
               <ion-label position="floating" for="First_name">Career Level</ion-label>
               <ion-input type="text" class="form-control" id="careerLevel" required [(ngModel)]="careerLevel"
@@ -60,6 +88,63 @@
   
             </div>
           </div>
+=======
+          <ion-item>
+            <ion-label position="floating" for="Nick_name">Nick name</ion-label>
+            <ion-input type="text" class="form-control" id="Nick_name" placeholder=" " required
+              [(ngModel)]="data.nick_name" name="Nick_name" #Nick_name="ngModel"></ion-input>
+          </ion-item>
+          <div [hidden]="Nick_name.valid || Nick_name.pristine" class="alert-danger">
+
+            Nick name is required
+
+          </div>
+        </div>
+
+
+
+        <!-- <div class="form-group">
+          <ion-item>
+            <ion-label position="floating" for="Career_level">Career level</ion-label>
+            <ion-input type="text" class="form-control" id="Nick_name" placeholder=" " required [(ngModel)]="data.level"
+              name="Career_level" #Career_level="ngModel"></ion-input>
+          </ion-item>
+          <div [hidden]="Career_level.valid || Career_level.pristine" class="alert-danger">
+
+            Career level is required
+
+          </div>
+        </div> -->
+
+        <div class="form-group">
+          <ion-item>
+            <ion-label position="floating" for="Cell_number">Cell number </ion-label>
+            <ion-input type="text" class="form-control" id="Cell_number" placeholder=" " required
+              [(ngModel)]="data.cellnumber" name="Cell_number" #Cell_number="ngModel"></ion-input>
+          </ion-item>
+          <div [hidden]="Cell_number.valid || Cell_number.pristine" class="alert-danger">
+
+            Career level is required
+
+          </div>
+        </div>
+
+
+        <!-- <div class="form-group">
+          <ion-item>
+            <ion-label position="floating" for="Birth_date">Birth date</ion-label>
+            <ion-datetime  class="form-control" id="Nick_name" placeholder=" " required [(ngModel)]="data.b_day"
+              name="Birth_date" display-format="DD MMM YYYY" #Birth_date="ngModel"></ion-datetime>
+          </ion-item>
+          <div [hidden]="Birth_date.valid || Birth_date.pristine" class="alert-danger">
+
+            Birth date is required (DD/MM//YYYY)
+
+          </div>
+        </div> -->
+
+
+>>>>>>> 4ecaa3f01ba036b76572122823561f91a8c0dba4
 
           <div class="form-group">
               <ion-item>
@@ -76,9 +161,15 @@
 
         <ion-item>
 
+<<<<<<< HEAD
           <ion-button style="text-transform: none;" slot="end" id="buttonColor" shape="round"
             (click)="presentAlertConfirm()" (click)="createPost()"size="medium" (click) = "updateDetails()"
             [disabled]="!heroForm.valid">
+=======
+          <ion-button style="text-transform: none;" slot="end" id="buttonColor" shape="square"
+            (click)="presentAlertConfirm()" (click)="createPost()" (click)="updateDetails()" size="medium"
+            [disabled]="!heroForm.valid" [hidden]="!heroForm.valid">
+>>>>>>> 4ecaa3f01ba036b76572122823561f91a8c0dba4
             Update
           </ion-button>
 

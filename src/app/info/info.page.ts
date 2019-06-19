@@ -8,7 +8,7 @@ import { Skills } from '../services/skills';
 import { UsersService } from '../services/users.service';
 import { UserService } from '../user.service';
 import { NotifiticationsComponent } from './notifitications/notifitications.component';
-
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -44,6 +44,8 @@ export class InfoPage implements OnInit {
     this.getSkills();
 
     }
+
+
 
   ngOnInit() {
     this.uid = this.users.getUID();

@@ -4,7 +4,7 @@
     <ion-buttons slot="start">
       <ion-menu-button autoHide="false" color="dark"></ion-menu-button>
     </ion-buttons>
-    <ion-title>Profile </ion-title>
+    <ion-title>Profile</ion-title>
   </ion-toolbar>
 
 </ion-header>
@@ -21,7 +21,7 @@
       <ion-label>
 
         <ion-label position="floating">Nick name & Surname</ion-label>
-        <ion-input disable="true" readonly="true" [(ngModel)]="name" placeholder=' {{ data.nick_name }} {{ data.last_name }} '></ion-input>
+        <ion-input disable="true" readonly="true" [(ngModel)]="name" placeholder='{{data.nick_name }} {{data.last_name}}'></ion-input>
       </ion-label>
     </ion-item>
    --> 
@@ -30,11 +30,16 @@
 
         <div>
             <ion-item>
+<<<<<<< HEAD
               <ion-thumbnail slot="start">
                 <ion-avatar> <img src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/150x150/center/"
                     (click)="updateProfilePic()"> </ion-avatar>
               </ion-thumbnail>
               {{ res.name }}
+=======
+              <ion-label position="floating">Enterprise ID</ion-label>
+              <ion-input disable="false" color="dark" placeholder=''>{{data.username}}</ion-input>
+>>>>>>> 4ecaa3f01ba036b76572122823561f91a8c0dba4
             </ion-item>
           </div>
 
@@ -72,13 +77,19 @@
         </ion-item>
       </div>
 
+<<<<<<< HEAD
+=======
+
+      <div class="profile-info">
+        <ion-item>
+          <ion-label position="floating">Birth date</ion-label>
+          <ion-datetime disable="true"readonly="true" display-format="DD MMM YYYY" [(ngModel)]="data.b_day" placeholder=''></ion-datetime>
+        </ion-item>
+      </div>
+ 
+
+>>>>>>> 4ecaa3f01ba036b76572122823561f91a8c0dba4
     </div>
-
-
-    <!-- <ion-item>
-      <ion-button shape="round" color="primary" routerLink="/tabs/edit-profile" slot="end" size="small" fill="outline"
-        slot="end" color="dark">Edit</ion-button>
-    </ion-item> -->
 
   </ion-list>
 </ion-content>

@@ -65,5 +65,9 @@ export class LoginPage implements OnInit {
 
     }
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4ecaa3f01ba036b76572122823561f91a8c0dba4
 }
 
