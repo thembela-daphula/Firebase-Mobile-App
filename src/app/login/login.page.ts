@@ -42,7 +42,7 @@ export class LoginPage implements OnInit {
     try {
       // tslint:disable-next-line: indent
       // Only sign in with accenture email
-      const res = await this.afAuth.auth.signInWithEmailAndPassword(username, password);
+      const res = await this.afAuth.auth.signInWithEmailAndPassword(username + '@accenture.com', password);
 
       if (res.user) {
         this.user.setUser({
@@ -65,6 +65,5 @@ export class LoginPage implements OnInit {
 
     }
   }
-  
 }
 

@@ -3,7 +3,9 @@ import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firest
 import { Http } from '@angular/http';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { UsersService } from '../services/users.service';
 import { UserService } from '../user.service';
+
 // import { timingSafeEqual } from 'crypto';
 
 
@@ -20,17 +22,11 @@ export class EditProfilePage implements OnInit {
   mainuser: AngularFirestoreDocument;
   sub;
 
-  data: any = {
-    'username' : null,
-    'name': null,
-    'cellnumber': null,
-    'email': null,
-    'phone': null,
-    'last_name': null,
-    'surname': null,
-    'level': null,
-    'location': null,
-  };
+    email: any;
+    name: string;
+    surname: string;
+    careerLevel: string;
+    mobile: string;
 
   // tslint:disable-next-line: no-inferrable-types
   busy: boolean = false;
@@ -43,28 +39,28 @@ export class EditProfilePage implements OnInit {
 
 
   constructor(
+    private users: UsersService,
     private http: Http,
     private afs: AngularFirestore,
     private router: Router,
     private alertController: AlertController,
     private user: UserService,
-
     public alertCtrl: AlertController) {
 
+      this.mainuser = afs.doc(`users/${this.users.getUID()}`);
+      this.sub = this.mainuser.valueChanges().subscribe(event => {
+      this.profilePic = event.profilePic;
+      this.email = event.email;
+      this.name = event.name;
+      this.surname = event.surname;
+      this.careerLevel = event.careerLevel;
+      this.mobile = event.mobile;
+});
 
   }
 
 
   ngOnInit() {
-    this.mainuser = this.afs.doc(`members/${this.user.getUID()}`);
-
-    this.sub = this.mainuser.valueChanges().subscribe(event => {
-      console.log(event);
-      this.username = event.username;
-      this.profilePic = event.profilePic;
-      this.data = event.data;
-
-    });
   }
 
   // tslint:disable-next-line: use-life-cycle-interface
@@ -78,7 +74,6 @@ export class EditProfilePage implements OnInit {
 
   uploadPic(event) {
     const files = event.target.files;
-
     const data = new FormData();
     data.append('file', files[0]);
     data.append('UPLOADCARE_STORE', '1');
@@ -96,21 +91,12 @@ export class EditProfilePage implements OnInit {
   async createPost() {
 
     this.busy = true;
-    const data = {
-      'username' : this.data.username,
-      'name': this.data.name,
-      'cellnumber': this.data.cellnumber,
-      'email': this.data.email,
-      'phone': this.data.phone,
-      'last_name': this.data.last_name,
-      'surname': this.data.location,
-      'level': this.data.level,
-      'nick_name': this.data.nick_name,
-      'b_day': this.data.b_day,
-      'location': this.data.location
-    };
-    this.afs.doc(`members/${this.user.getUID()}`).update({
-      data: data
+            this.afs.doc(`users/${this.users.getUID()}`).update({
+           name : this.name,
+            surname: this.surname,
+          careerLevel: this.careerLevel,
+           email: this.email,
+           mobile: this.mobile,
     });
 
     this.router.navigate(['/tabs/profile']);
@@ -128,10 +114,10 @@ export class EditProfilePage implements OnInit {
 
   async updateDetails() {
 
-    if (this.username !== this.user.getUsername()) {
-      await this.user.updateEmail(this.username);
+    if (this.username !== this.users.getUsername()) {
+      await this.users.updateEmail(this.username);
       this.mainuser.update({
-        username: this.username
+        username: this.username,
       });
     }
 

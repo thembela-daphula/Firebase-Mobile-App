@@ -28,7 +28,7 @@ export class ProjectsPage implements OnInit {
   async presentAlertConfirm() {
     const alert = await this.alertCtrl.create({
       header: 'Logout?',
-      message: 'Are you sure you want to logout?',
+      message: 'Are you sure you would like to logout',
       buttons: [
         {
           text: 'No',

@@ -28,6 +28,7 @@
     "@ionic-native/status-bar": "^5.0.0",
     "@ionic/angular": "^4.1.0",
     "angularfire2": "^5.1.2",
+    "bootstrap": "^4.3.1",
     "cordova-android": "8.0.0",
     "cordova-plugin-calendar": "5.1.4",
     "cordova-plugin-decimal-keyboard": "git+https://github.com/mrchandoo/cordova-plugin-decimal-keyboard.git",
@@ -35,7 +36,10 @@
     "core-js": "^2.5.4",
     "firebase": "^5.9.4",
     "ionic-calendar-date-picker": "^0.1.2",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.15.0",
     "rxjs": "~6.3.3",
+    "rxjs-compat": "^6.5.2",
     "zone.js": "~0.8.29"
   },
   "devDependencies": {

@@ -6,32 +6,47 @@
       <ion-icon slot="end" color="dark" name="close-circle" (click)="DismissClick()"></ion-icon>
 
     </ion-item>
-    <ion-item>
+ 
+    <form>
+      
+    </form>
+    <ion-list *ngIf = "skills">
 
-      <ion-label position="floating" style="color:darkgray"> Skill </ion-label>
-      <ion-input placeholder='' required >{{ post.skill }}</ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating" style="color:darkgray">Level</ion-label>
-      <ion-input placeholder=''> {{ post.level }}</ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating" style="color:darkgray">Last used </ion-label>
-      <ion-input placeholder=''>{{ post.last_used }}</ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating" style="color:darkgray">Origin</ion-label>
-      <ion-input placeholder=''>{{ post.origin }}</ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating" style="color:darkgray">Months of active experience</ion-label>
-      <ion-input placeholder=''>{{ post.months_active }}</ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating" style="color:darkgray">Are you currently developing skill?</ion-label>
-      <ion-input placeholder=''>{{ post.developing }}</ion-input>
-    </ion-item>
+          <ion-item>
+            <ion-label position="floating" style="color:darkgray"> Skill </ion-label>
+            <ion-input placeholder='' required >{{ skills.name }}</ion-input>
+          </ion-item>
 
+          <ion-item>
+            <ion-label position="floating" style="color:darkgray">Level</ion-label>
+            <ion-input placeholder=''> {{ skills.level }}</ion-input>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label position="floating" style="color:darkgray">Last used </ion-label>
+            <ion-input placeholder=''>{{ skills.lastUsed }}</ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating" style="color:darkgray">Origin</ion-label>
+            <ion-input placeholder=''>{{ skills.origin }}</ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating" style="color:darkgray">Months of active experience</ion-label>
+            <ion-input placeholder=''>{{ skills.activeExperience }}</ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating" style="color:darkgray">Are you currently developing skill?</ion-label>
+            <ion-input placeholder=''>{{ skills.active }}</ion-input>
+          </ion-item>
+      
+      
+    </ion-list>
+
+
+   
     <ion-item>
       <!-- <ion-button slot="start" style="text-transform: none;" size="small" slot="start" color="danger">Delete</ion-button> -->
       <ion-button slot="end" style="text-transform: none;" id="buttonColor" size="meduim">Update</ion-button>

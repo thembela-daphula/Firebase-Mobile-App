@@ -17,9 +17,11 @@ import { UserService } from './user.service';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AuthService } from './auth.service';
 import { ShareModule } from './share.module';
+import { UsersService } from './services/users.service';
 import { NotifiticationsComponent } from './info/notifitications/notifitications.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MemberinfoComponent } from './members/memberinfo/memberinfo.component';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 
 @NgModule({
@@ -43,7 +45,9 @@ ShareModule
     SplashScreen,
 { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
 UserService,
-AuthService
+AuthService,
+AngularFirestore,
+UsersService
   ],
   bootstrap: [AppComponent]
 })

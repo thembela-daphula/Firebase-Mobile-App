@@ -1,9 +1,14 @@
+
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
-import { UserService } from '../user.service';
 import { Router } from '@angular/router';
-import { AlertController } from '@ionic/angular';
-import { MenuController } from '@ionic/angular';
+import { AlertController, MenuController } from '@ionic/angular';
+import { UsersService } from '../services/users.service';
+import { UserService } from '../user.service';
+
+
+
 
 @Component({
   selector: 'app-profile',
@@ -12,36 +17,37 @@ import { MenuController } from '@ionic/angular';
 })
 export class ProfilePage implements OnInit {
 mainuser: AngularFirestoreDocument;
-userPosts;
-sub;
-username: string;
 profilePic: string;
-name: string;
-last_name: string;
-nick_name: string;
-cellnumber: string;
-b_day: string;
-email: string;
-phone: string;
-data;
-
+sub;
+res: any;
 
   constructor(
     public router: Router,
     private afs: AngularFirestore,
     private user: UserService,
+    private users: UsersService,
     private menu: MenuController,
-
+    private http: HttpClient,
     private alertCtrl: AlertController) {
-this.mainuser = afs.doc(`members/${user.getUID()}`);
-this.sub = this.mainuser.valueChanges().subscribe(event => {
-this.username = event.username;
-this.profilePic = event.profilePic;
-this.data = event.data;
+      this.mainuser = afs.doc(`users/${this.users.getUID()}`);
+      this.sub = this.mainuser.valueChanges().subscribe(event => {
+      this.profilePic = event.profilePic;
 });
+
+this.getMessage();
 }
 
+
   ngOnInit() {
+    this.users.getDatas(this.users.getUID()).subscribe((res) => {
+      this.res = res;
+      console.log(res);
+   });
+
+  }
+
+  getMessage() {
+    this.users.getData().subscribe(data => console.log(data));
   }
 
   edit() {

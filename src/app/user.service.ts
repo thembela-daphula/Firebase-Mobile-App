@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { first } from 'rxjs/operators';
 import { auth } from 'firebase/app';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 // tslint:disable-next-line: class-name
 interface user {
@@ -13,8 +15,10 @@ uid: string;
 @Injectable()
 export class UserService {
 public user: user;
+// tslint:disable-next-line: no-inferrable-types
+private url: string = 'http://localhost:3000/users';
 
-constructor(public afAuth: AngularFireAuth) {
+constructor(public afAuth: AngularFireAuth, private http: HttpClient) {
 
 }
 
@@ -30,6 +34,14 @@ return this.user.username;
 getName(): string {
     return this.user.username;
     }
+
+    getData(): Observable<Object> {
+        return this.http.get(this.url);
+      }
+
+      getDatas(id: string): Observable<Object> {
+        return this.http.get(`http://localhost:3000/users/${id}`);
+      }
 
 
 
