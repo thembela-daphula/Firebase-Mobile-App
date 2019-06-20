@@ -12,7 +12,7 @@
 <ion-content padding class="background">
       
   <ion-list id="profile-info" *ngIf="res">
-   <!--
+   
      <ion-item>
       <ion-thumbnail slot="start">
         <ion-avatar><img src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/200x200/center/"></ion-avatar>
@@ -21,25 +21,17 @@
       <ion-label>
 
         <ion-label position="floating">Nick name & Surname</ion-label>
-        <ion-input disable="true" readonly="true" [(ngModel)]="name" placeholder='{{data.nick_name }} {{data.last_name}}'></ion-input>
+        <ion-input disable="true" readonly="true" [(ngModel)]="name" placeholder='{{res.name }} {{res.surname}}'></ion-input>
       </ion-label>
     </ion-item>
-   --> 
+   
 
     <div *ngIf="res">
 
         <div>
             <ion-item>
-<<<<<<< HEAD
-              <ion-thumbnail slot="start">
-                <ion-avatar> <img src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/150x150/center/"
-                    (click)="updateProfilePic()"> </ion-avatar>
-              </ion-thumbnail>
-              {{ res.name }}
-=======
               <ion-label position="floating">Enterprise ID</ion-label>
-              <ion-input disable="false" color="dark" placeholder=''>{{data.username}}</ion-input>
->>>>>>> 4ecaa3f01ba036b76572122823561f91a8c0dba4
+              <ion-input disable="false" color="dark" placeholder=''>{{res.name}}.{{res.surname}}</ion-input>
             </ion-item>
           </div>
 
@@ -77,18 +69,15 @@
         </ion-item>
       </div>
 
-<<<<<<< HEAD
-=======
 
-      <div class="profile-info">
+      <!-- <div class="profile-info">
         <ion-item>
           <ion-label position="floating">Birth date</ion-label>
           <ion-datetime disable="true"readonly="true" display-format="DD MMM YYYY" [(ngModel)]="data.b_day" placeholder=''></ion-datetime>
         </ion-item>
-      </div>
+      </div> -->
  
 
->>>>>>> 4ecaa3f01ba036b76572122823561f91a8c0dba4
     </div>
 
   </ion-list>
