@@ -16,10 +16,10 @@ import { UserService } from '../user.service';
   styleUrls: ['./profile.page.scss'],
 })
 export class ProfilePage implements OnInit {
-mainuser: AngularFirestoreDocument;
-profilePic: string;
-sub;
-res: any;
+  mainuser: AngularFirestoreDocument;
+  profilePic: string;
+  sub;
+  res: any;
 
   constructor(
     public router: Router,
@@ -29,20 +29,20 @@ res: any;
     private menu: MenuController,
     private http: HttpClient,
     private alertCtrl: AlertController) {
-      this.mainuser = afs.doc(`users/${this.users.getUID()}`);
-      this.sub = this.mainuser.valueChanges().subscribe(event => {
+    this.mainuser = afs.doc(`users/${this.users.getUID()}`);
+    this.sub = this.mainuser.valueChanges().subscribe(event => {
       this.profilePic = event.profilePic;
-});
+    });
 
-this.getMessage();
-}
+    this.getMessage();
+  }
 
 
   ngOnInit() {
     this.users.getDatas(this.users.getUID()).subscribe((res) => {
       this.res = res;
       console.log(res);
-   });
+    });
 
   }
 
@@ -73,7 +73,7 @@ this.getMessage();
           }
         }
       ]
-  // tslint:disable-next-line: semicolon
+      // tslint:disable-next-line: semicolon
     });
     await alert.present();
   }
@@ -83,5 +83,5 @@ this.getMessage();
     this.menu.open('first');
   }
 
-      }
+}
 

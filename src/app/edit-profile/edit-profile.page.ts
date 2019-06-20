@@ -21,6 +21,7 @@ export class EditProfilePage implements OnInit {
 
   mainuser: AngularFirestoreDocument;
   sub;
+  res: any;
 
     email: any;
     name: string;
@@ -61,6 +62,10 @@ export class EditProfilePage implements OnInit {
 
 
   ngOnInit() {
+    this.users.getDatas(this.users.getUID()).subscribe((res) => {
+      this.res = res;
+      console.log(this.res);
+    });
   }
 
   // tslint:disable-next-line: use-life-cycle-interface
