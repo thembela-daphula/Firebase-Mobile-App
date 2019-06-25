@@ -17,9 +17,12 @@ import { UserService } from './user.service';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AuthService } from './auth.service';
 import { ShareModule } from './share.module';
+import { UsersService } from './services/users.service';
 import { NotifiticationsComponent } from './info/notifitications/notifitications.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MemberinfoComponent } from './members/memberinfo/memberinfo.component';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireStorageModule, StorageBucket } from '@angular/fire/storage';
 
 
 @NgModule({
@@ -33,6 +36,7 @@ AppRoutingModule,
 AngularFireModule.initializeApp(firebaseConfig),
 AngularFireAuthModule,
 AngularFirestoreModule,
+AngularFireStorageModule,
 // tslint:disable-next-line: deprecation
 HttpModule,
 ShareModule
@@ -43,7 +47,10 @@ ShareModule
     SplashScreen,
 { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
 UserService,
-AuthService
+AuthService,
+AngularFirestore,
+UsersService,
+{provide: StorageBucket, useValue: 'demoproject-8b1fa.appspot.com'}
   ],
   bootstrap: [AppComponent]
 })

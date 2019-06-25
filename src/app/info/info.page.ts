@@ -4,9 +4,11 @@ import { FormArray } from '@angular/forms';
 import { Http } from '@angular/http';
 import { Router } from '@angular/router';
 import { AlertController, PopoverController } from '@ionic/angular';
+import { Skills } from '../services/skills';
+import { UsersService } from '../services/users.service';
 import { UserService } from '../user.service';
 import { NotifiticationsComponent } from './notifitications/notifitications.component';
-
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-info',
@@ -14,35 +16,44 @@ import { NotifiticationsComponent } from './notifitications/notifitications.comp
   styleUrls: ['./info.page.scss'],
 })
 export class InfoPage implements OnInit {
-mainuser: AngularFirestoreDocument;
-
-skills;
-sub;
-
-// tslint:disable-next-line: no-inferrable-types
-busy: boolean = false;
+  res: any;
+  skills: any;
+  Skills: Skills[];
+  skillID: Skills;
+  uid: string;
 
 // tslint:disable-next-line: no-inferrable-types
 
-
+// tslint:disable-next-line: no-inferrable-types
 
 // tslint:disable-next-line: max-line-length
   constructor (
 
+// tslint:disable-next-line: deprecation
     private http: Http,
     public router: Router,
     private afs: AngularFirestore,
-    private user: UserService,
+    private users: UsersService,
     private alertCtrl: AlertController,
     public popoverController: PopoverController,
         ) {
-    this.mainuser = afs.doc(`members/${user.getUID()}`);
-    this.sub = this.mainuser.valueChanges().subscribe(event => {
-    this.skills = event.skills;
-    });
+    this.getSkills();
+
     }
 
   ngOnInit() {
+    this.uid = this.users.getUID();
+    this.users.getSkills(this.uid).subscribe((res: Skills[]) => {
+      this.skills = res;
+      console.log(res);
+   });
+   this.users.getDatas(this.users.getUID()).subscribe(res => {
+    this.res = res;
+  });
+  }
+
+ getSkills() {
+    this.users.getSkills(this.users.getUID()).subscribe(skills => this.skills = skills);
   }
 
     async presentAlertConfirm() {
@@ -84,6 +95,14 @@ busy: boolean = false;
       }
 delete(itemid) {
 this.afs.doc('members');
+}
+
+deleteSkill(id: string) {
+  this.users.deleteSkill(this.users.getUID(), id ).subscribe((res) => {
+    this.res = res;
+    console.log(res);
+
+  });
 }
 
 }
