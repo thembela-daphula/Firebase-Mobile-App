@@ -10,7 +10,6 @@ import { UserService } from '../user.service';
 import { NotifiticationsComponent } from './notifitications/notifitications.component';
 import { HttpClient } from '@angular/common/http';
 
-
 @Component({
   selector: 'app-info',
   templateUrl: './info.page.html',
@@ -25,10 +24,7 @@ export class InfoPage implements OnInit {
 
 // tslint:disable-next-line: no-inferrable-types
 
-
 // tslint:disable-next-line: no-inferrable-types
-
-
 
 // tslint:disable-next-line: max-line-length
   constructor (
@@ -45,8 +41,6 @@ export class InfoPage implements OnInit {
 
     }
 
-
-
   ngOnInit() {
     this.uid = this.users.getUID();
     this.users.getSkills(this.uid).subscribe((res: Skills[]) => {
@@ -58,8 +52,7 @@ export class InfoPage implements OnInit {
   });
   }
 
-
-  getSkills() {
+ getSkills() {
     this.users.getSkills(this.users.getUID()).subscribe(skills => this.skills = skills);
   }
 

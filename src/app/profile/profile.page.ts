@@ -20,6 +20,7 @@ export class ProfilePage implements OnInit {
   profilePic: string;
   sub;
   res: any;
+  data: any;
 
   constructor(
     public router: Router,
@@ -34,7 +35,7 @@ export class ProfilePage implements OnInit {
       this.profilePic = event.profilePic;
     });
 
-    this.getMessage();
+    this.getDp();
   }
 
 
@@ -46,9 +47,13 @@ export class ProfilePage implements OnInit {
 
   }
 
-  getMessage() {
-    this.users.getData().subscribe(data => console.log(data));
+  getDp() {
+    this.users.getProfilePicture(this.users.getUID()).subscribe((data) => {
+      this.data = data;
+      console.log(data);
+    });
   }
+
 
   edit() {
     this.router.navigate(['/tabs/profile']);

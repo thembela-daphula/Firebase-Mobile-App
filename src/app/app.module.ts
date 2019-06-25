@@ -22,6 +22,7 @@ import { NotifiticationsComponent } from './info/notifitications/notifitications
 import { HttpClientModule } from '@angular/common/http';
 import { MemberinfoComponent } from './members/memberinfo/memberinfo.component';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireStorageModule, StorageBucket } from '@angular/fire/storage';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ AppRoutingModule,
 AngularFireModule.initializeApp(firebaseConfig),
 AngularFireAuthModule,
 AngularFirestoreModule,
+AngularFireStorageModule,
 // tslint:disable-next-line: deprecation
 HttpModule,
 ShareModule
@@ -47,7 +49,8 @@ ShareModule
 UserService,
 AuthService,
 AngularFirestore,
-UsersService
+UsersService,
+{provide: StorageBucket, useValue: 'demoproject-8b1fa.appspot.com'}
   ],
   bootstrap: [AppComponent]
 })

@@ -15,9 +15,6 @@
       <ion-list *ngFor="let post of data">
           <ion-reorder-group disabled="false" id="reorder">
               <ion-item>
-                  <ion-thumbnail  slot="start">
-                      <ion-avatar><img src="https://ucarecdn.com/{{ post.profilePic }}/-/scale_crop/150x150/center/"></ion-avatar>
-                    </ion-thumbnail>
                   <ion-label (click)="notifications()" >{{ post.name }} {{ post.surname }} </ion-label>
                   <ion-item slot="end"> {{ post.careerLevel }}</ion-item>
                </ion-item>
@@ -25,7 +22,7 @@
       </ion-list>
     </ion-list>
 
-    <ion-list >
+    <!-- <ion-list >
         <div class="col-md-8 " style="padding-top: 20px" >
               <div id="accordion">
                    <ion-card class="card" *ngFor="let post of data; index as i">
@@ -76,5 +73,5 @@
                    </ion-card>
               </div>
          </div> 
-     </ion-list>
+     </ion-list> -->
 </ion-content>

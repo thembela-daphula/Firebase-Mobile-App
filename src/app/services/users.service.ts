@@ -48,6 +48,11 @@ export class UsersService {
         return this.http.delete(this.skillUrl + `/${uid}/delete/${id}`);
         }
 
+        createSkill (uid: string, skill: Skills) {
+          return this.http.post(this.skillUrl + `/${uid}/create`, skill );
+        }
+
+
         getCurrentUserSkill(uid: string, skill: Skills): Observable<Skills> {
           return this.http.get<Skills>(this.skillUrl + `/${uid}skill/${skill.id}`);
           }
@@ -56,8 +61,12 @@ export class UsersService {
           return this.http.get(this.url);
         }
 
+        getProfilePicture(id: string): Observable<Object> {
+          return this.http.get(`http://localhost:3000/users/${id}/pictures`);
+        }
+
         getDatas(id: string): Observable<Object> {
-          return this.http.get(`http://localhost:3000/users/${id}`);
+          return this.http.get(`http://localhost:3000/users/${id}/get-public`);
         }
 
         getSkills(id: string): Observable<Object> {
