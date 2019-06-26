@@ -6,8 +6,8 @@
 </ion-header>
 
 <ion-content padding class="background">
-
-  <div class="container" id="grad">
+  <ion-item>
+    <div class="container" id="grad">
 
       <form (ngSubmit)="CreateSkill(heroForm1)" #heroForm1="ngForm">
 
@@ -45,7 +45,7 @@
           <ion-item>
             <ion-label color=dark position="floating" for="last_Used">Date last used</ion-label>
             <ion-datetime class="form-control" placeholder=" " id="lastUsed" required [(ngModel)]="lastUsed"
-              name="lastUsed"  #last_Used="ngModel" display-format="DD MMM YYYY"></ion-datetime>
+              name="lastUsed" #last_Used="ngModel" display-format="DD MMM YYYY"></ion-datetime>
           </ion-item>
           <div [hidden]="last_Used.valid || last_Used.pristine" class="alert-danger">
 
@@ -59,7 +59,8 @@
         <div class="form-group">
           <ion-item>
             <ion-label color=dark position="floating" for="Origin">Origin</ion-label>
-            <ion-select class="form-control" placeholder=" " id="origin" required [(ngModel)]="origin" name="origin"  #Origin="ngModel" >
+            <ion-select class="form-control" placeholder=" " id="origin" required [(ngModel)]="origin" name="origin"
+              #Origin="ngModel">
               <ion-select-option value="University">Tertiary</ion-select-option>
               <ion-select-option value="Online course">Online course</ion-select-option>
               <ion-select-option value="Self-study">Self-study</ion-select-option>
@@ -77,7 +78,7 @@
           <ion-item>
             <ion-label color=dark position="floating" for="active_Experience">Months of active experience</ion-label>
             <ion-input type="text" class="form-control" placeholder=" " id="activeExperience" required
-              [(ngModel)]="activeExperience" name="activeExperience"  #active_Experience="ngModel">
+              [(ngModel)]="activeExperience" name="activeExperience" #active_Experience="ngModel">
             </ion-input>
           </ion-item>
           <div [hidden]="active_Experience.valid || active_Experience.pristine" class="alert-danger">
@@ -93,7 +94,8 @@
             <ion-label color=dark position="floating" for="active_dev">Are you
               currently developing this skill?
             </ion-label>
-            <ion-select class="form-control" placeholder=" " id="active" required [(ngModel)]="active" name="active" #active_dev="ngModel">
+            <ion-select class="form-control" placeholder=" " id="active" required [(ngModel)]="active" name="active"
+              #active_dev="ngModel">
               <ion-select-option value="yes" selected="true">Yes</ion-select-option>
               <ion-select-option value="no">No</ion-select-option>
             </ion-select>
@@ -104,10 +106,14 @@
 
           </div>
         </div>
-        <span> {{ heroForm1.value | json }} </span>
-        <ion-button style="text-transform: none;" id="buttonColor" type="submit" shape="square"
-        size="medium" slot="end" [disabled]="!heroForm1.form.valid">
-        Add skill</ion-button>
+        <!-- <span> {{ heroForm1.value | json }} </span> -->
+        <ion-item>
+          <ion-button style="text-transform: none;" id="buttonColor" type="submit" shape="square" size="medium"
+            slot="end" [disabled]="!heroForm1.form.valid">
+            Add skill</ion-button>
+        </ion-item>
       </form>
-  </div>
+
+    </div>
+  </ion-item>
 </ion-content>
