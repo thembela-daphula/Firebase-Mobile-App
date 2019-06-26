@@ -40,7 +40,7 @@
     "ionic-calendar-date-picker": "^0.1.2",
     "jquery": "^3.4.1",
     "popper.js": "^1.15.0",
-    "rxjs": "~6.3.3",
+    "rxjs": "^6.3.3",
     "rxjs-compat": "^6.5.2",
     "zone.js": "~0.8.29"
   },
