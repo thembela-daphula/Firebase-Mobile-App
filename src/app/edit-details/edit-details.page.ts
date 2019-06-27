@@ -8,6 +8,7 @@ import { Skills } from '../services/skills';
 import { UsersService } from '../services/users.service';
 import { UserService } from '../user.service';
 import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-edit-details',
@@ -21,37 +22,39 @@ export class EditDetailsPage implements OnInit {
   // tslint:disable-next-line:no-inferrable-types
   busy: boolean = false;
 
-  level: string;
-  lastUsed: string;
-  activeExperience: string;
-  active: string;
-  id: string;
+  level;
+  lastUsed;
+  activeExperience;
+  active;
+  id;
+  skillID: string;
 
   constructor(
     private users: UsersService,
     private http: Http,
+    private route: ActivatedRoute,
     private afs: AngularFirestore,
     private router: Router,
     private alertController: AlertController,
     private user: UserService,
     public alertCtrl: AlertController
-  ) {
-    this.mainuser = afs.collection(`users`).doc(`/${this.users.getUID()}`).collection(`skills`).doc(`/${this.id}`);
-    this.sub = this.mainuser.valueChanges().subscribe(event => {
-    this.lastUsed = event.lastUsed;
-    this.level = event.level;
-    this.activeExperience = event.activeExperience;
-    this.active = event.active;
-});
-   }
+  ) { }
 
   ngOnInit() {
+    this.skillID = this.route.snapshot.paramMap.get('id');
+    this.mainuser = this.afs.doc(`users/${this.users.getUID()}/skills/${this.skillID}`);
+    this.sub = this.mainuser.valueChanges().subscribe(event => {
+    this.level = event.level;
+    this.active = event.active;
+    this.lastUsed = event.lastUsed;
+    this.activeExperience = event.activeExperience;
+});
   }
 
   async UpdateSkills() {
-
+    this.skillID = this.route.snapshot.paramMap.get('id');
     this.busy = true;
-          this.afs.collection(`users`).doc(`/${this.users.getUID()}`).collection(`skills`).doc(`/${this.id}`).update({
+          this.afs.doc(`users/${this.users.getUID()}/skills/${this.skillID}`).update({
           level : this.level,
           lastUsed: this.lastUsed,
           activeExperience: this.activeExperience,
