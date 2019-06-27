@@ -15,7 +15,7 @@
       <ion-list *ngFor="let post of data">
           <ion-reorder-group disabled="false" id="reorder">
               <ion-item>
-                  <ion-label (click)="notifications()" >{{ post.name }} {{ post.surname }} </ion-label>
+                  <ion-label (click)="notifications()" >{{ post.name | titlecase  }} {{ post.surname | titlecase  }} </ion-label>
                   <ion-item slot="end"> {{ post.careerLevel }}</ion-item>
                </ion-item>
               </ion-reorder-group>
