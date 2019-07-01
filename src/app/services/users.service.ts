@@ -69,6 +69,10 @@ export class UsersService {
           return this.http.get(`http://localhost:3000/users/${id}/get-public`);
         }
 
+        getMember(id: string) {
+          return this.http.get(`http://localhost:3000/users/${id}/member`);
+        }
+
         getSkills(id: string): Observable<Object> {
           return this.http.get(`http://localhost:3000/users/skills/${id}`);
         }

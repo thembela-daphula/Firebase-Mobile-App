@@ -38,7 +38,6 @@ export class InfoPage implements OnInit {
     public popoverController: PopoverController,
         ) {
     this.getSkills();
-
     }
 
   ngOnInit() {
