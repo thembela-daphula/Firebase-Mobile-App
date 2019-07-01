@@ -15,7 +15,7 @@
   "dependencies": {
     "@angular/common": "^8.0.3",
     "@angular/core": "^8.0.3",
-    "@angular/fire": "^5.1.2",
+    "@angular/fire": "^5.2.1",
     "@angular/forms": "^8.0.3",
     "@angular/http": "^7.2.2",
     "@angular/platform-browser": "^8.0.3",

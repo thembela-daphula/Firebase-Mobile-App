@@ -21,6 +21,7 @@ export class InfoPage implements OnInit {
   Skills: Skills[];
   skillID: Skills;
   uid: string;
+  id: any;
 
 // tslint:disable-next-line: no-inferrable-types
 
@@ -80,6 +81,30 @@ export class InfoPage implements OnInit {
       await alert.present();
     }
 
+    async presentAlertConfirmDelete() {
+      const alert = await this.alertCtrl.create({
+        header: 'Delete Skill?',
+        message: 'Are you sure you want to delete this skill?',
+        buttons: [
+          {
+            text: 'No',
+            role: 'cancel',
+            cssClass: 'secondary',
+            handler: (blah) => {
+              console.log('Confirm Cancel: ?');
+            }
+          }, {
+            text: 'Yes',
+            handler: () => {
+              this.deleteSkill(this.id);
+            }
+          }
+        ]
+    // tslint:disable-next-line: semicolon
+      });
+      await alert.present();
+    }
+
     async notifications(ev: any) {
       const popover = await this.popoverController.create({
           component: NotifiticationsComponent,
@@ -106,3 +131,5 @@ deleteSkill(id: string) {
 }
 
 }
+
+
