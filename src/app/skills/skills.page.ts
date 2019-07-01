@@ -7,6 +7,8 @@ import { AlertController, NavController } from '@ionic/angular';
 import { Users } from '../services/users.interface';
 import { UserService } from '../user.service';
 import { UsersService } from '../services/users.service';
+import { Skills } from '../services/skills';
+import { NgForm } from '@angular/forms';
 
 
 
@@ -17,12 +19,19 @@ import { UsersService } from '../services/users.service';
   providers: [Keyboard]
 })
 export class SkillsPage implements OnInit {
+  id?: string;
+  name: string;
+  origin: string;
+  level: number;
+  lastUsed: Date;
+  activeExperience: number;
+  active: boolean;
 
   mainuser: AngularFirestoreDocument;
   skill: string;
-  level: string;
+  // level: string;
   last_used: string;
-  origin: string;
+  // origin: string;
   months_active: string;
   developing: string;
 
@@ -30,6 +39,7 @@ export class SkillsPage implements OnInit {
   sub;
 // tslint:disable-next-line: no-inferrable-types
   busy: boolean = false;
+  res: Object;
 
 // tslint:disable-next-line: max-line-length
   constructor(public router: Router, private afs: AngularFirestore, private users: UsersService,  private alertCtrl: AlertController, private keyboard: Keyboard) {
@@ -39,16 +49,18 @@ export class SkillsPage implements OnInit {
       });
     }
 
+
+
     async createPost() {
       this.busy = true;
-      const skill = this.skill;
+      const skill = this.name;
       const level = this.level;
-      const last_used = this.last_used;
+      const last_used = this.lastUsed;
       const origin = this.origin;
-      const months_active = this.months_active;
-      const developing = this.developing;
+      const months_active = this.activeExperience;
+      const developing = this.active;
 
-      this.afs.doc(`users/${this.users.getUID()}`).update({
+      this.afs.doc(`skills/${this.users.getUID()}`).update({
         skills: firestore.FieldValue.arrayUnion({
           skill,
           level,
@@ -61,6 +73,31 @@ export class SkillsPage implements OnInit {
 
       this.router.navigate(['/tabs/info']);
       }
+
+
+
+    // async createPost() {
+    //   this.busy = true;
+    //   const skill = this.skill;
+    //   const level = this.level;
+    //   const last_used = this.last_used;
+    //   const origin = this.origin;
+    //   const months_active = this.months_active;
+    //   const developing = this.developing;
+
+    //   this.afs.doc(`users/${this.users.getUID()}`).update({
+    //     skills: firestore.FieldValue.arrayUnion({
+    //       skill,
+    //       level,
+    //       last_used,
+    //       origin,
+    //       months_active,
+    //       developing
+    //     })
+    //     });
+
+    //   this.router.navigate(['/tabs/info']);
+    //   }
 
   ngOnInit() {
   }
@@ -93,5 +130,10 @@ export class SkillsPage implements OnInit {
     this.keyboard.show();
   }
 
-
+  CreateSkill (skill: NgForm) {
+    console.log(skill.value);
+    this.users.createSkill(this.users.getUID(), skill.value ).subscribe((res) => {
+      this.res = res;
+    });
+  }
 }

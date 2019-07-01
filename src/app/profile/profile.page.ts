@@ -1,4 +1,3 @@
-
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
@@ -6,8 +5,6 @@ import { Router } from '@angular/router';
 import { AlertController, MenuController } from '@ionic/angular';
 import { UsersService } from '../services/users.service';
 import { UserService } from '../user.service';
-
-
 
 
 @Component({
@@ -20,6 +17,7 @@ export class ProfilePage implements OnInit {
   profilePic: string;
   sub;
   res: any;
+  data: any;
 
   constructor(
     public router: Router,
@@ -33,8 +31,7 @@ export class ProfilePage implements OnInit {
     this.sub = this.mainuser.valueChanges().subscribe(event => {
       this.profilePic = event.profilePic;
     });
-
-    this.getMessage();
+    this.getDp();
   }
 
 
@@ -46,9 +43,13 @@ export class ProfilePage implements OnInit {
 
   }
 
-  getMessage() {
-    this.users.getData().subscribe(data => console.log(data));
+  getDp() {
+    this.users.getProfilePicture(this.users.getUID()).subscribe((data) => {
+      this.data = data;
+      console.log(data);
+    });
   }
+
 
   edit() {
     this.router.navigate(['/tabs/profile']);
@@ -84,4 +85,3 @@ export class ProfilePage implements OnInit {
   }
 
 }
-

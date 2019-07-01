@@ -48,6 +48,7 @@ uid: any;
       this.profilePic = event.profilePic;
   });
       this.getMessage();
+      this.getDp();
     }
 
   ngOnInit() {
@@ -59,6 +60,13 @@ uid: any;
   }
   getMessage() {
     this.users.getData().subscribe(data => this.data = data);
+  }
+
+  getDp() {
+    this.users.getProfilePicture(this.users.getUID()).subscribe((res) => {
+      this.data = res;
+      console.log(res);
+    });
   }
 
   async notifications() {

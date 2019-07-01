@@ -1,4 +1,5 @@
-export interface Users {
+
+export interface UserPublic {
     id?: string;
     name: string;
     nickname: string;

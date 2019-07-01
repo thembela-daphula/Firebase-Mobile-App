@@ -26,7 +26,7 @@ export class LoginPage implements OnInit {
     public user: UserService,
     public router: Router,
     public toastController: ToastController,
-     private splashScreen: SplashScreen) {
+    private splashScreen: SplashScreen) {
 
   }
 
