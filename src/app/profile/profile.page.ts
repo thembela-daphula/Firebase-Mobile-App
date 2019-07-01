@@ -1,4 +1,3 @@
-
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
@@ -6,8 +5,6 @@ import { Router } from '@angular/router';
 import { AlertController, MenuController } from '@ionic/angular';
 import { UsersService } from '../services/users.service';
 import { UserService } from '../user.service';
-
-
 
 
 @Component({
@@ -34,7 +31,6 @@ export class ProfilePage implements OnInit {
     this.sub = this.mainuser.valueChanges().subscribe(event => {
       this.profilePic = event.profilePic;
     });
-
     this.getDp();
   }
 
@@ -89,4 +85,3 @@ export class ProfilePage implements OnInit {
   }
 
 }
-
